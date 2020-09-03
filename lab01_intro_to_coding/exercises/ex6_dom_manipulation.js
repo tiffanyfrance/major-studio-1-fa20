@@ -46,7 +46,19 @@ function drawIrisData() {
     .then(data => data.json())
     .then(data => {
       console.log(data);
+
+      // const addChildToViz = () => {
+      //   const newChild = document.createElement("div");
+      //   newChild.className = "rectangle";
+      //   newChild.style.height = Math.random() * 100 + "px";
+      //   viz.appendChild(newChild);
+      // };
       
+
+      data.forEach(d => {
+        console.log(d)
+        // viz.appendChild(newChild)
+      })
     });
 }
 
