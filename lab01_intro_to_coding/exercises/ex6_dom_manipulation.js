@@ -47,17 +47,12 @@ function drawIrisData() {
     .then(data => {
       console.log(data);
 
-      // const addChildToViz = () => {
-      //   const newChild = document.createElement("div");
-      //   newChild.className = "rectangle";
-      //   newChild.style.height = Math.random() * 100 + "px";
-      //   viz.appendChild(newChild);
-      // };
-      
-
       data.forEach(d => {
-        console.log(d)
-        // viz.appendChild(newChild)
+        const newChild = document.createElement("div");
+        newChild.className = "rectangle";
+        newChild.style.height = d.petallength * 100 + "px";
+        newChild.style.width = 5 + 'px';
+        viz.appendChild(newChild);
       })
     });
 }
