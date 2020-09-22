@@ -1,6 +1,6 @@
 # major-studio-1-fa20
 
-Project 1 mocks:
+Project 1 mocks:<br />
 (Mock 1 Quantity focus, will use several api searches)
 ![Mock 1](mock1.png)<br /><br />
 (Mock 2 Tagged results)
