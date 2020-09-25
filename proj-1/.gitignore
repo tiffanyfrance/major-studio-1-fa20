@@ -3,12 +3,12 @@ raw-data/
 filtered-data/
 
 # Mocks
-mocks/
+mocks/*.ai
 
 # Logs
 logs
 *.log
-npm-debug.log*
+npm-debug.lo
 yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
