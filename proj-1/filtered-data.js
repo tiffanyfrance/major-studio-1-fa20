@@ -1,13 +1,21 @@
 const fs = require('fs');
 
-// const Q = 'mary';
+const Q = 'mary';
 // const Q = 'elizabeth';
-const Q = 'anna';
+// const Q = 'anna';
 // const Q = 'james';
 // const Q = 'john';
 // const Q = 'william';
 
-let rawDataStr = fs.readFileSync('raw-data/' + Q + '-raw-data.json');
+// const U = 'NMAH'; // Smithsonian National Museum of American History
+const U = 'SAAM'; // American Art Museum
+// const U = 'CHNDM'; // Cooper-Hewitt, National Design Museum
+// const U = 'NPG'; // Portrait Gallery
+// const U = 'FSG'; // Freer Gallery of Art and Arthur M. Sackler Gallery
+// const U = 'HSFA'; // Human Studies Film Archives
+// const U = 'NMAAHC'; // National Museum of African American History and Culture
+
+let rawDataStr = fs.readFileSync('raw-data/' + Q + '-raw-data' + U + '.json');
 
 let rawData = JSON.parse(rawDataStr);
 
@@ -62,7 +70,7 @@ topicsArr = topicsArr.filter(d => d[1] > 5);
 
 console.log(topicsArr, data.length);
 
-writeJSON(data, 'filtered-data/' + Q + '-filtered-data.json');
+writeJSON(data, 'filtered-data/' + Q + '-filtered-data-' + U +'.json');
 
 function writeJSON(data, path) {
   try {
