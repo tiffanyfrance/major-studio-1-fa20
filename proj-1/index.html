@@ -4,13 +4,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet">
+  
+  <title>Interactivity in Data Visualization</title>
   <style>
+    * {
+      font-family: 'Lato';
+      font-size: 10px;
+    }
+    svg {
+      max-width: 900px;
+      pointer-events: all;
+    }
 
+    .domain {
+      display: none;
+    }
+
+    .svg-tooltip {
+      background: rgba(80, 80, 80, .9);
+      color: #fff;
+      display: block;
+      padding: .2rem .4rem;
+      border-radius: .1rem;
+      position: absolute;
+      z-index: 1;
+      visibility: hidden;
+      pointer-events: none;
+      box-sizing: border-box;
+    }
   </style>
 </head>
 
 <body>
+  <script src="https://d3js.org/d3.v6.min.js"></script>
   <script src="index.js"></script>
 </body>
 
