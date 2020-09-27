@@ -6,7 +6,7 @@ const Q = vars.Q,
 
 console.log(Q,U);
 
-let rawDataStr = fs.readFileSync('raw-data/' + Q + '-raw-data-' + U + '.json');
+let rawDataStr = fs.readFileSync('raw-data/' + U + '/' + Q + '-raw-data-' + U + '.json');
 
 let rawData = JSON.parse(rawDataStr);
 
@@ -15,9 +15,9 @@ let topics = {};
 let data = rawData.filter(d => {
   // if (d.content.descriptiveNonRepeating.online_media) {
   if (titleIncludes(d, Q)
-    && !titleIncludes(d, `by ${Q}`) // ) {
-    && !isObjectType(d, 'Sound recordings')
-    && !isObjectType(d, 'Button')) {
+    && !titleIncludes(d, `by ${Q}`)) {
+    // && !isObjectType(d, 'Sound recordings')
+    // && !isObjectType(d, 'Button')) {
 
     if (d.content.indexedStructured.topic) {
       for (let t of d.content.indexedStructured.topic) {
@@ -61,7 +61,7 @@ topicsArr = topicsArr.filter(d => d[1] > 5);
 
 console.log(topicsArr, data.length);
 
-writeJSON(data, 'filtered-data/' + Q + '-filtered-data-' + U +'.json');
+writeJSON(data, 'filtered-data/' + U + '/' + Q + '-filtered-data-' + U +'.json');
 
 function writeJSON(data, path) {
   try {

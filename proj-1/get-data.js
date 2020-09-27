@@ -30,7 +30,7 @@ console.log(Q,U);
     rowCount = result.response.rowCount;
   } while (start < rowCount);
 
-  writeJSON(data, 'raw-data/' + Q.toLowerCase() + '-raw-data-' + U + '.json');
+  writeJSON(data, 'raw-data/' + U + '/' + Q.toLowerCase() + '-raw-data-' + U + '.json');
 })();
 
 function writeJSON(data, path) {
