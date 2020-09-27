@@ -6,71 +6,85 @@ const Q = vars.Q,
 
 console.log(Q, U);
 
-let topicsCount = {};
+let totals = {};
 
 for (let name of Q) {
-
-  let rawDataStr = fs.readFileSync(`raw-data/${U}/${name}-raw-data-${U}.json`);
-
-  let rawData = JSON.parse(rawDataStr);
-
-  let topics = {};
-
-  /*
-  * TODO: Filter out exact duplicate title 
-  * (i.e. "title": "Carte-de-visite portrait of Mary Anna Longstreth" 
-  * appears under "Mary" and "Anna")
-  *
-  * TODO: isObjectType doesn't work in all cases
-  *
-  *
-  */
-  let data = rawData.filter(d => {
-    // if (d.content.descriptiveNonRepeating.online_media) {
-    if (d.content.indexedStructured.topic
-      && titleIncludes(d, name)
-      && !titleIncludes(d, `by ${name}`) //) {
-      && d.content.indexedStructured.object_type // check for object type, filter out those missing object_type
-      && !isObjectType(d, 'Sound recordings')
-      && !isObjectType(d, 'Button')
-      && !isTopic(d, 'Button')) {
-
-      for (let t of d.content.indexedStructured.topic) {
-        let count = topics[t];
-
-        if (!count) {
-          count = 0;
-        }
-
-        topics[t] = count + 1;
-      }
-
-      return true;
-    }
-
-    // if (d.content.indexedStructured.name) {
-    //   for (let n of d.content.indexedStructured.name) {
-    //     if (includesName(n)) {
-    //       return true;
-    //     }
-    //   }
-    // }
-    // }
-
-    return false;
-  });
-
-  let topicsArr = Object.entries(topics);
-  topicsArr.sort((a, b) => a[1] - b[1]);
-  // topicsArr = topicsArr.filter(d => d[1] > 5);
-
-  topicsCount[name] = topicsArr;
-
-  console.log(topicsArr, data.length);
-
+  totals[name] = 0;
 }
 
-writeJSON(topicsCount, U + '-count.json');
+let topics = {};
+
+for (let name of Q) {
+  for (let u of U) {
+    let rawDataStr = fs.readFileSync(`raw-data/${u}/${name}-raw-data-${u}.json`);
+
+    let rawData = JSON.parse(rawDataStr);
+
+    /*
+    * TODO: Filter out exact duplicate title 
+    * (i.e. "title": "Carte-de-visite portrait of Mary Anna Longstreth" 
+    * appears under "Mary" and "Anna") - edge case
+    *
+    *
+    * TODO: Top 40 categories by gender (2 lists)
+    *
+    * TODO: Total number of results by person 
+    * 
+    * TODO: Each person should have minimum 3 tags
+    * 
+    */
+    for (let d of rawData) {
+      if (d.content.indexedStructured.topic
+        && titleIncludes(d, name)
+        && !titleIncludes(d, `by ${name}`) //) {
+        && d.content.indexedStructured.object_type // check for object type, filter out those missing object_type
+        && !isObjectType(d, 'Sound recordings')
+        && !isObjectType(d, 'Button')
+        && !isTopic(d, 'Button')) {
+
+        for (let topicName of d.content.indexedStructured.topic) {
+          let t = topics[topicName];
+
+          if (!t) {
+            t = {
+              topic: topicName,
+              count: 0
+            };
+
+            for (let n of Q) {
+              t[n] = 0;
+            }
+
+            topics[topicName] = t;
+          }
+
+          t.count++;
+          t[name]++;
+          totals[name]++;
+        }
+      }
+    }
+  }
+}
+
+let topicsSet = new Set();
+
+let topicsArr = Object.values(topics);
+
+topicsArr.sort((a, b) => (b.mary + b.elizabeth + b.anna) - (a.mary + a.elizabeth + a.anna));
+let womenTopicsArr = topicsArr.slice(0, 50);
+womenTopicsArr.forEach(topicsSet.add, topicsSet);
+
+topicsArr.sort((a, b) => (b.james + b.john + b.william) - (a.james + a.john + a.william));
+let menTopicsArr = topicsArr.slice(0, 50);
+menTopicsArr.forEach(topicsSet.add, topicsSet);
+
+console.log(topicsSet.size);
+
+// topicsArr.sort((a, b) => b.count - a.count);
+// topicsArr = topicsArr.filter(t => t.count > 3);
+
+writeJSON({ totals, topics: Array.from(topicsSet) }, 'topic-count.json');
 
 function titleIncludes(d, str) {
   let lowerTitle = d.title.toLowerCase();

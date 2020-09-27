@@ -4,24 +4,53 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.typekit.net/nei2ipe.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,400&display=swap" rel="stylesheet">
+
+
+
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet"> -->
   
   <title>Interactivity in Data Visualization</title>
   <style>
     * {
-      font-family: 'Lato';
-      font-size: 10px;
+      font-family: canada-type-gibson,sans-serif;
+      font-weight: 200;
+      font-style: normal;
     }
-    svg {
+
+    body {
+      margin: 0px;
+      padding: 0px;
+    }
+
+    h1 {
+      /* font: normal 52px 'Cormorant Garamond', serif; */
+      font-size: 42px;
+      text-align: center;
+      margin: 20px 0px;
+      font-weight: 100;
+    }
+
+    .container {
+      text-align: center;
+    }
+
+    .intro {
+      max-width: 50%;
+      margin: 0 auto;
+    }
+
+    /* svg {
       max-width: 900px;
       pointer-events: all;
     }
 
     .domain {
       display: none;
-    }
+    } */
 
-    .svg-tooltip {
+    /* .svg-tooltip {
       background: rgba(80, 80, 80, .9);
       color: #fff;
       display: block;
@@ -32,11 +61,43 @@
       visibility: hidden;
       pointer-events: none;
       box-sizing: border-box;
+    } */
+
+    #header {
+      background-color: #222;
+      color: white;
+      text-align: center;
+      font: 500 12px canada-type-gibson,sans-serif;
+      padding: 15px 0px;
+      margin-top: 0px;
     }
   </style>
 </head>
 
 <body>
+  <h1 id="header">USING SMITHSONIAN INSTITUTION OPEN API</h1>
+
+  <div class="container">
+
+    <h1>An Analysis of Topic Tagging by Gender</h1>
+
+    <p class="intro">
+      This project uses the open API from the Smithsonian Institute. 
+      The data is being retrieved from four separate units:  
+      the Smithsonian National Museum of American History, 
+      the American Art Museum,
+      the Portrait Gallery,
+      and the National Museum of African American History and Culture. 
+      The intent is to analyze gender difference by using the three most popular names,
+      by gender, for the 1800s - late 1900s (the time period
+      reflected in the collection). These names were gathered from
+      the Social Security Administration website as well as several smaller
+      websites (for data before SSA was active).
+    </p>
+
+
+  </div>
+
   <script src="https://d3js.org/d3.v6.min.js"></script>
   <script src="index.js"></script>
 </body>
