@@ -1,21 +1,13 @@
+// import { Q, U } from 'vars.js';
+const vars = require('./vars.js');
 const fs = require('fs');
 
-const Q = 'mary';
-// const Q = 'elizabeth';
-// const Q = 'anna';
-// const Q = 'james';
-// const Q = 'john';
-// const Q = 'william';
+let Q = vars.Q,
+    U = vars.U;
+console.log(Q,U);
 
-// const U = 'NMAH'; // Smithsonian National Museum of American History
-const U = 'SAAM'; // American Art Museum
-// const U = 'CHNDM'; // Cooper-Hewitt, National Design Museum
-// const U = 'NPG'; // Portrait Gallery
-// const U = 'FSG'; // Freer Gallery of Art and Arthur M. Sackler Gallery
-// const U = 'HSFA'; // Human Studies Film Archives
-// const U = 'NMAAHC'; // National Museum of African American History and Culture
-
-let rawDataStr = fs.readFileSync('raw-data/' + Q + '-raw-data' + U + '.json');
+let rawDataStr = fs.readFileSync('raw-data/' + Q + '-raw-data.json');
+// let rawDataStr = fs.readFileSync('raw-data/' + Q + '-raw-data-' + U + '.json');
 
 let rawData = JSON.parse(rawDataStr);
 
@@ -24,7 +16,7 @@ let topics = {};
 let data = rawData.filter(d => {
   // if (d.content.descriptiveNonRepeating.online_media) {
   if (titleIncludes(d, Q)
-    && !titleIncludes(d, `by ${Q}`)
+    && !titleIncludes(d, `by ${Q}`) // ) {
     && !isObjectType(d, 'Sound recordings')
     && !isObjectType(d, 'Button')) {
 
