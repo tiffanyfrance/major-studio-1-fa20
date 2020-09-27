@@ -1,0 +1,766 @@
+{
+  "mary": [
+    [
+      "Athletes",
+      1
+    ],
+    [
+      "Political organizations",
+      1
+    ],
+    [
+      "Classical (Music)",
+      1
+    ],
+    [
+      "History",
+      1
+    ],
+    [
+      "Religion",
+      1
+    ],
+    [
+      "Associations and institutions",
+      1
+    ],
+    [
+      "Funeral rites and ceremonies",
+      1
+    ],
+    [
+      "Clothing and dress",
+      1
+    ],
+    [
+      "Craftsmanship",
+      1
+    ],
+    [
+      "Free communities of color",
+      1
+    ],
+    [
+      "Motherhood",
+      1
+    ],
+    [
+      "Conductors (Musicians)",
+      1
+    ],
+    [
+      "Communities",
+      1
+    ],
+    [
+      "Jazz (Music)",
+      1
+    ],
+    [
+      "Tennis",
+      1
+    ],
+    [
+      "Religious groups",
+      1
+    ],
+    [
+      "Communication",
+      1
+    ],
+    [
+      "Slavery",
+      1
+    ],
+    [
+      "Parenthood",
+      1
+    ],
+    [
+      "Family",
+      1
+    ],
+    [
+      "Correspondence",
+      1
+    ],
+    [
+      "Reconstruction (U.S. history, 1865-1877)",
+      2
+    ],
+    [
+      "Instrumentalists (Musicians)",
+      2
+    ],
+    [
+      "Education",
+      2
+    ],
+    [
+      "Activism",
+      2
+    ],
+    [
+      "American Civil War (1861-1865)",
+      3
+    ],
+    [
+      "Civil War, 1861-1865",
+      3
+    ],
+    [
+      "Antislavery",
+      3
+    ],
+    [
+      "Women",
+      3
+    ],
+    [
+      "Social reform",
+      3
+    ],
+    [
+      "Photography",
+      6
+    ]
+  ],
+  "elizabeth": [
+    [
+      "Politics",
+      1
+    ],
+    [
+      "Agriculture",
+      1
+    ],
+    [
+      "Clothing and dress",
+      1
+    ],
+    [
+      "American Civil War (1861-1865)",
+      1
+    ],
+    [
+      "Craftsmanship",
+      1
+    ],
+    [
+      "Civil War, 1861-1865",
+      1
+    ],
+    [
+      "Free communities of color",
+      1
+    ],
+    [
+      "Finance",
+      1
+    ],
+    [
+      "Women",
+      1
+    ],
+    [
+      "Business",
+      2
+    ],
+    [
+      "Slavery",
+      2
+    ]
+  ],
+  "anna": [
+    [
+      "Women",
+      1
+    ],
+    [
+      "Communities",
+      1
+    ],
+    [
+      "Education",
+      1
+    ],
+    [
+      "Photography",
+      2
+    ],
+    [
+      "Reconstruction (U.S. history, 1865-1877)",
+      2
+    ],
+    [
+      "Civil War, 1861-1865",
+      2
+    ],
+    [
+      "American Civil War (1861-1865)",
+      2
+    ],
+    [
+      "Antislavery",
+      2
+    ]
+  ],
+  "james": [
+    [
+      "Correspondence",
+      1
+    ],
+    [
+      "Baseball",
+      1
+    ],
+    [
+      "Fugitive enslaved",
+      1
+    ],
+    [
+      "Finance",
+      1
+    ],
+    [
+      "Self-liberation",
+      1
+    ],
+    [
+      "Law",
+      1
+    ],
+    [
+      "Resistance",
+      1
+    ],
+    [
+      "Freemasons",
+      1
+    ],
+    [
+      "Religious groups",
+      1
+    ],
+    [
+      "Reconstruction (U.S. history, 1865-1877)",
+      1
+    ],
+    [
+      "Labor unions",
+      1
+    ],
+    [
+      "Urban life",
+      1
+    ],
+    [
+      "Emancipation",
+      1
+    ],
+    [
+      "Transportation",
+      1
+    ],
+    [
+      "Housing",
+      1
+    ],
+    [
+      "Domestic life",
+      1
+    ],
+    [
+      "Poverty",
+      1
+    ],
+    [
+      "Tuskegee Airmen",
+      1
+    ],
+    [
+      "Segregation",
+      1
+    ],
+    [
+      "Business",
+      1
+    ],
+    [
+      "Men",
+      2
+    ],
+    [
+      "Freedom",
+      2
+    ],
+    [
+      "American West",
+      2
+    ],
+    [
+      "Military",
+      2
+    ],
+    [
+      "Slavery",
+      2
+    ],
+    [
+      "Agriculture",
+      2
+    ],
+    [
+      "World War, 1939-1945",
+      2
+    ],
+    [
+      "Race relations",
+      3
+    ],
+    [
+      "Communication",
+      3
+    ],
+    [
+      "History",
+      3
+    ],
+    [
+      "Antislavery",
+      4
+    ],
+    [
+      "Sports",
+      4
+    ],
+    [
+      "Athletes",
+      4
+    ],
+    [
+      "Violence",
+      4
+    ],
+    [
+      "Literature",
+      5
+    ],
+    [
+      "Photography",
+      6
+    ]
+  ],
+  "john": [
+    [
+      "Mass media",
+      1
+    ],
+    [
+      "Self-liberation",
+      1
+    ],
+    [
+      "Fugitive enslaved",
+      1
+    ],
+    [
+      "Race relations",
+      1
+    ],
+    [
+      "Football",
+      1
+    ],
+    [
+      "Social reform",
+      1
+    ],
+    [
+      "Clothing and dress",
+      1
+    ],
+    [
+      "Activism",
+      1
+    ],
+    [
+      "United States--History--2001-",
+      1
+    ],
+    [
+      "Emancipation",
+      1
+    ],
+    [
+      "Trans Atlantic slave trade",
+      1
+    ],
+    [
+      "Women",
+      1
+    ],
+    [
+      "Justice",
+      1
+    ],
+    [
+      "Domestic life",
+      1
+    ],
+    [
+      "Labor unions",
+      1
+    ],
+    [
+      "Religion",
+      1
+    ],
+    [
+      "Buffalo Soldiers",
+      1
+    ],
+    [
+      "Broadway Theatre",
+      1
+    ],
+    [
+      "Freedom",
+      1
+    ],
+    [
+      "Comedy",
+      1
+    ],
+    [
+      "Children",
+      1
+    ],
+    [
+      "Communities",
+      1
+    ],
+    [
+      "Society",
+      1
+    ],
+    [
+      "Funeral rites and ceremonies",
+      1
+    ],
+    [
+      "Art",
+      1
+    ],
+    [
+      "Race",
+      2
+    ],
+    [
+      "American South",
+      2
+    ],
+    [
+      "Law",
+      2
+    ],
+    [
+      "Slave hire system",
+      2
+    ],
+    [
+      "Religious groups",
+      2
+    ],
+    [
+      "Communication",
+      2
+    ],
+    [
+      "Resistance",
+      2
+    ],
+    [
+      "United States Colored Troops",
+      2
+    ],
+    [
+      "Discrimination",
+      2
+    ],
+    [
+      "Reconstruction (U.S. history, 1865-1877)",
+      2
+    ],
+    [
+      "Civil rights",
+      2
+    ],
+    [
+      "Correspondence",
+      3
+    ],
+    [
+      "American Civil War (1861-1865)",
+      3
+    ],
+    [
+      "Civil War, 1861-1865",
+      3
+    ],
+    [
+      "Domestic slave trade",
+      3
+    ],
+    [
+      "Antislavery",
+      4
+    ],
+    [
+      "Family",
+      4
+    ],
+    [
+      "Politics",
+      4
+    ],
+    [
+      "Military",
+      4
+    ],
+    [
+      "History",
+      4
+    ],
+    [
+      "Free communities of color",
+      4
+    ],
+    [
+      "Agriculture",
+      5
+    ],
+    [
+      "Men",
+      5
+    ],
+    [
+      "Finance",
+      6
+    ],
+    [
+      "Slavery",
+      6
+    ],
+    [
+      "Business",
+      7
+    ],
+    [
+      "Photography",
+      7
+    ]
+  ],
+  "william": [
+    [
+      "Trans Atlantic slave trade",
+      1
+    ],
+    [
+      "Gospel (Music)",
+      1
+    ],
+    [
+      "Communication",
+      1
+    ],
+    [
+      "Medicine",
+      1
+    ],
+    [
+      "Ornamentation",
+      1
+    ],
+    [
+      "Law",
+      1
+    ],
+    [
+      "Motion pictures",
+      1
+    ],
+    [
+      "Architecture",
+      1
+    ],
+    [
+      "Technology",
+      1
+    ],
+    [
+      "Funeral rites and ceremonies",
+      1
+    ],
+    [
+      "Craftsmanship",
+      1
+    ],
+    [
+      "Music",
+      1
+    ],
+    [
+      "Resistance",
+      1
+    ],
+    [
+      "African diaspora",
+      1
+    ],
+    [
+      "Conductors (Musicians)",
+      1
+    ],
+    [
+      "Instrumentalists (Musicians)",
+      1
+    ],
+    [
+      "Men",
+      1
+    ],
+    [
+      "Opera (Music)",
+      1
+    ],
+    [
+      "Composers (Musicians)",
+      1
+    ],
+    [
+      "Holidays and festivals",
+      1
+    ],
+    [
+      "Orchestral (Music)",
+      1
+    ],
+    [
+      "Civil rights",
+      1
+    ],
+    [
+      "United States--History--1969-2001",
+      1
+    ],
+    [
+      "Domestic slave trade",
+      1
+    ],
+    [
+      "Finance",
+      1
+    ],
+    [
+      "Social reform",
+      1
+    ],
+    [
+      "Dance",
+      1
+    ],
+    [
+      "Emancipation",
+      1
+    ],
+    [
+      "Singers (Musicians)",
+      1
+    ],
+    [
+      "American South",
+      1
+    ],
+    [
+      "Jazz (Music)",
+      2
+    ],
+    [
+      "Reconstruction (U.S. history, 1865-1877)",
+      2
+    ],
+    [
+      "Correspondence",
+      2
+    ],
+    [
+      "Domestic life",
+      2
+    ],
+    [
+      "Labor unions",
+      2
+    ],
+    [
+      "Communities",
+      2
+    ],
+    [
+      "Society",
+      2
+    ],
+    [
+      "United States Colored Troops",
+      3
+    ],
+    [
+      "History",
+      3
+    ],
+    [
+      "Politics",
+      3
+    ],
+    [
+      "Antislavery",
+      3
+    ],
+    [
+      "Religion",
+      3
+    ],
+    [
+      "Family",
+      3
+    ],
+    [
+      "Business",
+      3
+    ],
+    [
+      "Religious groups",
+      4
+    ],
+    [
+      "Military",
+      4
+    ],
+    [
+      "Slavery",
+      5
+    ],
+    [
+      "Photography",
+      5
+    ],
+    [
+      "American Civil War (1861-1865)",
+      7
+    ],
+    [
+      "Civil War, 1861-1865",
+      7
+    ]
+  ]
+}

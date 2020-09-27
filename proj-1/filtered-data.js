@@ -6,7 +6,7 @@ const Q = vars.Q,
 
 console.log(Q, U);
 
-let objectTypeCount = {};
+let topicsCount = {};
 
 for (let name of Q) {
 
@@ -25,26 +25,24 @@ for (let name of Q) {
   *
   *
   */
-
-
   let data = rawData.filter(d => {
     // if (d.content.descriptiveNonRepeating.online_media) {
-    if (titleIncludes(d, name)
+    if (d.content.indexedStructured.topic
+      && titleIncludes(d, name)
       && !titleIncludes(d, `by ${name}`) //) {
       && d.content.indexedStructured.object_type // check for object type, filter out those missing object_type
       && !isObjectType(d, 'Sound recordings')
-      && !isObjectType(d, 'Button')) {
+      && !isObjectType(d, 'Button')
+      && !isTopic(d, 'Button')) {
 
-      if (d.content.indexedStructured.topic) {
-        for (let t of d.content.indexedStructured.topic) {
-          let count = topics[t];
+      for (let t of d.content.indexedStructured.topic) {
+        let count = topics[t];
 
-          if (!count) {
-            count = 0;
-          }
-
-          topics[t] = count + 1;
+        if (!count) {
+          count = 0;
         }
+
+        topics[t] = count + 1;
       }
 
       return true;
@@ -64,15 +62,15 @@ for (let name of Q) {
 
   let topicsArr = Object.entries(topics);
   topicsArr.sort((a, b) => a[1] - b[1]);
-  topicsArr = topicsArr.filter(d => d[1] > 5);
+  // topicsArr = topicsArr.filter(d => d[1] > 5);
 
-  objectTypeCount[name] = topicsArr;
+  topicsCount[name] = topicsArr;
 
   console.log(topicsArr, data.length);
 
 }
 
-writeJSON(objectTypeCount, U + '-count.json');
+writeJSON(topicsCount, U + '-count.json');
 
 function titleIncludes(d, str) {
   let lowerTitle = d.title.toLowerCase();
@@ -81,6 +79,10 @@ function titleIncludes(d, str) {
 
 function isObjectType(d, objType) {
   return d.content.indexedStructured.object_type.includes(objType);
+}
+
+function isTopic(d, t) {
+  return d.content.indexedStructured.topic.includes(t);
 }
 
 // writeJSON(data, `filtered-data/${U}/${Q}-filtered-data-${U}.json`);
