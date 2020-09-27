@@ -9,9 +9,9 @@ const Uval = 'NMAH'; // Smithsonian National Museum of American History
 // const Uval = 'SAAM'; // American Art Museum
 // const Uval = 'CHNDM'; // Cooper-Hewitt, National Design Museum
 // const Uval = 'NPG'; // Portrait Gallery
-// const Uval = 'FSG'; // Freer Gallery of Art and Arthur M. Sackler Gallery
-// const Uval = 'HSFA'; // Human Studies Film Archives
 // const Uval = 'NMAAHC'; // National Museum of African American History and Culture
+// const Uval = 'FSG'; // Freer Gallery of Art and Arthur M. Sackler Gallery
+
 
 module.exports = {
   Q: Qval,

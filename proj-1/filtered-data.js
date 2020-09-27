@@ -12,6 +12,17 @@ let rawData = JSON.parse(rawDataStr);
 
 let topics = {};
 
+/*
+* TODO: Filter out exact duplicate title 
+* (i.e. "title": "Carte-de-visite portrait of Mary Anna Longstreth" 
+* appears under "Mary" and "Anna")
+*
+* TODO: isObjectType doesn't work in all cases
+*
+*
+*/
+
+
 let data = rawData.filter(d => {
   // if (d.content.descriptiveNonRepeating.online_media) {
   if (titleIncludes(d, Q)
