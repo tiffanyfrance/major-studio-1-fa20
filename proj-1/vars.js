@@ -1,12 +1,12 @@
-// const Qval = 'mary';
+const Qval = 'mary';
 // const Qval = 'elizabeth';
 // const Qval = 'anna';
 // const Qval = 'james';
 // const Qval = 'john';
-const Qval = 'william';
+// const Qval = 'william';
 
-const Uval = 'NMAH'; // Smithsonian National Museum of American History
-// const Uval = 'SAAM'; // American Art Museum
+// const Uval = 'NMAH'; // Smithsonian National Museum of American History
+const Uval = 'SAAM'; // American Art Museum
 // const Uval = 'CHNDM'; // Cooper-Hewitt, National Design Museum
 // const Uval = 'NPG'; // Portrait Gallery
 // const Uval = 'FSG'; // Freer Gallery of Art and Arthur M. Sackler Gallery

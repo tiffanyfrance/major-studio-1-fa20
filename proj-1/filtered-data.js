@@ -1,13 +1,12 @@
-// import { Q, U } from 'vars.js';
-const vars = require('./vars.js');
+const vars = require('./vars.js'); // needs ./ even though at same level
 const fs = require('fs');
 
-let Q = vars.Q,
+const Q = vars.Q,
     U = vars.U;
+
 console.log(Q,U);
 
-let rawDataStr = fs.readFileSync('raw-data/' + Q + '-raw-data.json');
-// let rawDataStr = fs.readFileSync('raw-data/' + Q + '-raw-data-' + U + '.json');
+let rawDataStr = fs.readFileSync('raw-data/' + Q + '-raw-data-' + U + '.json');
 
 let rawData = JSON.parse(rawDataStr);
 

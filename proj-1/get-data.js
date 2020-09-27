@@ -1,24 +1,16 @@
+const vars = require('./vars.js');
 const fetch = require('node-fetch');
 const fs = require('fs');
 
 // const API_KEY = 'FHPaQjcqKGlTdHDgyjjCEEqav0YlbvN61us1miIH';
 const API_KEY = 'UIgHKgyJmPqbv5dh219gWw37WoLdQ57TbtDeo8Oa';
-const Q = 'Mary';
-// const Q = 'Elizabeth';
-// const Q = 'Anna';
-// const Q = 'James';
-// const Q = 'John';
-// const Q = 'William';
-
-// const U = 'NMAH'; // Smithsonian National Museum of American History
-const U = 'SAAM'; // American Art Museum
-// const U = 'CHNDM'; // Cooper-Hewitt, National Design Museum
-// const U = 'NPG'; // Portrait Gallery
-// const U = 'FSG'; // Freer Gallery of Art and Arthur M. Sackler Gallery
-// const U = 'HSFA'; // Human Studies Film Archives
-// const U = 'NMAAHC'; // National Museum of African American History and Culture
 
 const ROWS = 1000;
+
+const Q = vars.Q,
+    U = vars.U;
+    
+console.log(Q,U);
 
 (async () => {
   let data = [];
