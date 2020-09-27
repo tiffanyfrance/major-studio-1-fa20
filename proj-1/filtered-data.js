@@ -26,9 +26,10 @@ let topics = {};
 let data = rawData.filter(d => {
   // if (d.content.descriptiveNonRepeating.online_media) {
   if (titleIncludes(d, Q)
-    && !titleIncludes(d, `by ${Q}`)) {
-    // && !isObjectType(d, 'Sound recordings')
-    // && !isObjectType(d, 'Button')) {
+    && !titleIncludes(d, `by ${Q}`) //) {
+    && d.content.indexedStructured.object_type // check for object type, filter out those missing object_type
+    && !isObjectType(d, 'Sound recordings') 
+    && !isObjectType(d, 'Button')) {
 
     if (d.content.indexedStructured.topic) {
       for (let t of d.content.indexedStructured.topic) {
