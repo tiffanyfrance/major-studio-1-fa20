@@ -1,4 +1,4 @@
-const Qval = 'mary';
+// const Qval = 'mary';
 // const Qval = 'elizabeth';
 // const Qval = 'anna';
 // const Qval = 'james';
@@ -14,6 +14,6 @@ const Uval = 'NMAH'; // Smithsonian National Museum of American History
 
 
 module.exports = {
-  Q: Qval,
+  Q: ['mary','elizabeth','anna','james','john','william'],
   U: Uval
 };
