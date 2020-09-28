@@ -62,13 +62,6 @@ let xAxisG;
 
   xAxis = g => g.call(d3.axisBottom(x).ticks(width / 80));
 
-  // svg.append('rect')
-  //   .attr('x', 0)
-  //   .attr('y', 0)
-  //   .attr('width', margin.left)
-  //   .attr('height', height)
-  //   .attr('fill', 'white');
-
   xAxisG = svg.append('g')
     .attr('transform', `translate(0,${height - margin.bottom})`);
 
@@ -91,27 +84,9 @@ let xAxisG;
     .on('mouseover', function (e, d) {
       console.log(d.topic, d.ratio);
 
-      // let left = null
-      // let right = null;
+      this.parentNode.parentNode.appendChild(this.parentNode);
+      this.parentNode.parentNode.parentNode.appendChild(this.parentNode.parentNode);
 
-      // if (e.offsetX < width / 2) {
-      //   left = (e.pageX + 10) + 'px';
-      // } else {
-      //   let bodyMarginRight = parseInt(window.getComputedStyle(document.body).marginRight);
-      //   let tooltipPaddingRight = parseInt(window.getComputedStyle(tooltip.node()).paddingRight);
-      //   right = (document.body.clientWidth - e.pageX + bodyMarginRight + tooltipPaddingRight + 10) + 'px';
-      // }
-
-      // tooltip
-      //   .style('top', (e.pageY - 10) + 'px')
-      //   .style('left', left)
-      //   .style('right', right)
-      //   .html(d.topic.toLowerCase());
-
-
-
-      this.parentNode.parentNode.appendChild(this.parentNode);//the path group is on the top with in its parent group
-      this.parentNode.parentNode.parentNode.appendChild(this.parentNode.parentNode);//the parent group is on the top with in its parent group
       d3.select(this)
         .append('circle')
         .attr('class', 'hover-circle')
@@ -120,9 +95,6 @@ let xAxisG;
         .style('stroke','#999')
         .style('stroke-width', 0.5)
         .attr('stroke-dasharray', 2);
-
-      // this.parentNode.append('circle')
-      //   .style('color',red);
   
       tooltip.transition()		
         .duration(200)		
@@ -134,8 +106,8 @@ let xAxisG;
             				
         
     })
-  // .on('mouseout', () => tooltip.style('visibility', 'hidden'));
   .on("mouseout", function(d) {		
+
     d3.select('.hover-circle')
       .remove();
 
@@ -160,37 +132,13 @@ let xAxisG;
       }
     })
     .attr('r', d => r(d.selectedCount))
-    // .attr('r', 20)
     .style('opacity', 1);
-
-  // let text = node.append('text')
-  //   .text(d => (d.topic).toLowerCase())
-  //   .attr('class', 'topic')
-  //   .attr('text-anchor', 'middle')
-  //   .style('font-size', d => (0.4 * r(d.selectedCount)) + 'px')
-  //   .style('fill', 'white')
-  //   .style('font-weight', '500')
-  //   .attr('stroke-width', 0.2)
-  //   .attr('stroke', d => {
-  //     if (d.ratio < (1 / 3)) {
-  //       return '#5F2756';
-  //     } else if (d.ratio < (1 / 3) + (1 / 9)) {
-  //       return '#A83A55';
-  //     } else if (d.ratio < (1 / 3) + (2 / 9)) {
-  //       return '#E14B56';
-  //     } else if (d.ratio < (2 / 3)) {
-  //       return '#F76F55';
-  //     } else {
-  //       return '#F8A255';
-  //     }
-  //   });
 
   let text = node.append('foreignObject')
     .html(d => `<div>${(d.topic).toLowerCase()}</div>`)
     .attr('class', 'topic')
     .attr('text-anchor', 'start')
     .style('font-size', d => (0.35 * r(d.selectedCount)) + 'px')
-    // .style('fill', 'white')
     .style('color', 'white')
     .style('width', d => r(d.selectedCount) + 20)
     .style('height', 25)
@@ -210,30 +158,6 @@ let xAxisG;
         return '#F8A255';
       }
     })
-
-
-  // let text2 = node.append('text')
-  //   .text(d => Math.floor(d.womenPercent * 100) + '% | ' + Math.floor(d.menPercent * 100) + '%')
-  //   .attr('class', 'total')
-  //   .attr('text-anchor', 'middle')
-  //   .style('font-size', d => '6px')
-  //   .style('fill', 'white')
-  //   .style('font-weight', '500')
-  //   .attr('stroke-width', 0.2)
-  //   .attr('stroke', d => {
-  //     if (d.ratio < (1 / 3)) {
-  //       return '#5F2756';
-  //     } else if (d.ratio < (1 / 3) + (1 / 9)) {
-  //       return '#A83A55';
-  //     } else if (d.ratio < (1 / 3) + (2 / 9)) {
-  //       return '#E14B56';
-  //     } else if (d.ratio < (2 / 3)) {
-  //       return '#F76F55';
-  //     } else {
-  //       return '#F8A255';
-  //     }
-  //   })
-  //   .attr('dy', '1.5em');
 
   const spacing = 4;
 
@@ -266,7 +190,6 @@ let xAxisG;
         return `translate(-${halfWidth}px, -${halfHeight}px)`;
       })
       .style('opacity', 1);
-    // text2.style('opacity', 1);
 
     svg.append('line')          
       .style('stroke', '#999')  
@@ -321,6 +244,14 @@ let xAxisG;
       .attr('height', 20)
       .attr('x', 323)
       .attr('y', 35);
+
+    svg.append('foreignObject')
+      .html(d => `<div style="font-size: 8px;">* includes the 50 most popular tags for each gender<br>
+      * size of circle represents popularity of tag with a minimum 13px radius</div>`)
+      .attr('width', 300)
+      .attr('height', 100)
+      .attr('x', 623)
+      .attr('y', 355);
 
   }, 2000);
 })();

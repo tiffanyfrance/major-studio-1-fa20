@@ -21,12 +21,6 @@ for (let name of Q) {
     let rawData = JSON.parse(rawDataStr);
 
     /*
-    * TODO: Filter out exact duplicate title 
-    * (i.e. "title": "Carte-de-visite portrait of Mary Anna Longstreth" 
-    * appears under "Mary" and "Anna") - edge case
-    *
-    *
-    * TODO: Top 40 categories by gender (2 lists)
     *
     * TODO: Total number of results by person 
     * 
@@ -41,8 +35,9 @@ for (let name of Q) {
         && !isObjectType(d, 'Sound recordings')
         && !isObjectType(d, 'Button')
         && !isTopic(d, 'Button')
-        && !isTopic(d, 'curtain')
+        && !isTopic(d, 'Curtain')
         // && !isTopic(d, 'Portraits')
+        // && !isTopic(d, 'Photography')
         && !isTopic(d, 'Ferris Collection')
         && !isTopic(d, 'Marsh Collection')
         && !isTopic(d, 'Rudolf Eickemeyer Jr. Collection')
@@ -50,6 +45,9 @@ for (let name of Q) {
         && !isTopic(d, 'Antibody Initiative: New York City Public Health Collections')
         && !isTopic(d, 'Scovill Manufacturing Collection')
         && !isTopic(d, 'Ken Regan Collection')
+        && !isTopic(d, 'Peters Prints')
+        && !isTopic(d, 'Column')
+        && !isTopic(d, 'Seating')
         && !isTopic(d, 'Copp Collection')) {
 
         for (let topicName of d.content.indexedStructured.topic) {
@@ -82,11 +80,11 @@ let topicsSet = new Set();
 let topicsArr = Object.values(topics);
 
 topicsArr.sort((a, b) => (b.mary + b.elizabeth + b.anna) - (a.mary + a.elizabeth + a.anna));
-let womenTopicsArr = topicsArr.slice(0, 60);
+let womenTopicsArr = topicsArr.slice(0, 50);
 womenTopicsArr.forEach(topicsSet.add, topicsSet);
 
 topicsArr.sort((a, b) => (b.james + b.john + b.william) - (a.james + a.john + a.william));
-let menTopicsArr = topicsArr.slice(0, 60);
+let menTopicsArr = topicsArr.slice(0, 50);
 menTopicsArr.forEach(topicsSet.add, topicsSet);
 
 console.log(topicsSet.size);

@@ -1,122 +1,72 @@
 {
   "totals": {
-    "mary": 1989,
-    "elizabeth": 586,
-    "anna": 365,
-    "james": 6405,
-    "john": 13584,
-    "william": 10392
+    "mary": 1538,
+    "elizabeth": 557,
+    "anna": 229,
+    "james": 4833,
+    "john": 9501,
+    "william": 7194
   },
   "topics": [
     {
       "topic": "Women",
-      "count": 280,
-      "mary": 128,
-      "elizabeth": 49,
-      "anna": 27,
-      "james": 9,
-      "john": 29,
-      "william": 38
+      "count": 236,
+      "mary": 105,
+      "elizabeth": 47,
+      "anna": 19,
+      "james": 8,
+      "john": 25,
+      "william": 32
     },
     {
       "topic": "Portraits",
-      "count": 2028,
-      "mary": 114,
-      "elizabeth": 45,
-      "anna": 24,
-      "james": 363,
-      "john": 791,
-      "william": 691
-    },
-    {
-      "topic": "Furnishings",
-      "count": 532,
-      "mary": 64,
-      "elizabeth": 21,
-      "anna": 5,
-      "james": 86,
-      "john": 204,
-      "william": 152
+      "count": 1603,
+      "mary": 91,
+      "elizabeth": 43,
+      "anna": 16,
+      "james": 303,
+      "john": 604,
+      "william": 546
     },
     {
       "topic": "Textiles",
-      "count": 173,
+      "count": 169,
       "mary": 54,
       "elizabeth": 25,
       "anna": 3,
-      "james": 10,
-      "john": 17,
+      "james": 7,
+      "john": 16,
       "william": 64
     },
     {
-      "topic": "Costume",
-      "count": 829,
-      "mary": 55,
-      "elizabeth": 11,
-      "anna": 15,
-      "james": 147,
-      "john": 316,
-      "william": 285
-    },
-    {
       "topic": "Photography",
-      "count": 435,
-      "mary": 47,
+      "count": 426,
+      "mary": 46,
       "elizabeth": 14,
       "anna": 8,
-      "james": 52,
-      "john": 154,
-      "william": 160
+      "james": 51,
+      "john": 151,
+      "william": 156
     },
     {
-      "topic": "Dress accessories",
-      "count": 641,
+      "topic": "Furnishings",
+      "count": 177,
       "mary": 43,
+      "elizabeth": 19,
+      "anna": 2,
+      "james": 28,
+      "john": 39,
+      "william": 46
+    },
+    {
+      "topic": "Costume",
+      "count": 509,
+      "mary": 32,
       "elizabeth": 9,
-      "anna": 11,
-      "james": 119,
-      "john": 250,
-      "william": 209
-    },
-    {
-      "topic": "Design",
-      "count": 755,
-      "mary": 40,
-      "elizabeth": 6,
-      "anna": 14,
-      "james": 133,
-      "john": 325,
-      "william": 237
-    },
-    {
-      "topic": "Interior decoration",
-      "count": 754,
-      "mary": 40,
-      "elizabeth": 6,
-      "anna": 14,
-      "james": 133,
-      "john": 324,
-      "william": 237
-    },
-    {
-      "topic": "Jewelry",
-      "count": 181,
-      "mary": 35,
-      "elizabeth": 8,
-      "anna": 10,
-      "james": 34,
-      "john": 56,
-      "william": 38
-    },
-    {
-      "topic": "Art",
-      "count": 376,
-      "mary": 35,
-      "elizabeth": 13,
-      "anna": 3,
-      "james": 60,
-      "john": 147,
-      "william": 118
+      "anna": 7,
+      "james": 109,
+      "john": 186,
+      "william": 166
     },
     {
       "topic": "Quilts",
@@ -130,73 +80,83 @@
     },
     {
       "topic": "Politics",
-      "count": 865,
-      "mary": 36,
+      "count": 697,
+      "mary": 31,
       "elizabeth": 6,
       "anna": 3,
-      "james": 174,
-      "john": 406,
-      "william": 240
+      "james": 142,
+      "john": 326,
+      "william": 189
     },
     {
       "topic": "Government",
-      "count": 805,
-      "mary": 36,
+      "count": 636,
+      "mary": 31,
       "elizabeth": 4,
       "anna": 3,
-      "james": 176,
-      "john": 342,
-      "william": 244
+      "james": 144,
+      "john": 261,
+      "william": 193
     },
     {
-      "topic": "First ladies",
-      "count": 43,
-      "mary": 34,
-      "elizabeth": 2,
+      "topic": "Art",
+      "count": 299,
+      "mary": 23,
+      "elizabeth": 12,
       "anna": 3,
-      "james": 2,
-      "john": 1,
-      "william": 1
+      "james": 43,
+      "john": 110,
+      "william": 108
     },
     {
-      "topic": "Presidents' spouses",
-      "count": 43,
-      "mary": 34,
-      "elizabeth": 2,
+      "topic": "Dress accessories",
+      "count": 386,
+      "mary": 26,
+      "elizabeth": 7,
       "anna": 3,
-      "james": 2,
-      "john": 1,
-      "william": 1
-    },
-    {
-      "topic": "Actors and actresses",
-      "count": 114,
-      "mary": 28,
-      "elizabeth": 3,
-      "anna": 6,
-      "james": 9,
-      "john": 40,
-      "william": 28
+      "james": 84,
+      "john": 147,
+      "william": 119
     },
     {
       "topic": "Health & Medicine",
-      "count": 68,
+      "count": 66,
       "mary": 14,
       "elizabeth": 19,
       "anna": 2,
       "james": 5,
-      "john": 18,
+      "john": 16,
       "william": 10
     },
     {
-      "topic": "Society and social change",
-      "count": 120,
-      "mary": 17,
-      "elizabeth": 12,
+      "topic": "First ladies",
+      "count": 37,
+      "mary": 29,
+      "elizabeth": 2,
       "anna": 3,
+      "james": 2,
+      "john": 1,
+      "william": 0
+    },
+    {
+      "topic": "Presidents' spouses",
+      "count": 37,
+      "mary": 29,
+      "elizabeth": 2,
+      "anna": 3,
+      "james": 2,
+      "john": 1,
+      "william": 0
+    },
+    {
+      "topic": "Actors and actresses",
+      "count": 86,
+      "mary": 27,
+      "elizabeth": 3,
+      "anna": 1,
       "james": 8,
-      "john": 48,
-      "william": 32
+      "john": 24,
+      "william": 23
     },
     {
       "topic": "Beauty and Health",
@@ -209,64 +169,44 @@
       "william": 4
     },
     {
-      "topic": "Headgear",
-      "count": 270,
-      "mary": 27,
-      "elizabeth": 1,
+      "topic": "Jewelry",
+      "count": 97,
+      "mary": 22,
+      "elizabeth": 7,
+      "anna": 2,
+      "james": 21,
+      "john": 23,
+      "william": 22
+    },
+    {
+      "topic": "Interior decoration",
+      "count": 382,
+      "mary": 18,
+      "elizabeth": 6,
+      "anna": 6,
+      "james": 84,
+      "john": 159,
+      "william": 109
+    },
+    {
+      "topic": "Design",
+      "count": 383,
+      "mary": 18,
+      "elizabeth": 6,
+      "anna": 6,
+      "james": 84,
+      "john": 160,
+      "william": 109
+    },
+    {
+      "topic": "Society and social change",
+      "count": 88,
+      "mary": 15,
+      "elizabeth": 11,
       "anna": 3,
-      "james": 34,
-      "john": 103,
-      "william": 102
-    },
-    {
-      "topic": "Music",
-      "count": 125,
-      "mary": 25,
-      "elizabeth": 3,
-      "anna": 2,
-      "james": 4,
+      "james": 7,
       "john": 34,
-      "william": 57
-    },
-    {
-      "topic": "Children",
-      "count": 57,
-      "mary": 23,
-      "elizabeth": 6,
-      "anna": 0,
-      "james": 6,
-      "john": 10,
-      "william": 12
-    },
-    {
-      "topic": "Clothing and dress",
-      "count": 87,
-      "mary": 21,
-      "elizabeth": 6,
-      "anna": 2,
-      "james": 6,
-      "john": 31,
-      "william": 21
-    },
-    {
-      "topic": "Flowers",
-      "count": 37,
-      "mary": 16,
-      "elizabeth": 3,
-      "anna": 9,
-      "james": 2,
-      "john": 3,
-      "william": 4
-    },
-    {
-      "topic": "Home Furnishings",
-      "count": 477,
-      "mary": 16,
-      "elizabeth": 4,
-      "anna": 8,
-      "james": 79,
-      "john": 199,
-      "william": 171
+      "william": 18
     },
     {
       "topic": "Amusements",
@@ -279,84 +219,74 @@
       "william": 27
     },
     {
-      "topic": "Architecture",
-      "count": 272,
-      "mary": 17,
-      "elizabeth": 2,
-      "anna": 8,
-      "james": 39,
-      "john": 108,
-      "william": 98
+      "topic": "Children",
+      "count": 54,
+      "mary": 22,
+      "elizabeth": 6,
+      "anna": 0,
+      "james": 6,
+      "john": 8,
+      "william": 12
     },
     {
-      "topic": "Necklace",
-      "count": 46,
-      "mary": 18,
+      "topic": "Music",
+      "count": 103,
+      "mary": 22,
       "elizabeth": 3,
-      "anna": 4,
-      "james": 5,
-      "john": 14,
-      "william": 2
+      "anna": 2,
+      "james": 3,
+      "john": 34,
+      "william": 39
+    },
+    {
+      "topic": "Religion",
+      "count": 90,
+      "mary": 21,
+      "elizabeth": 2,
+      "anna": 1,
+      "james": 10,
+      "john": 41,
+      "william": 15
     },
     {
       "topic": "Social reformers",
-      "count": 142,
+      "count": 141,
       "mary": 20,
       "elizabeth": 4,
       "anna": 0,
-      "james": 12,
+      "james": 11,
       "john": 52,
       "william": 54
     },
     {
-      "topic": "Religion",
-      "count": 108,
-      "mary": 21,
-      "elizabeth": 2,
-      "anna": 1,
-      "james": 13,
-      "john": 55,
-      "william": 16
-    },
-    {
-      "topic": "Hats",
-      "count": 242,
-      "mary": 18,
-      "elizabeth": 1,
-      "anna": 3,
-      "james": 31,
-      "john": 92,
-      "william": 97
-    },
-    {
-      "topic": "Bracelet",
-      "count": 24,
-      "mary": 13,
-      "elizabeth": 1,
-      "anna": 8,
-      "james": 0,
-      "john": 2,
-      "william": 0
-    },
-    {
       "topic": "Education",
-      "count": 226,
+      "count": 181,
       "mary": 12,
       "elizabeth": 6,
       "anna": 3,
-      "james": 73,
-      "john": 70,
-      "william": 62
+      "james": 60,
+      "john": 53,
+      "william": 47
     },
     {
-      "topic": "Theater",
-      "count": 61,
+      "topic": "Clothing and dress",
+      "count": 62,
       "mary": 14,
-      "elizabeth": 0,
-      "anna": 7,
-      "james": 3,
-      "john": 27,
-      "william": 10
+      "elizabeth": 5,
+      "anna": 2,
+      "james": 2,
+      "john": 24,
+      "william": 15
+    },
+    {
+      "topic": "Communications",
+      "count": 124,
+      "mary": 15,
+      "elizabeth": 4,
+      "anna": 1,
+      "james": 28,
+      "john": 40,
+      "william": 36
     },
     {
       "topic": "Roman Catholicism",
@@ -370,43 +300,13 @@
     },
     {
       "topic": "Literature",
-      "count": 284,
-      "mary": 7,
+      "count": 223,
+      "mary": 6,
       "elizabeth": 9,
       "anna": 4,
-      "james": 65,
-      "john": 107,
-      "william": 92
-    },
-    {
-      "topic": "Communications",
-      "count": 158,
-      "mary": 15,
-      "elizabeth": 4,
-      "anna": 1,
-      "james": 32,
-      "john": 47,
-      "william": 59
-    },
-    {
-      "topic": "Entertainers",
-      "count": 94,
-      "mary": 11,
-      "elizabeth": 0,
-      "anna": 8,
-      "james": 11,
-      "john": 34,
-      "william": 30
-    },
-    {
-      "topic": "First Lady of US",
-      "count": 22,
-      "mary": 16,
-      "elizabeth": 0,
-      "anna": 3,
-      "james": 2,
-      "john": 0,
-      "william": 1
+      "james": 56,
+      "john": 86,
+      "william": 62
     },
     {
       "topic": "Embroidery",
@@ -419,164 +319,134 @@
       "william": 1
     },
     {
-      "topic": "Column",
-      "count": 137,
-      "mary": 12,
+      "topic": "Headgear",
+      "count": 161,
+      "mary": 15,
       "elizabeth": 1,
-      "anna": 5,
-      "james": 19,
-      "john": 49,
-      "william": 51
+      "anna": 1,
+      "james": 25,
+      "john": 61,
+      "william": 58
     },
     {
-      "topic": "Writers",
-      "count": 269,
-      "mary": 6,
-      "elizabeth": 8,
-      "anna": 3,
-      "james": 59,
-      "john": 106,
-      "william": 87
+      "topic": "Necklace",
+      "count": 19,
+      "mary": 13,
+      "elizabeth": 3,
+      "anna": 1,
+      "james": 1,
+      "john": 0,
+      "william": 1
     },
     {
       "topic": "Sports",
-      "count": 299,
+      "count": 297,
       "mary": 14,
       "elizabeth": 2,
       "anna": 0,
       "james": 37,
-      "john": 152,
+      "john": 150,
       "william": 94
     },
     {
       "topic": "Reformers",
-      "count": 70,
+      "count": 55,
       "mary": 6,
       "elizabeth": 8,
       "anna": 2,
-      "james": 5,
-      "john": 34,
-      "william": 15
+      "james": 4,
+      "john": 24,
+      "william": 11
     },
     {
-      "topic": "Chairs",
-      "count": 272,
-      "mary": 11,
-      "elizabeth": 1,
+      "topic": "Writers",
+      "count": 212,
+      "mary": 5,
+      "elizabeth": 8,
       "anna": 3,
-      "james": 43,
-      "john": 123,
-      "william": 91
+      "james": 50,
+      "john": 85,
+      "william": 61
     },
     {
-      "topic": "Seating",
-      "count": 272,
-      "mary": 11,
-      "elizabeth": 1,
-      "anna": 3,
-      "james": 43,
-      "john": 124,
-      "william": 90
+      "topic": "Flowers",
+      "count": 21,
+      "mary": 12,
+      "elizabeth": 2,
+      "anna": 1,
+      "james": 2,
+      "john": 2,
+      "william": 2
     },
     {
       "topic": "Civil War, 1861-1865",
-      "count": 266,
+      "count": 221,
       "mary": 8,
       "elizabeth": 1,
       "anna": 5,
-      "james": 49,
-      "john": 116,
-      "william": 87
+      "james": 39,
+      "john": 98,
+      "william": 70
+    },
+    {
+      "topic": "Theater",
+      "count": 35,
+      "mary": 12,
+      "elizabeth": 0,
+      "anna": 2,
+      "james": 2,
+      "john": 13,
+      "william": 6
+    },
+    {
+      "topic": "First Lady of US",
+      "count": 16,
+      "mary": 11,
+      "elizabeth": 0,
+      "anna": 3,
+      "james": 2,
+      "john": 0,
+      "william": 0
     },
     {
       "topic": "American Civil War (1861-1865)",
-      "count": 266,
+      "count": 221,
       "mary": 8,
       "elizabeth": 1,
       "anna": 5,
-      "james": 49,
-      "john": 116,
-      "william": 87
+      "james": 39,
+      "john": 98,
+      "william": 70
+    },
+    {
+      "topic": "Entertainers",
+      "count": 66,
+      "mary": 10,
+      "elizabeth": 0,
+      "anna": 3,
+      "james": 10,
+      "john": 18,
+      "william": 25
     },
     {
       "topic": "Musical instruments",
-      "count": 77,
+      "count": 59,
       "mary": 9,
       "elizabeth": 3,
       "anna": 1,
       "james": 3,
       "john": 18,
-      "william": 43
+      "william": 25
     },
     {
-      "topic": "Crown",
-      "count": 17,
-      "mary": 12,
-      "elizabeth": 1,
-      "anna": 0,
-      "james": 0,
-      "john": 2,
-      "william": 2
-    },
-    {
-      "topic": "Headdresses",
-      "count": 20,
-      "mary": 12,
-      "elizabeth": 1,
-      "anna": 0,
-      "james": 0,
-      "john": 3,
-      "william": 4
-    },
-    {
-      "topic": "Photographic format",
-      "count": 121,
-      "mary": 7,
-      "elizabeth": 5,
-      "anna": 1,
-      "james": 26,
-      "john": 41,
-      "william": 41
-    },
-    {
-      "topic": "Brooch",
-      "count": 16,
-      "mary": 8,
-      "elizabeth": 4,
-      "anna": 1,
-      "james": 0,
-      "john": 0,
-      "william": 3
-    },
-    {
-      "topic": "Gloves",
-      "count": 39,
-      "mary": 11,
-      "elizabeth": 1,
-      "anna": 0,
-      "james": 4,
-      "john": 8,
-      "william": 15
-    },
-    {
-      "topic": "Glove",
-      "count": 60,
-      "mary": 11,
-      "elizabeth": 1,
-      "anna": 0,
-      "james": 6,
-      "john": 16,
-      "william": 26
-    },
-    {
-      "topic": "Peters Prints",
-      "count": 59,
+      "topic": "Hats",
+      "count": 142,
       "mary": 10,
       "elizabeth": 1,
-      "anna": 0,
-      "james": 14,
-      "john": 27,
-      "william": 7
+      "anna": 1,
+      "james": 22,
+      "john": 52,
+      "william": 56
     },
     {
       "topic": "Mourning",
@@ -589,14 +459,14 @@
       "william": 3
     },
     {
-      "topic": "Ring",
-      "count": 51,
-      "mary": 2,
-      "elizabeth": 1,
-      "anna": 7,
-      "james": 13,
-      "john": 21,
-      "william": 7
+      "topic": "Photographic format",
+      "count": 105,
+      "mary": 5,
+      "elizabeth": 4,
+      "anna": 1,
+      "james": 24,
+      "john": 35,
+      "william": 36
     },
     {
       "topic": "Judaism",
@@ -609,134 +479,134 @@
       "william": 2
     },
     {
+      "topic": "Brooch",
+      "count": 11,
+      "mary": 6,
+      "elizabeth": 3,
+      "anna": 1,
+      "james": 0,
+      "john": 0,
+      "william": 1
+    },
+    {
+      "topic": "Beauty and Hygiene Products: Make-up",
+      "count": 10,
+      "mary": 2,
+      "elizabeth": 7,
+      "anna": 0,
+      "james": 0,
+      "john": 0,
+      "william": 1
+    },
+    {
+      "topic": "Family",
+      "count": 24,
+      "mary": 9,
+      "elizabeth": 0,
+      "anna": 0,
+      "james": 2,
+      "john": 8,
+      "william": 5
+    },
+    {
       "topic": "Men",
-      "count": 1663,
+      "count": 1278,
       "mary": 5,
       "elizabeth": 0,
       "anna": 0,
-      "james": 349,
-      "john": 754,
-      "william": 555
+      "james": 289,
+      "john": 571,
+      "william": 413
     },
     {
       "topic": "Military",
-      "count": 554,
+      "count": 464,
       "mary": 4,
       "elizabeth": 2,
       "anna": 1,
-      "james": 127,
-      "john": 229,
-      "william": 191
+      "james": 108,
+      "john": 189,
+      "william": 160
     },
     {
       "topic": "Facial Hair",
-      "count": 489,
+      "count": 334,
       "mary": 0,
       "elizabeth": 0,
       "anna": 0,
-      "james": 113,
-      "john": 219,
-      "william": 157
+      "james": 84,
+      "john": 142,
+      "william": 108
     },
     {
       "topic": "Law and Law Enforcement",
-      "count": 445,
+      "count": 324,
       "mary": 1,
       "elizabeth": 0,
       "anna": 0,
-      "james": 138,
-      "john": 181,
-      "william": 125
+      "james": 107,
+      "john": 124,
+      "william": 92
     },
     {
       "topic": "Legislators",
-      "count": 435,
-      "mary": 0,
-      "elizabeth": 0,
-      "anna": 0,
-      "james": 117,
-      "john": 196,
-      "william": 122
-    },
-    {
-      "topic": "Lawyers",
-      "count": 398,
-      "mary": 0,
-      "elizabeth": 0,
-      "anna": 0,
-      "james": 127,
-      "john": 157,
-      "william": 114
-    },
-    {
-      "topic": "Neckties",
-      "count": 363,
-      "mary": 1,
-      "elizabeth": 0,
-      "anna": 0,
-      "james": 86,
-      "john": 140,
-      "william": 136
-    },
-    {
-      "topic": "Officer",
-      "count": 348,
-      "mary": 0,
-      "elizabeth": 0,
-      "anna": 0,
-      "james": 93,
-      "john": 138,
-      "william": 117
-    },
-    {
-      "topic": "Mustaches",
-      "count": 324,
-      "mary": 0,
-      "elizabeth": 0,
-      "anna": 0,
-      "james": 69,
-      "john": 157,
-      "william": 98
-    },
-    {
-      "topic": "Congressmen",
-      "count": 308,
+      "count": 315,
       "mary": 0,
       "elizabeth": 0,
       "anna": 0,
       "james": 87,
-      "john": 145,
-      "william": 76
+      "john": 137,
+      "william": 91
     },
     {
-      "topic": "Beards",
-      "count": 295,
+      "topic": "Lawyers",
+      "count": 286,
       "mary": 0,
       "elizabeth": 0,
       "anna": 0,
-      "james": 85,
-      "john": 121,
-      "william": 89
+      "james": 96,
+      "john": 107,
+      "william": 83
     },
     {
-      "topic": "Senators",
-      "count": 252,
+      "topic": "Officer",
+      "count": 263,
+      "mary": 0,
+      "elizabeth": 0,
+      "anna": 0,
+      "james": 74,
+      "john": 103,
+      "william": 86
+    },
+    {
+      "topic": "Mustaches",
+      "count": 236,
+      "mary": 0,
+      "elizabeth": 0,
+      "anna": 0,
+      "james": 54,
+      "john": 109,
+      "william": 73
+    },
+    {
+      "topic": "Neckties",
+      "count": 228,
+      "mary": 1,
+      "elizabeth": 0,
+      "anna": 0,
+      "james": 66,
+      "john": 85,
+      "william": 76
+    },
+    {
+      "topic": "Congressmen",
+      "count": 223,
       "mary": 0,
       "elizabeth": 0,
       "anna": 0,
       "james": 65,
-      "john": 117,
-      "william": 70
-    },
-    {
-      "topic": "Presidents",
-      "count": 246,
-      "mary": 2,
-      "elizabeth": 3,
-      "anna": 0,
-      "james": 77,
-      "john": 102,
-      "william": 62
+      "john": 100,
+      "william": 58
     },
     {
       "topic": "Professional",
@@ -749,94 +619,34 @@
       "william": 69
     },
     {
-      "topic": "Printed Material",
-      "count": 189,
-      "mary": 1,
-      "elizabeth": 2,
-      "anna": 0,
-      "james": 33,
-      "john": 90,
-      "william": 63
-    },
-    {
-      "topic": "Diplomacy",
-      "count": 173,
+      "topic": "Beards",
+      "count": 209,
       "mary": 0,
       "elizabeth": 0,
       "anna": 0,
-      "james": 40,
-      "john": 79,
-      "william": 54
-    },
-    {
-      "topic": "Governors",
-      "count": 172,
-      "mary": 0,
-      "elizabeth": 0,
-      "anna": 0,
-      "james": 40,
-      "john": 69,
-      "william": 63
-    },
-    {
-      "topic": "Business and Finance",
-      "count": 177,
-      "mary": 5,
-      "elizabeth": 0,
-      "anna": 0,
-      "james": 38,
-      "john": 75,
-      "william": 59
-    },
-    {
-      "topic": "Diplomats",
-      "count": 171,
-      "mary": 0,
-      "elizabeth": 0,
-      "anna": 0,
-      "james": 40,
+      "james": 65,
       "john": 77,
-      "william": 54
+      "william": 67
     },
     {
-      "topic": "Businessperson",
-      "count": 171,
-      "mary": 3,
+      "topic": "Presidents",
+      "count": 199,
+      "mary": 2,
+      "elizabeth": 3,
+      "anna": 0,
+      "james": 58,
+      "john": 88,
+      "william": 48
+    },
+    {
+      "topic": "Senators",
+      "count": 177,
+      "mary": 0,
       "elizabeth": 0,
       "anna": 0,
-      "james": 38,
-      "john": 71,
-      "william": 59
-    },
-    {
-      "topic": "Books and reading",
-      "count": 173,
-      "mary": 3,
-      "elizabeth": 5,
-      "anna": 0,
-      "james": 35,
-      "john": 74,
-      "william": 56
-    },
-    {
-      "topic": "Tables",
-      "count": 170,
-      "mary": 7,
-      "elizabeth": 1,
-      "anna": 0,
-      "james": 41,
-      "john": 64,
-      "william": 57
-    },
-    {
-      "topic": "Ecology",
-      "count": 160,
-      "mary": 6,
-      "elizabeth": 0,
-      "anna": 1,
-      "james": 40,
-      "john": 61,
-      "william": 52
+      "james": 49,
+      "john": 79,
+      "william": 49
     },
     {
       "topic": "Baseball",
@@ -849,84 +659,94 @@
       "william": 52
     },
     {
-      "topic": "Cabinet Member",
-      "count": 151,
-      "mary": 0,
+      "topic": "Business and Finance",
+      "count": 139,
+      "mary": 3,
       "elizabeth": 0,
       "anna": 0,
-      "james": 33,
-      "john": 82,
-      "william": 36
-    },
-    {
-      "topic": "Educators",
-      "count": 147,
-      "mary": 4,
-      "elizabeth": 2,
-      "anna": 0,
-      "james": 56,
-      "john": 33,
-      "william": 52
-    },
-    {
-      "topic": "Bowtie",
-      "count": 140,
-      "mary": 0,
-      "elizabeth": 0,
-      "anna": 0,
-      "james": 32,
-      "john": 52,
-      "william": 56
-    },
-    {
-      "topic": "Union",
-      "count": 137,
-      "mary": 0,
-      "elizabeth": 0,
-      "anna": 0,
-      "james": 17,
+      "james": 30,
       "john": 63,
-      "william": 57
+      "william": 43
     },
     {
-      "topic": "Administrators",
-      "count": 111,
+      "topic": "Businessperson",
+      "count": 134,
       "mary": 2,
-      "elizabeth": 1,
-      "anna": 0,
-      "james": 42,
-      "john": 37,
-      "william": 29
-    },
-    {
-      "topic": "Curtain",
-      "count": 109,
-      "mary": 1,
       "elizabeth": 0,
-      "anna": 3,
-      "james": 10,
-      "john": 55,
-      "william": 40
+      "anna": 0,
+      "james": 30,
+      "john": 59,
+      "william": 43
     },
     {
-      "topic": "Judges",
-      "count": 99,
+      "topic": "Ecology",
+      "count": 135,
+      "mary": 3,
+      "elizabeth": 0,
+      "anna": 1,
+      "james": 33,
+      "john": 53,
+      "william": 45
+    },
+    {
+      "topic": "Governors",
+      "count": 126,
       "mary": 0,
       "elizabeth": 0,
       "anna": 0,
       "james": 27,
-      "john": 33,
-      "william": 39
+      "john": 55,
+      "william": 44
     },
     {
-      "topic": "Artists",
-      "count": 104,
-      "mary": 6,
+      "topic": "Diplomacy",
+      "count": 120,
+      "mary": 0,
       "elizabeth": 0,
-      "anna": 1,
-      "james": 21,
+      "anna": 0,
+      "james": 34,
+      "john": 54,
+      "william": 32
+    },
+    {
+      "topic": "Diplomats",
+      "count": 119,
+      "mary": 0,
+      "elizabeth": 0,
+      "anna": 0,
+      "james": 34,
+      "john": 53,
+      "william": 32
+    },
+    {
+      "topic": "Educators",
+      "count": 120,
+      "mary": 4,
+      "elizabeth": 2,
+      "anna": 0,
+      "james": 50,
+      "john": 26,
+      "william": 38
+    },
+    {
+      "topic": "Cabinet Member",
+      "count": 103,
+      "mary": 0,
+      "elizabeth": 0,
+      "anna": 0,
+      "james": 23,
+      "john": 58,
+      "william": 22
+    },
+    {
+      "topic": "Union",
+      "count": 98,
+      "mary": 0,
+      "elizabeth": 0,
+      "anna": 0,
+      "james": 9,
       "john": 47,
-      "william": 29
+      "william": 42
     },
     {
       "topic": "Occupations",
@@ -937,6 +757,26 @@
       "james": 17,
       "john": 43,
       "william": 36
+    },
+    {
+      "topic": "Home Furnishings",
+      "count": 98,
+      "mary": 5,
+      "elizabeth": 2,
+      "anna": 0,
+      "james": 24,
+      "john": 32,
+      "william": 35
+    },
+    {
+      "topic": "Artists",
+      "count": 93,
+      "mary": 4,
+      "elizabeth": 0,
+      "anna": 1,
+      "james": 18,
+      "john": 42,
+      "william": 28
     }
   ]
 }

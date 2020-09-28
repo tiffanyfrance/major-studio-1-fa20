@@ -1,6 +1,8 @@
 # Data
 raw-data/
 filtered-data/
+.env
+.gitignore
 
 # Mocks
 mocks/*.ai
