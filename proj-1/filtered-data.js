@@ -40,7 +40,17 @@ for (let name of Q) {
         && d.content.indexedStructured.object_type // check for object type, filter out those missing object_type
         && !isObjectType(d, 'Sound recordings')
         && !isObjectType(d, 'Button')
-        && !isTopic(d, 'Button')) {
+        && !isTopic(d, 'Button')
+        && !isTopic(d, 'curtain')
+        // && !isTopic(d, 'Portraits')
+        && !isTopic(d, 'Ferris Collection')
+        && !isTopic(d, 'Marsh Collection')
+        && !isTopic(d, 'Rudolf Eickemeyer Jr. Collection')
+        && !isTopic(d, 'Richard Avedon Collection')
+        && !isTopic(d, 'Antibody Initiative: New York City Public Health Collections')
+        && !isTopic(d, 'Scovill Manufacturing Collection')
+        && !isTopic(d, 'Ken Regan Collection')
+        && !isTopic(d, 'Copp Collection')) {
 
         for (let topicName of d.content.indexedStructured.topic) {
           let t = topics[topicName];
@@ -72,11 +82,11 @@ let topicsSet = new Set();
 let topicsArr = Object.values(topics);
 
 topicsArr.sort((a, b) => (b.mary + b.elizabeth + b.anna) - (a.mary + a.elizabeth + a.anna));
-let womenTopicsArr = topicsArr.slice(0, 50);
+let womenTopicsArr = topicsArr.slice(0, 60);
 womenTopicsArr.forEach(topicsSet.add, topicsSet);
 
 topicsArr.sort((a, b) => (b.james + b.john + b.william) - (a.james + a.john + a.william));
-let menTopicsArr = topicsArr.slice(0, 50);
+let menTopicsArr = topicsArr.slice(0, 60);
 menTopicsArr.forEach(topicsSet.add, topicsSet);
 
 console.log(topicsSet.size);
