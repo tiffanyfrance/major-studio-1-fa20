@@ -1,6 +1,6 @@
 const vars = require('./vars.js');
-const fetch = require('node-fetch');
-const fs = require('fs')
+const fetch = require('node-fetch'),
+  fs = require('fs'),
   dotenv = require('dotenv');
 
 const API_KEY = process.env.API_KEY;
