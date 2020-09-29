@@ -1,4 +1,5 @@
 const vars = require('./vars.js');
+
 const fetch = require('node-fetch'),
   fs = require('fs'),
   dotenv = require('dotenv');

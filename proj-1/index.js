@@ -211,28 +211,28 @@ let xAxisG;
     
     svg.append('line')          
       .style('stroke', '#999')  
-      .attr('x1', 373)
-      .attr('y1', 275)
-      .attr('x2', 373)
-      .attr('y2', 350)
+      .attr('x1', 343)
+      .attr('y1', 220)
+      .attr('x2', 343)
+      .attr('y2', 320)
       .attr('stroke-width', '0.5')
       .attr('stroke-dasharray', 2)
     
     svg.append('foreignObject')
       .html(d => `<div style="border-left: solid 2px #E14B56;">
-      <div style="padding-left: 5px">indicates tags that are equal female/male</div></div>`)
+      <div style="padding-left: 5px">indicates tags that are equally female/male</div></div>`)
       .attr('class', 'callout')
       .attr('width', 100)
       .attr('height', 20)
-      .attr('x', 373)
-      .attr('y', 332);
+      .attr('x', 343)
+      .attr('y', 300);
     
     svg.append('line')          
       .style('stroke', '#999')  
-      .attr('x1', 323)
-      .attr('y1', 140)
-      .attr('x2', 323)
-      .attr('y2', 32)
+      .attr('x1', 308)
+      .attr('y1', 168)
+      .attr('x2', 308)
+      .attr('y2', 65)
       .attr('stroke-width', '0.5')
       .attr('stroke-dasharray', 2)
     
@@ -242,8 +242,44 @@ let xAxisG;
       .attr('class', 'callout')
       .attr('width', 100)
       .attr('height', 20)
-      .attr('x', 323)
+      .attr('x', 308)
+      .attr('y', 65);
+    
+      svg.append('line')          
+      .style('stroke', '#999')  
+      .attr('x1', 593)
+      .attr('y1', 90)
+      .attr('x2', 593)
+      .attr('y2', 32)
+      .attr('stroke-width', '0.5')
+      .attr('stroke-dasharray', 2)
+    
+    svg.append('foreignObject')
+      .html(d => `<div style="border-left: solid 2px #A83A55;">
+      <div style="padding-left: 5px">indicates tags that are majority male</div></div>`)
+      .attr('class', 'callout')
+      .attr('width', 100)
+      .attr('height', 20)
+      .attr('x', 593)
       .attr('y', 35);
+
+    svg.append('line')          
+      .style('stroke', '#999')  
+      .attr('x1', 555)
+      .attr('y1', 265)
+      .attr('x2', 555)
+      .attr('y2', 335)
+      .attr('stroke-width', '0.5')
+      .attr('stroke-dasharray', 2)
+    
+    svg.append('foreignObject')
+      .html(d => `<div style="border-left: solid 2px #A83A55;">
+      <div style="padding-left: 5px">indicates tags that are primarily or solely male</div></div>`)
+      .attr('class', 'callout')
+      .attr('width', 100)
+      .attr('height', 20)
+      .attr('x', 555)
+      .attr('y', 317);
 
     svg.append('foreignObject')
       .html(d => `<div style="font-size: 8px;">* includes the 50 most popular tags for each gender<br>
