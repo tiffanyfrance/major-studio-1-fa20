@@ -1,10 +1,9 @@
+let isPortrait = window.innerHeight > window.innerWidth;
 
-const margin = { top: 25, right: 40, bottom: 35, left: 40 };
+const margin = (isPortrait) ? { top: 25, right: 20, bottom: 35, left: 20 } : { top: 25, right: 40, bottom: 35, left: 40 };
 let width = 900;
 let height = 380;
 let totals;
-
-let isPortrait = window.innerHeight > window.innerWidth;
 
 if (window.innerHeight > window.innerWidth) {
   width = 380;
