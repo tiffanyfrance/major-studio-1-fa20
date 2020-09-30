@@ -34,6 +34,10 @@
       font-weight: 100;
     }
 
+    h2 {
+      font-size: 32px;
+    }
+
     .container {
       text-align: center;
     }
@@ -42,6 +46,19 @@
       max-width: 60%;
       margin: 0 auto;
       text-align: justify;
+    }
+
+    @media screen and (max-width: 500px) {
+      h1 {
+        font-size: 32px;
+        margin-bottom: 10px;
+      }
+
+      h1,
+      .intro {
+        max-width: 100%;
+        padding: 10px 20px;
+      }
     }
 
     #header {
@@ -86,11 +103,15 @@
     }
 
     #secondaryViz {
-      width: calc(80% - 80px);
-      margin: 0 auto;
-      margin-top: 25px;
+      width: calc(90% - 80px);
+      margin: 0px auto;
+    }
+
+    .secondaryViz {
+      margin-top: 60px;
       text-align: left;
       position: relative;
+      display: none;
     }
 
     .bar {
@@ -108,11 +129,16 @@
     }
 
     .post-text {
-      background:none;
+      background: none;
       font-size: 0.75em;
-      position:absolute;
-      left: -85px;
+      position: absolute;
+      /* left: -85px; */
+      top: -15px;
       margin-top: 2px;
+    }
+
+    footer {
+      height: 130px;
     }
   </style>
 </head>
@@ -131,28 +157,35 @@
       the American Art Museum,
       the Portrait Gallery,
       and the National Museum of African American History and Culture.
-      Three most popular female and male names were searched in the API: 
+      Three most popular female and male names were searched in the API:
       <b>Mary, Elizabeth, Anna</b>
       and <b>James, John, William</b> - name popuarity as reported from
       the Social Security Administration (and other sources).
     </p>
   </div>
 
-  <div id="secondaryViz">
-    <div class="bar post-text">posts for female</div>
-    <div id="mary" class="bar"></div>
-    <div id="elizabeth" class="bar"></div>
-    <div id="anna" class="bar"></div>
-  </div>
-  <div id="secondaryViz">
-    <div class="bar post-text">posts for male &nbsp;&nbsp;</div>
-    <div id="james" class="bar"></div>
-    <div id="john" class="bar"></div>
-    <div id="william" class="bar"></div>
-  </div>
-
-
   <div id="primaryViz"></div>
+
+  <div id="secondaryViz">
+    <h2>How many posts were collected?</h2>
+    <p>Even though the top three names for each gender were used, the stacks returned far more
+      entries for men than women.
+    </p>
+    <div class="secondaryViz" style="margin-top: 40px">
+      <div class="bar post-text">posts for female</div>
+      <div id="mary" class="bar"></div>
+      <div id="elizabeth" class="bar"></div>
+      <div id="anna" class="bar"></div>
+    </div>
+    <div class="secondaryViz">
+      <div class="bar post-text">posts for male &nbsp;&nbsp;</div>
+      <div id="james" class="bar"></div>
+      <div id="john" class="bar"></div>
+      <div id="william" class="bar"></div>
+    </div>
+  </div>
+
+  <footer></footer>
 
   <script src="https://d3js.org/d3.v6.min.js"></script>
   <script src="index.js"></script>

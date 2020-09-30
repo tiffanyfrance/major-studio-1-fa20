@@ -1,7 +1,15 @@
 
 const margin = { top: 25, right: 40, bottom: 35, left: 40 };
-const width = 900;
-const height = 380;
+let width = 900;
+let height = 380;
+let totals;
+
+let isPortrait = window.innerHeight > window.innerWidth;
+
+if (window.innerHeight > window.innerWidth) {
+  width = 380;
+  height = 600;
+}
 
 const women = ['mary', 'elizabeth', 'anna'];
 const men = ['james', 'john', 'william'];
@@ -27,34 +35,6 @@ let xAxisG;
 (async () => {
   let response = await fetch('topic-count.json');
   let { totals, topics } = await response.json();
-
-  console.log(totals)
-
-  // const sumValues = Object.values(totals).reduce((a, b) => a + b);
-  const sumValues = 4833 + 9501 + 7194;
-
-  for (var name in totals) {
-    let val = Math.round((totals[name] / sumValues) * 100);
-
-    document.getElementById(name).style.width = 'calc(' + val + '% - 5px)';
-
-    if (name === 'mary' || name === 'elizabeth' || name === 'anna') {
-      document.getElementById(name).style.background = '#5F2756';
-    } else {
-      document.getElementById(name).style.background = '#F8A255';
-    }
-
-    let text = (name === 'elizabeth') ? 'eli...' : name;
-
-    var label = document.createElement('div');
-    label.className = "label";
-    var htmlString = `${text}<br>${totals[name].toLocaleString()}`
-    label.innerHTML = htmlString.trim();
-
-    document.getElementById(name).appendChild(label);
-  }
-
-  console.log(sumValues)
 
   for (let d of topics) {
     let womenCount = 0;
@@ -113,8 +93,8 @@ let xAxisG;
     .on('mouseover', function (e, d) {
       console.log(d.topic, d.ratio);
 
-      this.parentNode.parentNode.appendChild(this.parentNode);
-      this.parentNode.parentNode.parentNode.appendChild(this.parentNode.parentNode);
+      // this.parentNode.parentNode.appendChild(this.parentNode);
+      // this.parentNode.parentNode.parentNode.appendChild(this.parentNode.parentNode);
 
       d3.select(this)
         .append('circle')
@@ -220,103 +200,94 @@ let xAxisG;
       })
       .style('opacity', 1);
 
-    svg.append('line')
-      .style('stroke', '#999')
-      .attr('x1', 120)
-      .attr('y1', 246)
-      .attr('x2', 120)
-      .attr('y2', 321)
-      .attr('stroke-width', '0.5')
-      .attr('stroke-dasharray', 2)
 
-    svg.append('foreignObject')
-      .html(d => `<div style="border-left: solid 2px #5F2756;">
-      <div style="padding-left: 5px">indicates tags that are primarily or solely female</div></div>`)
-      .attr('class', 'callout')
-      .attr('width', 100)
-      .attr('height', 20)
-      .attr('x', 120)
-      .attr('y', 303);
+    if (!isPortrait) {
+      document.querySelectorAll('.secondaryViz').forEach(d => {
+        d.style.display = 'block';
+      });
 
-    svg.append('line')
-      .style('stroke', '#999')
-      .attr('x1', 343)
-      .attr('y1', 220)
-      .attr('x2', 343)
-      .attr('y2', 320)
-      .attr('stroke-width', '0.5')
-      .attr('stroke-dasharray', 2)
+      // const sumValues = Object.values(totals).reduce((a, b) => a + b);
+      const sumValues = 4833 + 9501 + 7194;
 
-    svg.append('foreignObject')
-      .html(d => `<div style="border-left: solid 2px #E14B56;">
-      <div style="padding-left: 5px">indicates tags that are equally female/male</div></div>`)
-      .attr('class', 'callout')
-      .attr('width', 100)
-      .attr('height', 20)
-      .attr('x', 343)
-      .attr('y', 300);
+      for (var name in totals) {
+        let val = Math.round((totals[name] / sumValues) * 100);
 
-    svg.append('line')
-      .style('stroke', '#999')
-      .attr('x1', 308)
-      .attr('y1', 168)
-      .attr('x2', 308)
-      .attr('y2', 65)
-      .attr('stroke-width', '0.5')
-      .attr('stroke-dasharray', 2)
+        document.getElementById(name).style.width = 'calc(' + val + '% - 5px)';
 
-    svg.append('foreignObject')
-      .html(d => `<div style="border-left: solid 2px #A83A55;">
-      <div style="padding-left: 5px">indicates tags that are majority female</div></div>`)
-      .attr('class', 'callout')
-      .attr('width', 100)
-      .attr('height', 20)
-      .attr('x', 308)
-      .attr('y', 65);
+        if (name === 'mary' || name === 'elizabeth' || name === 'anna') {
+          document.getElementById(name).style.background = '#5F2756';
+        } else {
+          document.getElementById(name).style.background = '#F8A255';
+        }
 
-    svg.append('line')
-      .style('stroke', '#999')
-      .attr('x1', 593)
-      .attr('y1', 90)
-      .attr('x2', 593)
-      .attr('y2', 32)
-      .attr('stroke-width', '0.5')
-      .attr('stroke-dasharray', 2)
+        let text = (name === 'elizabeth') ? 'eli...' : name;
 
-    svg.append('foreignObject')
-      .html(d => `<div style="border-left: solid 2px #F76F55;">
-      <div style="padding-left: 5px">indicates tags that are majority male</div></div>`)
-      .attr('class', 'callout')
-      .attr('width', 100)
-      .attr('height', 20)
-      .attr('x', 593)
-      .attr('y', 32);
+        var label = document.createElement('div');
+        label.className = "label";
+        var htmlString = `${text}<br>${totals[name].toLocaleString()}`
+        label.innerHTML = htmlString.trim();
 
-    svg.append('line')
-      .style('stroke', '#999')
-      .attr('x1', 555)
-      .attr('y1', 265)
-      .attr('x2', 555)
-      .attr('y2', 335)
-      .attr('stroke-width', '0.5')
-      .attr('stroke-dasharray', 2)
+        document.getElementById(name).appendChild(label);
+      }
 
-    svg.append('foreignObject')
-      .html(d => `<div style="border-left: solid 2px #F8A255;">
-      <div style="padding-left: 5px">indicates tags that are primarily or solely male</div></div>`)
-      .attr('class', 'callout')
-      .attr('width', 100)
-      .attr('height', 20)
-      .attr('x', 555)
-      .attr('y', 317);
 
-    svg.append('foreignObject')
-      .html(d => `<div style="font-size: 8px;">* includes the 50 most popular tags for each gender<br>
-      * size of circle represents popularity of tag with a minimum 13px radius</div>`)
-      .attr('width', 300)
-      .attr('height', 100)
-      .attr('x', 623)
-      .attr('y', 355);
+      //Callouts
+      
+      drawLine(svg, 120, 246, 120, 321);
 
+      appendForeignObj(svg, `<div style="border-left: solid 2px #5F2756;">
+        <div style="padding-left: 5px">indicates tags that are primarily or solely female</div></div>`,
+        100, 20, 120, 303, 'callout');
+
+      drawLine(svg, 343, 220, 343, 320);
+
+      appendForeignObj(svg, `<div style="border-left: solid 2px #E14B56;">
+        <div style="padding-left: 5px">indicates tags that are equally female/male</div></div>`,
+        100, 20, 343, 300, 'callout');
+
+      drawLine(svg, 308, 168, 308, 65);
+
+      appendForeignObj(svg, `<div style="border-left: solid 2px #A83A55;">
+        <div style="padding-left: 5px">indicates tags that are majority female</div></div>`,
+        100, 20, 308, 65, 'callout');
+
+      drawLine(svg, 593, 90, 593, 32);
+
+      appendForeignObj(svg, `<div style="border-left: solid 2px #F76F55;">
+        <div style="padding-left: 5px">indicates tags that are majority male</div></div>`,
+        100, 20, 593, 32, 'callout');
+
+      drawLine(svg, 555, 265, 555, 335);
+
+      appendForeignObj(svg, `<div style="border-left: solid 2px #F8A255;">
+        <div style="padding-left: 5px">indicates tags that are primarily or solely male</div></div>`,
+        100, 20, 555, 317, 'callout');
+
+      appendForeignObj(svg, `<div style="font-size: 8px;">* includes the 50 most popular tags for each gender<br>
+        * size of circle represents popularity of tag with a minimum 13px radius</div>`,
+        300, 100, 623, 355, '');
+
+    }
   }, 2000);
 })();
+
+function drawLine(svg, x1, y1, x2, y2) {
+  svg.append('line')
+    .style('stroke', '#999')
+    .attr('x1', x1)
+    .attr('y1', y1)
+    .attr('x2', x2)
+    .attr('y2', y2)
+    .attr('stroke-width', '0.5')
+    .attr('stroke-dasharray', 2)
+}
+
+function appendForeignObj(svg, str, w, h, x, y, className) {
+  svg.append('foreignObject')
+    .html(d => str)
+    .attr('class', className)
+    .attr('width', w)
+    .attr('height', h)
+    .attr('x', x)
+    .attr('y', y);
+}
