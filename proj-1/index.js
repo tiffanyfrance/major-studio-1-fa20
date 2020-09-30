@@ -6,10 +6,10 @@ let totals;
 
 let isPortrait = window.innerHeight > window.innerWidth;
 
-if (window.innerHeight > window.innerWidth) {
-  width = 380;
-  height = 600;
-}
+// if (window.innerHeight > window.innerWidth) {
+//   width = 380;
+//   height = 600;
+// }
 
 const women = ['mary', 'elizabeth', 'anna'];
 const men = ['james', 'john', 'william'];
