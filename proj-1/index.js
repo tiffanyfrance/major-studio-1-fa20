@@ -1,11 +1,15 @@
+
 const margin = { top: 25, right: 40, bottom: 35, left: 40 };
 const width = 900;
 const height = 380;
 
-const svg = d3.select('body').append('svg')
+const women = ['mary', 'elizabeth', 'anna'];
+const men = ['james', 'john', 'william'];
+
+const svg = d3.select('#primaryViz').append('svg')
   .attr('viewBox', [0, 0, width, height]);
 
-const tooltip = d3.select('body').append('div')
+const tooltip = d3.select('#primaryViz').append('div')
   .attr('class', 'tooltip');
 
 let data;
@@ -24,14 +28,39 @@ let xAxisG;
   let response = await fetch('topic-count.json');
   let { totals, topics } = await response.json();
 
-  let selectedWomen = ['mary', 'elizabeth', 'anna'];
-  let selectedMen = ['james', 'john', 'william'];
+  console.log(totals)
+
+  // const sumValues = Object.values(totals).reduce((a, b) => a + b);
+  const sumValues = 4833 + 9501 + 7194;
+
+  for (var name in totals) {
+    let val = Math.round((totals[name] / sumValues) * 100);
+
+    document.getElementById(name).style.width = 'calc(' + val + '% - 5px)';
+
+    if (name === 'mary' || name === 'elizabeth' || name === 'anna') {
+      document.getElementById(name).style.background = '#5F2756';
+    } else {
+      document.getElementById(name).style.background = '#F8A255';
+    }
+
+    let text = (name === 'elizabeth') ? 'eli...' : name;
+
+    var label = document.createElement('div');
+    label.className = "label";
+    var htmlString = `${text}<br>${totals[name].toLocaleString()}`
+    label.innerHTML = htmlString.trim();
+
+    document.getElementById(name).appendChild(label);
+  }
+
+  console.log(sumValues)
 
   for (let d of topics) {
     let womenCount = 0;
     let womenTotal = 0;
 
-    for (let w of selectedWomen) {
+    for (let w of women) {
       womenCount += d[w];
       womenTotal += totals[w];
     }
@@ -41,7 +70,7 @@ let xAxisG;
     let menCount = 0;
     let menTotal = 0;
 
-    for (let w of selectedMen) {
+    for (let w of men) {
       menCount += d[w];
       menTotal += totals[w];
     }
@@ -92,29 +121,29 @@ let xAxisG;
         .attr('class', 'hover-circle')
         .attr('r', d => r(d.selectedCount) + 3)
         .style('fill', 'none')
-        .style('stroke','#999')
+        .style('stroke', '#999')
         .style('stroke-width', 0.5)
         .attr('stroke-dasharray', 2);
-  
-      tooltip.transition()		
-        .duration(200)		
-        .style("opacity", 0.9);		
-      
-      tooltip.html(`<div>${d.topic.toLowerCase()}</div>`)	
-        .style("left", (e.pageX) + "px")		
-        .style("top", (e.pageY + 8) + "px");	
-            				
-        
+
+      tooltip.transition()
+        .duration(200)
+        .style("opacity", 0.9);
+
+      tooltip.html(`<div>${d.topic.toLowerCase()}</div>`)
+        .style("left", (e.pageX) + "px")
+        .style("top", (e.pageY + 8) + "px");
+
+
     })
-  .on("mouseout", function(d) {		
+    .on("mouseout", function (d) {
 
-    d3.select('.hover-circle')
-      .remove();
+      d3.select('.hover-circle')
+        .remove();
 
-    tooltip.transition()		
-        .duration(500)		
-        .style("opacity", 0);	
-});
+      tooltip.transition()
+        .duration(500)
+        .style("opacity", 0);
+    });
 
   let circle = node.append('circle')
     .attr('stroke', 'none')
@@ -191,33 +220,33 @@ let xAxisG;
       })
       .style('opacity', 1);
 
-    svg.append('line')          
-      .style('stroke', '#999')  
-      .attr('x1', 130)
-      .attr('y1', 263)
-      .attr('x2', 130)
-      .attr('y2', 338)
+    svg.append('line')
+      .style('stroke', '#999')
+      .attr('x1', 120)
+      .attr('y1', 246)
+      .attr('x2', 120)
+      .attr('y2', 321)
       .attr('stroke-width', '0.5')
       .attr('stroke-dasharray', 2)
-    
+
     svg.append('foreignObject')
       .html(d => `<div style="border-left: solid 2px #5F2756;">
       <div style="padding-left: 5px">indicates tags that are primarily or solely female</div></div>`)
       .attr('class', 'callout')
       .attr('width', 100)
       .attr('height', 20)
-      .attr('x', 130)
-      .attr('y', 320);
-    
-    svg.append('line')          
-      .style('stroke', '#999')  
+      .attr('x', 120)
+      .attr('y', 303);
+
+    svg.append('line')
+      .style('stroke', '#999')
       .attr('x1', 343)
       .attr('y1', 220)
       .attr('x2', 343)
       .attr('y2', 320)
       .attr('stroke-width', '0.5')
       .attr('stroke-dasharray', 2)
-    
+
     svg.append('foreignObject')
       .html(d => `<div style="border-left: solid 2px #E14B56;">
       <div style="padding-left: 5px">indicates tags that are equally female/male</div></div>`)
@@ -226,16 +255,16 @@ let xAxisG;
       .attr('height', 20)
       .attr('x', 343)
       .attr('y', 300);
-    
-    svg.append('line')          
-      .style('stroke', '#999')  
+
+    svg.append('line')
+      .style('stroke', '#999')
       .attr('x1', 308)
       .attr('y1', 168)
       .attr('x2', 308)
       .attr('y2', 65)
       .attr('stroke-width', '0.5')
       .attr('stroke-dasharray', 2)
-    
+
     svg.append('foreignObject')
       .html(d => `<div style="border-left: solid 2px #A83A55;">
       <div style="padding-left: 5px">indicates tags that are majority female</div></div>`)
@@ -244,36 +273,36 @@ let xAxisG;
       .attr('height', 20)
       .attr('x', 308)
       .attr('y', 65);
-    
-      svg.append('line')          
-      .style('stroke', '#999')  
+
+    svg.append('line')
+      .style('stroke', '#999')
       .attr('x1', 593)
       .attr('y1', 90)
       .attr('x2', 593)
       .attr('y2', 32)
       .attr('stroke-width', '0.5')
       .attr('stroke-dasharray', 2)
-    
+
     svg.append('foreignObject')
-      .html(d => `<div style="border-left: solid 2px #A83A55;">
+      .html(d => `<div style="border-left: solid 2px #F76F55;">
       <div style="padding-left: 5px">indicates tags that are majority male</div></div>`)
       .attr('class', 'callout')
       .attr('width', 100)
       .attr('height', 20)
       .attr('x', 593)
-      .attr('y', 35);
+      .attr('y', 32);
 
-    svg.append('line')          
-      .style('stroke', '#999')  
+    svg.append('line')
+      .style('stroke', '#999')
       .attr('x1', 555)
       .attr('y1', 265)
       .attr('x2', 555)
       .attr('y2', 335)
       .attr('stroke-width', '0.5')
       .attr('stroke-dasharray', 2)
-    
+
     svg.append('foreignObject')
-      .html(d => `<div style="border-left: solid 2px #A83A55;">
+      .html(d => `<div style="border-left: solid 2px #F8A255;">
       <div style="padding-left: 5px">indicates tags that are primarily or solely male</div></div>`)
       .attr('class', 'callout')
       .attr('width', 100)

@@ -81,10 +81,39 @@
 
     .callout {
       font-size: 8px;
-      padding-left: 10px;
+      padding-left: 5px;
       line-height: 1.2;
     }
-    
+
+    #secondaryViz {
+      width: calc(80% - 80px);
+      margin: 0 auto;
+      margin-top: 25px;
+      text-align: left;
+      position: relative;
+    }
+
+    .bar {
+      height: 10px;
+      background: #333;
+      display: inline-block;
+      position: relative;
+    }
+
+    .label {
+      position: absolute;
+      top: 10px;
+      font-size: 0.75em;
+      text-align: left;
+    }
+
+    .post-text {
+      background:none;
+      font-size: 0.75em;
+      position:absolute;
+      left: -85px;
+      margin-top: 2px;
+    }
   </style>
 </head>
 
@@ -96,21 +125,34 @@
     <h1>An Analysis of Topic Tagging of Portraits by Gender</h1>
 
     <p class="intro">
-      This visualization shows topics by gender as tagged in the collections from
+      This visualization shows topics by gender from
       four Smithsonian Institute units:
       the National Museum of American History,
       the American Art Museum,
       the Portrait Gallery,
       and the National Museum of African American History and Culture.
-      Three female and three male names have been put into the Open API 
-      to retrieve items. The selected names were the most popular
-      by gender, from the 1800s to late 1900s: <b>Mary, Elizabeth, Anna</b> 
-      and <b>James, John, William</b> as reported on the 
-      the Social Security Administration website (and other sources).
+      Three most popular female and male names were searched in the API: 
+      <b>Mary, Elizabeth, Anna</b>
+      and <b>James, John, William</b> - name popuarity as reported from
+      the Social Security Administration (and other sources).
     </p>
-
-
   </div>
+
+  <div id="secondaryViz">
+    <div class="bar post-text">posts for female</div>
+    <div id="mary" class="bar"></div>
+    <div id="elizabeth" class="bar"></div>
+    <div id="anna" class="bar"></div>
+  </div>
+  <div id="secondaryViz">
+    <div class="bar post-text">posts for male &nbsp;&nbsp;</div>
+    <div id="james" class="bar"></div>
+    <div id="john" class="bar"></div>
+    <div id="william" class="bar"></div>
+  </div>
+
+
+  <div id="primaryViz"></div>
 
   <script src="https://d3js.org/d3.v6.min.js"></script>
   <script src="index.js"></script>

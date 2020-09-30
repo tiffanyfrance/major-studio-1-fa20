@@ -26,6 +26,8 @@ for (let name of Q) {
     * 
     * TODO: Each person should have minimum 3 tags
     * 
+    * TODO: Github.io/pages
+    * 
     */
     for (let d of rawData) {
       if (d.content.indexedStructured.topic
