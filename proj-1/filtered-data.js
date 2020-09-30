@@ -17,18 +17,8 @@ let topics = {};
 for (let name of Q) {
   for (let u of U) {
     let rawDataStr = fs.readFileSync(`raw-data/${u}/${name}-raw-data-${u}.json`);
-
     let rawData = JSON.parse(rawDataStr);
 
-    /*
-    *
-    * TODO: Total number of results by person 
-    * 
-    * TODO: Each person should have minimum 3 tags
-    * 
-    * TODO: Github.io/pages
-    * 
-    */
     for (let d of rawData) {
       if (d.content.indexedStructured.topic
         && titleIncludes(d, name)
@@ -81,6 +71,7 @@ let topicsSet = new Set();
 
 let topicsArr = Object.values(topics);
 
+// return 50 results for the most popular tags by gender for the purpose of filtering out one-off topics
 topicsArr.sort((a, b) => (b.mary + b.elizabeth + b.anna) - (a.mary + a.elizabeth + a.anna));
 let womenTopicsArr = topicsArr.slice(0, 50);
 womenTopicsArr.forEach(topicsSet.add, topicsSet);
@@ -90,9 +81,6 @@ let menTopicsArr = topicsArr.slice(0, 50);
 menTopicsArr.forEach(topicsSet.add, topicsSet);
 
 console.log(topicsSet.size);
-
-// topicsArr.sort((a, b) => b.count - a.count);
-// topicsArr = topicsArr.filter(t => t.count > 3);
 
 writeJSON({ totals, topics: Array.from(topicsSet) }, 'topic-count.json');
 
@@ -108,8 +96,6 @@ function isObjectType(d, objType) {
 function isTopic(d, t) {
   return d.content.indexedStructured.topic.includes(t);
 }
-
-// writeJSON(data, `filtered-data/${U}/${Q}-filtered-data-${U}.json`);
 
 function writeJSON(data, path) {
   try {
