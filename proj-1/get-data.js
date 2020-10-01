@@ -1,37 +1,47 @@
 const vars = require('./vars.js');
 
 const fetch = require('node-fetch'),
-  fs = require('fs'),
-  dotenv = require('dotenv');
+  fs = require('fs');
+
+require('dotenv').config();
 
 const API_KEY = process.env.API_KEY;
 
 const ROWS = 1000;
 
 const Q = vars.Q,
-    U = vars.U;
-    
-console.log(Q,U);
+  U = vars.U;
+
+console.log(Q, U);
 
 (async () => {
-  let data = [];
 
-  let start = 0;
-  let rowCount;
+  for (let q of Q) {
+    for (let u of U) {
 
-  do {
-    let res = await fetch(`https://api.si.edu/openaccess/api/v1.0/search/?api_key=${API_KEY}&rows=${ROWS}&start=${start}&q=${Q} AND unit_code:${U}`);
-    let result = await res.json();
+      let data = [];
 
-    console.log(start);
+      let start = 0;
+      let rowCount;
 
-    data.push(...result.response.rows);
+      console.log(q,u);
 
-    start += ROWS;
-    rowCount = result.response.rowCount;
-  } while (start < rowCount);
+      do {
+        let res = await fetch(`https://api.si.edu/openaccess/api/v1.0/search/?api_key=${API_KEY}&rows=${ROWS}&start=${start}&q=${q} AND unit_code:${u}`);
+        let result = await res.json();
 
-  writeJSON(data, 'raw-data/' + U + '/' + Q.toLowerCase() + '-raw-data-' + U + '.json');
+        data.push(...result.response.rows);
+
+        start += ROWS;
+        rowCount = result.response.rowCount;
+
+        console.log(start, rowCount);
+      } while (start < rowCount);
+
+      writeJSON(data, 'raw-data/' + u + '/' + q.toLowerCase() + '-raw-data-' + u + '.json');
+
+    }
+  }
 })();
 
 function writeJSON(data, path) {
