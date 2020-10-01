@@ -10,8 +10,8 @@
 // const Uval = 'NPG'; // Portrait Gallery
 // const Uval = 'NMAAHC'; // National Museum of African American History and Culture
 
-let W = ['mary', 'elizabeth', 'anna', 'amanda', 'helen', 'jocelyn', 'margaret', 'karen', 'rosalie', 'annabel', 'sarah', 'emma', ' linda', 'susan', 'barbara', ' clara', ' jennifer', 'florence', 'patricia', 'jessica'];
-let M = ['james', 'john', 'william', 'samuel', 'joel', 'george', 'joseph', 'charles', 'frank', 'robert', 'henry', 'andrew', 'edward', 'michael', 'thomas', 'christopher', 'daniel', 'matthew', 'david', 'anthony'];
+let W = ['mary', 'elizabeth', 'anna', 'helen', 'margaret', 'sarah', 'emma', 'susan', 'clara', 'florence'];
+let M = ['james', 'john', 'william', 'george', 'joseph', 'charles', 'robert', 'henry', 'edward', 'thomas'];
 
 module.exports = {
   W,

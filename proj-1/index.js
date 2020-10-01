@@ -10,8 +10,8 @@ if (window.innerHeight > window.innerWidth) {
   height = 600;
 }
 
-const women = ['mary', 'elizabeth', 'anna'];
-const men = ['james', 'john', 'william'];
+let W = ['mary', 'elizabeth', 'anna', 'helen', 'margaret', 'sarah', 'emma', 'susan', 'clara', 'florence'];
+let M = ['james', 'john', 'william', 'george', 'joseph', 'charles', 'robert', 'henry', 'edward', 'thomas'];
 
 const svg = d3.select('#primaryViz').append('svg')
   .attr('viewBox', [0, 0, width, height]);
@@ -39,7 +39,7 @@ let xAxisG;
     let womenCount = 0;
     let womenTotal = 0;
 
-    for (let w of women) {
+    for (let w of W) {
       womenCount += d[w];
       womenTotal += totals[w];
     }
@@ -49,9 +49,9 @@ let xAxisG;
     let menCount = 0;
     let menTotal = 0;
 
-    for (let w of men) {
-      menCount += d[w];
-      menTotal += totals[w];
+    for (let m of M) {
+      menCount += d[m];
+      menTotal += totals[m];
     }
 
     d.menPercent = menCount / menTotal;
@@ -206,27 +206,27 @@ let xAxisG;
       });
 
       // const sumValues = Object.values(totals).reduce((a, b) => a + b);
-      const sumValues = 4833 + 9501 + 7194;
+      const sumValues = 46172;
 
       for (var name in totals) {
         let val = Math.round((totals[name] / sumValues) * 100);
 
-        document.getElementById(name).style.width = 'calc(' + val + '% - 5px)';
+        document.getElementById(name).style.width = 'calc(' + val + '% - 2px)';
 
-        if (name === 'mary' || name === 'elizabeth' || name === 'anna') {
+        if (W.includes(name)) {
           document.getElementById(name).style.background = '#5F2756';
         } else {
           document.getElementById(name).style.background = '#F8A255';
         }
 
-        let text = (name === 'elizabeth') ? 'eli...' : name;
+        // let text = (name === 'elizabeth') ? 'eli...' : name;
 
-        var label = document.createElement('div');
-        label.className = "label";
-        var htmlString = `${text}<br>${totals[name].toLocaleString()}`
-        label.innerHTML = htmlString.trim();
+        // var label = document.createElement('div');
+        // label.className = 'label';
+        // var htmlString = `${text}<br>${totals[name].toLocaleString()}`;
+        // label.innerHTML = htmlString.trim();
 
-        document.getElementById(name).appendChild(label);
+        // document.getElementById(name).appendChild(label);
       }
 
 
@@ -238,29 +238,29 @@ let xAxisG;
         <div style="padding-left: 5px">indicates tags that are primarily or solely female</div></div>`,
         100, 20, 120, 303, 'callout');
 
-      drawLine(svg, 343, 220, 343, 320);
+      drawLine(svg, 433, 300, 433, 354);
 
       appendForeignObj(svg, `<div style="border-left: solid 2px #E14B56;">
         <div style="padding-left: 5px">indicates tags that are equally female/male</div></div>`,
-        100, 20, 343, 300, 'callout');
+        100, 20, 433, 335, 'callout');
 
-      drawLine(svg, 308, 168, 308, 65);
+      drawLine(svg, 303, 168, 303, 65);
 
       appendForeignObj(svg, `<div style="border-left: solid 2px #A83A55;">
         <div style="padding-left: 5px">indicates tags that are majority female</div></div>`,
-        100, 20, 308, 65, 'callout');
+        100, 20, 303, 65, 'callout');
 
-      drawLine(svg, 593, 90, 593, 32);
+      drawLine(svg, 602, 130, 602, 32);
 
       appendForeignObj(svg, `<div style="border-left: solid 2px #F76F55;">
         <div style="padding-left: 5px">indicates tags that are majority male</div></div>`,
-        100, 20, 593, 32, 'callout');
+        100, 20, 602, 32, 'callout');
 
-      drawLine(svg, 555, 265, 555, 335);
+      drawLine(svg, 575, 268, 575, 335);
 
       appendForeignObj(svg, `<div style="border-left: solid 2px #F8A255;">
         <div style="padding-left: 5px">indicates tags that are primarily or solely male</div></div>`,
-        100, 20, 555, 317, 'callout');
+        100, 20, 575, 317, 'callout');
 
       appendForeignObj(svg, `<div style="font-size: 8px;">* includes the 50 most popular tags for each gender<br>
         * size of circle represents popularity of tag with a minimum 13px radius</div>`,

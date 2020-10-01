@@ -108,7 +108,7 @@
     }
 
     .secondaryViz {
-      margin-top: 50px;
+      margin-top: 20px;
       text-align: left;
       position: relative;
       display: none;
@@ -165,29 +165,19 @@
 
   <div id="secondaryViz">
     <h2>How many posts were used?</h2>
-    <p>Posts were gathered by pulling data on 6 names - 
-      three female and three males:
-      <b>Mary, Elizabeth, Anna</b>
-      and <b>James, John, William</b>. These names were chosen because 
+    <p>Posts were gathered by pulling data on 20 names - 
+      ten female and ten males:
+      <b>Mary, Elizabeth, Anna, Helen, Margaret, Sarah, Emma, Susan, Clara, Florence</b>
+      and <b>James, John, William, George, Joesph, Charles, Robert, Henry, Edward, Thomas</b>. These names were chosen because 
       they were the most popuar names as reported on
-      the Social Security Administration website from 1880 - late 1900's (NOTE: ssa.gov data is 
-      back to 1880, other sources supplemented prior to this decade back to late 1700's). 
-      Even though the top three names for each gender were used, the stacks returned far more
+      the Social Security Administration website for last 200 years (NOTE: ssa.gov data is 
+      back to 1880, other sources supplemented prior to this decade back to late 1700's). Certain names were filtered out due to their lack of data in the Smithsonian collection.
+      Even though the top ten names for each gender were used, the stacks returned far more
       entries for men than women. When posts were modified and cleaned, the total results showed  
       nearly 10x more posts for males than females.
     </p>
-    <div class="secondaryViz" style="margin-top: 40px">
-      <div class="bar post-text">posts for female</div>
-      <div id="mary" class="bar"></div>
-      <div id="elizabeth" class="bar"></div>
-      <div id="anna" class="bar"></div>
-    </div>
-    <div class="secondaryViz">
-      <div class="bar post-text">posts for male &nbsp;&nbsp;</div>
-      <div id="james" class="bar"></div>
-      <div id="john" class="bar"></div>
-      <div id="william" class="bar"></div>
-    </div>
+    <div class="secondaryViz" style="margin-top: 40px"><div class="bar post-text">posts for female names: 4,162</div><div id="mary" class="bar"></div><div id="elizabeth" class="bar"></div><div id="anna" class="bar"></div><div id="helen" class="bar"></div><div id="margaret" class="bar"></div><div id="sarah" class="bar"></div><div id="emma" class="bar"></div><div id="susan" class="bar"></div><div id="clara" class="bar"></div><div id="florence" class="bar"></div></div>
+    <div class="secondaryViz"><div class="bar post-text">posts for male names: 46,172</div><div id="james" class="bar"></div><div id="john" class="bar"></div><div id="william" class="bar"></div><div id="george" class="bar"></div><div id="joseph" class="bar"></div><div id="charles" class="bar"></div><div id="robert" class="bar"></div><div id="henry" class="bar"></div><div id="edward" class="bar"></div><div id="thomas" class="bar"></div></div>
   </div>
 
   <footer></footer>
