@@ -34,7 +34,6 @@ a {
   position: absolute;
   z-index: 1;
   visibility: hidden;
-  pointer-events: none;
   box-sizing: border-box;
   max-width: 25rem;
   font-family: Assistant, sans-serif;

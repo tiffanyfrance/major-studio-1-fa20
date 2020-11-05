@@ -562,6 +562,7 @@ let mexicoElem;
 let progress = 0;
 let currentGenre = 'None';
 let currentTooltip = null;
+let selectedTooltip = null;
 
 let isFinal = false;
 
@@ -579,6 +580,8 @@ document.addEventListener('wheel', function (e) {
       if (nextGenre) {
         highlight(nextGenre);
       } else {
+        hideTooltip();
+
         anime({
           targets: 'svg, #progress',
           opacity: 0,
@@ -586,7 +589,7 @@ document.addEventListener('wheel', function (e) {
           duration: 250,
           complete() {
             d3.select('svg').remove();
-            bar();
+            showFinal();
           }
         });
       }
@@ -606,7 +609,7 @@ function highlight(genre) {
     }
   });
 
-  tooltipElem.style('visibility', 'hidden');
+  hideTooltip();
 
   if (genre) {
     let d = genreData[genre];
@@ -618,10 +621,10 @@ function highlight(genre) {
 }
 
 (async () => {
-  await foo();
+  await showOverview();
 })();
 
-async function foo() {
+async function showOverview() {
   let res = await fetch(`images/overview.svg`);
   let text = await res.text();
   document.body.insertAdjacentHTML('afterbegin', text);
@@ -650,7 +653,7 @@ async function foo() {
   labelPlants('#Overview > g');
 }
 
-async function bar() {
+async function showFinal() {
   isFinal = true;
 
   let res = await fetch(`images/final.svg`);
@@ -669,6 +672,14 @@ async function bar() {
   });
 }
 
+d3.select('html').on('click', (e) => {
+  hideTooltip();
+});
+
+tooltipElem.on('click', (e) => {
+  e.stopPropagation();
+})
+
 function labelPlants(selector) {
   d3.selectAll(selector).each(function () {
     /* If third last character is '-' then label as plant */
@@ -680,61 +691,94 @@ function labelPlants(selector) {
 
       if (genres.includes(genre)) {
         d3.select(this)
-          .on('mouseover', () => {
+          .on('click', (e) => {
             if (!currentGenre || genre === currentGenre) {
-              tooltipElem.style('visibility', 'visible');
-
-              if (currentTooltip != this.id) {
-                let t = tooltips[this.id];
-
-                tooltipElem.html(`
-                  <h3>${t.title}</h3>
-                  <div>
-                    <audio controls autoplay src="songs/${t.audio}"></audio>
-                  </div>
-                  <br>
-                  <div>
-                  <div class="lower-half">${t.desc}</div>
-                  <br>
-                  <div class="footer lower-half">
-                    <img src="images/albums/${t.img}"> 
-                    <div class="desc">
-                      <div>${t.footerLine1}</div>
-                      <div>${t.footerLine2}</div>
-                      <div><a href="${t.link}">Smithsonian Folkways information</a></div>
-                    <div>
-                  </div>
-                  </div>
-                `);
-
-                currentTooltip = this.id;
+              if (selectedTooltip === this.id) {
+                hideTooltip();
+              } else {
+                selectedTooltip = this.id;
+                showTooltip(genre, this.id);
+                moveTooltip(e);
               }
 
-              tooltipElem.select('audio').node().play();
+              e.preventDefault();
+              e.stopPropagation();
             }
           })
-          .on('mousemove', function (e, d) {
-            let left = null
-            let right = null;
-
-            if (e.offsetX < document.body.clientWidth / 2) {
-              left = (e.pageX + 10) + 'px';
-            } else {
-              let bodyMarginRight = parseInt(window.getComputedStyle(document.body).marginRight);
-              let tooltipPaddingRight = parseInt(window.getComputedStyle(tooltipElem.node()).paddingRight);
-              right = (document.body.clientWidth - e.pageX + bodyMarginRight + tooltipPaddingRight + 10) + 'px';
+          .on('mouseover', () => {
+            if (!selectedTooltip) {
+              showTooltip(genre, this.id);
             }
-
-            tooltipElem
-              .style('top', (e.pageY - 10) + 'px')
-              .style('left', left)
-              .style('right', right);
+          })
+          .on('mousemove', function (e) {
+            if (!selectedTooltip) {
+              moveTooltip(e);
+            }
           })
           .on('mouseout', () => {
-            tooltipElem.select('audio').node()?.pause();
-            tooltipElem.style('visibility', 'hidden');
+            if (!selectedTooltip) {
+              hideTooltip();
+            }
           });
       }
     }
   });
+}
+
+function showTooltip(genre, id) {
+  if (!currentGenre || genre === currentGenre) {
+    tooltipElem.style('visibility', 'visible');
+
+    if (currentTooltip != id) {
+      let t = tooltips[id];
+
+      tooltipElem.html(`
+        <h3>${t.title}</h3>
+        <div>
+          <audio controls autoplay src="songs/${t.audio}"></audio>
+        </div>
+        <br>
+        <div>
+        <div class="lower-half">${t.desc}</div>
+        <br>
+        <div class="footer lower-half">
+          <img src="images/albums/${t.img}">
+          <div class="desc">
+            <div>${t.footerLine1}</div>
+            <div>${t.footerLine2}</div>
+            <div><a target="_blank" href="${t.link}">Smithsonian Folkways information</a></div>
+          <div>
+        </div>
+        </div>
+      `);
+
+      currentTooltip = id;
+    }
+
+    tooltipElem.select('audio').node().play();
+  }
+}
+
+function moveTooltip(e) {
+  let left = null
+  let right = null;
+
+  if (e.offsetX < document.body.clientWidth / 2) {
+    left = (e.pageX + 10) + 'px';
+  } else {
+    let bodyMarginRight = parseInt(window.getComputedStyle(document.body).marginRight);
+    let tooltipPaddingRight = parseInt(window.getComputedStyle(tooltipElem.node()).paddingRight);
+    right = (document.body.clientWidth - e.pageX + bodyMarginRight + tooltipPaddingRight + 10) + 'px';
+  }
+
+  tooltipElem
+    .style('top', (e.pageY - 10) + 'px')
+    .style('left', left)
+    .style('right', right);
+}
+
+function hideTooltip() {
+  tooltipElem.select('audio').node()?.pause();
+  tooltipElem.style('visibility', 'hidden');
+  selectedTooltip = null;
 }
