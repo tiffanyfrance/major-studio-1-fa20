@@ -4,9 +4,9 @@ const genres = [
   'corridos',
   'ranchera',
   'son-jarocho',
+  'son-huasteco',
   'banda',
   'norteno',
-  'son-huasteco',
   'mariachi'
 ];
 
