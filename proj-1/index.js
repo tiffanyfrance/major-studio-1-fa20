@@ -63,7 +63,7 @@ let xAxisG;
     d.x = x(d.ratio);
     d.y = centerY;
   }
-
+/////////////////
   topics.sort((a, b) => a.ratio - b.ratio);
 
   data = topics;
@@ -91,9 +91,6 @@ let xAxisG;
     // .on('mouseover', () => tooltip.style('visibility', 'visible'))
     .on('mouseover', function (e, d) {
       console.log(d.topic, d.ratio);
-
-      // this.parentNode.parentNode.appendChild(this.parentNode);
-      // this.parentNode.parentNode.parentNode.appendChild(this.parentNode.parentNode);
 
       d3.select(this)
         .append('circle')

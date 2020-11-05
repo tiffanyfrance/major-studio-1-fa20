@@ -1,0 +1,79 @@
+body {
+  background-color: #1B1B1B;
+  font-family: Assistant, sans-serif;
+  overflow: hidden;
+  color: #F2F2F2;
+}
+
+#progress {
+  position: absolute;
+  top: 0px;
+  background-color: #999;
+  width: 0%;
+  height: 6px;
+  will-change: width;
+}
+
+a {
+  color: #fbb03b;
+}
+
+#title {
+  font-family: 'Sancreek Regular', Sancreek;
+}
+
+.text-block {
+  font-size: 16px;
+}
+
+#tooltip {
+  background: #333333;
+  display: block;
+  padding: 20px;
+  border-radius: 1rem;
+  position: absolute;
+  z-index: 1;
+  visibility: hidden;
+  pointer-events: none;
+  box-sizing: border-box;
+  max-width: 25rem;
+  font-family: Assistant, sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+#tooltip h3 {
+  font-family: 'Sancreek Regular', Sancreek;
+  margin-top: 0px;
+  font-size: 1.5em;
+  line-height: 1.25em;
+}
+
+#tooltip h3, #tooltip audio {
+  text-align: center;
+  width: 100%;
+}
+
+#tooltip .lower-half {
+  padding: 10px 20px;
+}
+
+#tooltip .footer img {
+  display: block;
+  float: left;
+  width: 30%;
+  height: 30%;
+  margin-right: 20px;
+}
+
+#tooltip .footer .desc {
+  display: inline;
+}
+
+.plant {
+  transition: opacity 0.25s;
+}
+
+.dim {
+  opacity: 0.25;
+}
