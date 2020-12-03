@@ -1,21 +1,24 @@
-// let wavesurfer;
+// building each song tooltip
+import { data } from './data.js';
 
-let corridos = document.getElementById('corridos');
-
-let wavecolors = {
-  corridos: ['#fbcb3b','#F7931E'],
-}
-
-for (var i = 0; i < data.length; i++) {
-  let d = data[i];
-  let waveId = `${d.id}-wf`;
-
-  corridos.innerHTML += `<div class="tip" id="${d.id}">
-      <h4>${d.trackName}</h4><div id="${waveId}"></div>
-      <p>${d.trackStr}</p></div>`
-
-  buildWave('#' + waveId, d.wavecolor, d.progresscolor, d.trackMP3);
-}
+d3.select('#corridos')
+  .selectAll('.tip')
+  .data(data)
+  .enter()
+  .append('div')
+  .attr('class', 'tip')
+  .attr('id', d => d.id)
+  .html(d => {
+    return `<h4>${d.trackName}</h4>
+            <a onclick="wavesurfer.playPause()"><img src="play.svg" class="wave-btn"></a>
+            <div class="waves" id="${d.id}-wf"></div>
+            <p>${d.trackStr}</p>`
+  })
+  .style('top', d => d.top + 'px')
+  .style('left', d => d.left + 'px')
+  .each(function(d) {
+    buildWave(`#${d.id}-wf`, d.wavecolor, d.progresscolor, d.trackMP3)
+  });
 
 function buildWave(id, wavecolor, progresscolor, mp3) {
   let wavesurfer = WaveSurfer.create({
@@ -23,62 +26,18 @@ function buildWave(id, wavecolor, progresscolor, mp3) {
     barWidth: 3,
     barRadius: 3,
     cursorWidth: 0,
-    barHeight: 2, 
+    barHeight: 2,
     barGap: null,
     progressColor: progresscolor,
-    height: 50,
+    height: 30,
     waveColor: wavecolor
   });
 
   wavesurfer.load(mp3);
 }
 
-for (var i = 0; i < data.length; i++) {
-  d3.select('#' + data[i].id)
-    .on('click', () => wavesurfer.playPause());
-}
-
-  // var wavesurfer = WaveSurfer.create({
-//   container: document.querySelector('#waveform'),
-//     // waveColor: '#D9DCFF',
-//     // progressColor: '#4353FF',
-//     // cursorColor: '#4353FF',
-//     barWidth: 3,
-//     barRadius: 3,
-//     cursorWidth: 0,
-//     // height: 200,
-//     // barGap: 3,
-//     // container: document.querySelector('#waveform'),
-//     // barWidth: 2,
-//     barHeight: 2, // the height of the wave
-//     // barMinHeight: 1.75,
-//     barGap: null, // the optional spacing between bars of the wave, if not provided will be calculated in legacy format
-//     progressColor: "#F7931E",
-//     height: 50,
-//     waveColor: "#fbcb3b"
-// });
-
-// wavesurfer.load('la-bamba.mp3');
-
-
-// var wavesurfer1 = WaveSurfer.create({
-//   container: document.querySelector('#waveform1'),
-//     // waveColor: '#D9DCFF',
-//     // progressColor: '#4353FF',
-//     // cursorColor: '#4353FF',
-//     barWidth: 3,
-//     barRadius: 3,
-//     cursorWidth: 0,
-//     // height: 200,
-//     // barGap: 3,
-//     // container: document.querySelector('#waveform'),
-//     // barWidth: 2,
-//     barHeight: 2, // the height of the wave
-//     // barMinHeight: 1.75,
-//     barGap: null, // the optional spacing between bars of the wave, if not provided will be calculated in legacy format
-//     progressColor: "#F7931E",
-//     height: 50,
-//     waveColor: "#fbcb3b"
-// });
-
-// wavesurfer1.load('Adelita.mp3');
+// d3.select('#corridos-01')
+//   .on('click', () => {
+//     // wavesurfer.resume(); 
+//     wavesurfer.playPause();
+//   });

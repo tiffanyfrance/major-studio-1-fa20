@@ -12,6 +12,8 @@ body {
 
 #viz {
   position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 h1 {
@@ -107,20 +109,25 @@ h4 {
   cursor: pointer;
 }
 
-#corridos-02 {
-  left: 600px;
-  top: 180px;
+.waves {
+  margin-left: 20px;
+  margin-top: -28px;
+}
+
+.wave-btn {
+  width: 20px;
+  margin-top: 15px;
 }
 
 /* FLOWERS */
 
-[id^="leaf"] .cls-1 {
+.leaf .cls-1 {
   fill:none;
   stroke:#39b54a;
   stroke-miterlimit:10;
   stroke-width:2px;
 }
-[id^="leaf"] .cls-2 {
+.leaf .cls-2 {
   fill:#39b54a;
 }
 
@@ -161,4 +168,9 @@ h4 {
 }
 [id^="corridos"] .cls-2 {
   fill:#f7931e;
+}
+
+[id^="banda"] .cls-1 {
+  fill:#ff0;
+  opacity:0.85;
 }

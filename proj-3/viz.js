@@ -1,8 +1,10 @@
 import { data } from './data.js';
-console.log(data)
-var w = window.innerWidth;
+
+var w = Math.min(window.innerWidth, 1600);
 var h = window.innerHeight;
-var scale = 0.6;
+var scale = 1;
+
+console.log(w)
 
 let svg = d3.select("#viz")
   .append('svg')
@@ -10,31 +12,37 @@ let svg = d3.select("#viz")
   .attr('height', h)
   .attr('viewbox', `0 0 ${w} ${h}`);
 
-let sonjarocho = svg.append('g')
-  .attr('id', "sonjarocho-07")
-  .attr('transform', `scale(${scale}, ${scale}) translate(${w / 4},150)`); //dynamic?
+// let sonjarocho = svg.append('g')
+//   .attr('id', "sonjarocho-07")
+//   .attr('transform', `scale(${scale}, ${scale}) translate(${w / 4},150)`); //dynamic?
 
-sonjarocho.html(sonjarochosvg)
+// sonjarocho.html(sonjarochosvg)
 
-let mariachi = svg.append('g')
-  .attr('id', "mariachi-07")
-  .attr('transform', `scale(${scale}, ${scale}) translate(${w / 2},${(h / 2) * .5})`); //dynamic?
+// let mariachi = svg.append('g')
+//   .attr('id', "mariachi-07")
+//   .attr('transform', `scale(${scale}, ${scale}) translate(${w / 2},${(h / 2) * .5})`); //dynamic?
 
-mariachi.html(mariachisvg)
+// mariachi.html(mariachisvg)
 
-let newArr = [];
-let count = 0;
-
-for (var foo of data) {
+for (var d of data) {
   let flower = svg.append('g')
-    .attr('id', foo.id)
+    .attr('id', d.id)
+    .html(d.genresvg)
     .attr('transform', 
           `scale(${scale}, ${scale}) 
-           translate(${w / 3}, ${(h / 2) * .5})`); 
+           translate(${d.x}, ${d.y})`); 
+}
 
-  flower.html(foo.genresvg)
+let leafdata = [[160,140,45], [200,350,0]];
 
-  console.log(foo.genre)
+for (var l of leafdata) {
+  svg.append('g')
+    .attr('class', 'leaf')
+    .html(leafsvg)
+    .attr('transform', 
+          `scale(${scale}, ${scale}) 
+           translate(${l[0]}, ${l[1]}) 
+           rotate(${l[2]})`); 
 }
 
 
@@ -44,8 +52,6 @@ for (var foo of data) {
 
 var title = document.getElementById('title');
 var subtitle = document.getElementById('subtitle');
-
-console.log(subtitle.scrollTop)
 
 let start;
 
