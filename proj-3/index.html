@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reginal Folk Music</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Rye&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="viz"></div>
+    <h1 id="title">
+      Folk music of Mexico
+    </h1>
+    <h2 id="subtitle">
+      featuring content from the Smithsonian Folkways Museum
+    </h2>
+  </div>
+
+
+
+  <div class="map">
+    <div id="corridos">
+      <div class="title">
+        <h3>CORRIDOS</h3>
+        <p>Delivery of news and current affairs through song
+          to a population that was mostly illiterate.
+          Storyform ballads of battles, criminals, and
+          general strife. Three-step structure includes
+          prologue, story, and moral.</p>
+      </div>
+      
+      <!-- 
+      <div class="tip" id="corridos-01">
+        <h4>TOMA DE GELAVA</h4>
+        <div id="waveform"></div>
+        <button class="btn btn-primary" onclick="wavesurfer.playPause()">
+          <i class="fa fa-play"></i>
+          Play /
+          <i class="fa fa-pause"></i>
+          Pause
+        </button>
+
+        <p>In April, the first of the month<br />
+          On Holy Thursday in the morning,<br />
+          Villa went forth from Parral<br />
+          To launch and speed up a campaign</p>
+      </div> -->
+    </div>
+  </div>
+
+
+  <script src="https://d3js.org/d3.v6.min.js"></script>
+  <script src="wavesurfer.js"></script>
+  <script type="module" src="data.js"></script>
+  <script src="flowers.js"></script>
+  <script type="module" src="viz.js"></script>
+  <script src="tips.js"></script>
+</body>
+
+</html>
