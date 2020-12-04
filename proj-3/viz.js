@@ -6,44 +6,33 @@ var scale = 1;
 
 console.log(w)
 
-let svg = d3.select("#viz")
-  .append('svg')
-  .attr('width', w)
-  .attr('height', h)
-  .attr('viewbox', `0 0 ${w} ${h}`);
+// let svg = d3.select("#viz")
+//   .append('svg')
+//   .attr('width', w)
+//   .attr('height', h)
+//   .attr('viewbox', `0 0 ${w} ${h}`);
 
-// let sonjarocho = svg.append('g')
-//   .attr('id', "sonjarocho-07")
-//   .attr('transform', `scale(${scale}, ${scale}) translate(${w / 4},150)`); //dynamic?
+// for (var d of data) {
+//   svg.append('g')
+//     .attr('id', d.id + '-flower')
+//     .html(d.genresvg)
+//     .attr('transform', 
+//           `scale(${scale}, ${scale}) 
+//            rotate(${d.rotate})
+//            translate(${d.epicX}, ${d.epicY})`); 
+// }
 
-// sonjarocho.html(sonjarochosvg)
+// let leafdata = [[160,140,45], [200,350,0]];
 
-// let mariachi = svg.append('g')
-//   .attr('id', "mariachi-07")
-//   .attr('transform', `scale(${scale}, ${scale}) translate(${w / 2},${(h / 2) * .5})`); //dynamic?
-
-// mariachi.html(mariachisvg)
-
-for (var d of data) {
-  let flower = svg.append('g')
-    .attr('id', d.id)
-    .html(d.genresvg)
-    .attr('transform', 
-          `scale(${scale}, ${scale}) 
-           translate(${d.x}, ${d.y})`); 
-}
-
-let leafdata = [[160,140,45], [200,350,0]];
-
-for (var l of leafdata) {
-  svg.append('g')
-    .attr('class', 'leaf')
-    .html(leafsvg)
-    .attr('transform', 
-          `scale(${scale}, ${scale}) 
-           translate(${l[0]}, ${l[1]}) 
-           rotate(${l[2]})`); 
-}
+// for (var l of leafdata) {
+//   svg.append('g')
+//     .attr('class', 'leaf')
+//     .html(leafsvg)
+//     .attr('transform', 
+//           `scale(${scale}, ${scale}) 
+//            translate(${l[0]}, ${l[1]}) 
+//            rotate(${l[2]})`); 
+// }
 
 
 
