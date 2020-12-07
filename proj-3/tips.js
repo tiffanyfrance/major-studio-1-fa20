@@ -8,11 +8,11 @@ d3.select('#slide-native')
   .data(data)
   .enter()
   .append('div')
-  .attr('class', 'tip')
+  .attr('class', d => `${d.genre}-tip tip`)
   .attr('id', d => `${d.id}-tip`)
   .attr('data-locations', d => d.locations)
   .html(d => {
-    return `<h4><img src="svgs/native.svg" />${d.trackName}</h4>
+    return `<h4><img src="svgs/${d.genre}.svg" />${d.trackName}</h4>
             <a class="play"><img src="play.svg" class="wave-btn"></a>
             <div class="wave-container">
             <div class="waves" id="${d.id}-wf"></div>
@@ -20,7 +20,8 @@ d3.select('#slide-native')
             <div class="tip-content">
             <p>
             <img src="albums/${d.trackImg}" />
-            ${d.trackStr} <a href="${d.trackURL}" target="_blank">${d.trackAlbum}</a>
+            ${d.trackStr} 
+            <a href="${d.trackURL}" target="_blank">${d.trackAlbum}</a>
             </p>
             </div>`
   })

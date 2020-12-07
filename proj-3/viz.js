@@ -2,40 +2,6 @@ import { data } from './data.js';
 
 let w = Math.min(window.innerWidth, 1600);
 let h = window.innerHeight;
-let scale = 1;
-
-console.log(w)
-
-// let svg = d3.select("#viz")
-//   .append('svg')
-//   .attr('width', w)
-//   .attr('height', h)
-//   .attr('viewbox', `0 0 ${w} ${h}`);
-
-// for (let d of data) {
-//   svg.append('g')
-//     .attr('id', d.id + '-flower')
-//     .html(d.genresvg)
-//     .attr('transform', 
-//           `scale(${scale}, ${scale}) 
-//            rotate(${d.rotate})
-//            translate(${d.epicX}, ${d.epicY})`); 
-// }
-
-// let leafdata = [[160,140,45], [200,350,0]];
-
-// for (let l of leafdata) {
-//   svg.append('g')
-//     .attr('class', 'leaf')
-//     .html(leafsvg)
-//     .attr('transform', 
-//           `scale(${scale}, ${scale}) 
-//            translate(${l[0]}, ${l[1]}) 
-//            rotate(${l[2]})`); 
-// }
-
-
-
 
 /////// ANIMATION ////////
 
@@ -57,31 +23,6 @@ function step(timestamp) {
 
 window.requestAnimationFrame(step);
 
-var viz = document.querySelector("#viz");
-var mapNative = document.querySelector("#container-native .map");
-
-window.onscroll = function () {
-  console.log(window.pageYOffset)
-  let scrollPos = window.pageYOffset;
-  if (scrollPos > 50) {
-    viz.className = "hidden";
-  } else {
-    viz.className = "visible";
-  }
-
-  if (scrollPos > 2910 && scrollPos < 3500) {
-    // mapNative.style.position = "fixed";
-    if ($('#slide-native .tip').css("opacity") == 0) {
-      $('#slide-native .tip').fadeTo(1000, 1);
-    }
-
-  } else  {
-    if ($('#slide-native .tip').css("opacity") == 1) {
-      $('#slide-native .tip').fadeTo(1000, 0);
-    }
-  }
-};
-
 d3.select('#title')
   .transition()
   .duration(600)
@@ -92,6 +33,148 @@ d3.select('#subtitle')
   .delay(1000)
   .duration(600)
   .style('opacity', 1);
+
+var viz = document.querySelector("#viz");
+
+window.onscroll = function () {
+  console.log(window.pageYOffset)
+  let scrollPos = window.pageYOffset;
+  if (scrollPos > 50) {
+    viz.className = "hidden";
+    $('.corridos-tip').hide();
+
+  } else {
+    viz.className = "visible";
+  }
+
+  // Native title
+  if (scrollPos < 3900) {
+    if ($('#nativ-title').css("opacity") == 0) {
+      $('#native-title').fadeTo(1000, 1);
+    }
+  } else {
+    if ($('#nativ-title').css("opacity") == 1) {
+      $('#native-title').fadeTo(1000, 0);
+    }
+  }
+
+  // Native Tips
+  if (scrollPos > 2910 && scrollPos < 3500) {
+    if ($('.native-tip').css("opacity") == 0) {
+      $('.native-tip').fadeTo(1000, 1);
+    }
+  } else {
+    if ($('.native-tip').css("opacity") == 1) {
+      $('.native-tip').fadeTo(1000, 0);
+      $('.native-tip').hide();
+    }
+  }
+
+  // Corridos title
+  if (scrollPos > 3900 && scrollPos < 5100) {
+    if ($('#corridos-title').css("opacity") == 0) {
+      $('#native-title').fadeTo(1000, 0);
+      $('#corridos-title').fadeTo(1000, 1);
+    }
+
+    $('#mexico-map path').removeClass('fill');
+  } else {
+    if ($('#corridos-title').css("opacity") == 1) {
+      $('#corridos-title').fadeTo(1000, 0);
+    }
+  }
+
+  // Corridos tips
+  if (scrollPos > 4200 && scrollPos < 5100) {
+    $('.ranchera-tip').hide();
+    $('.corridos-tip').show();
+    if ($('.corridos-tip').css("opacity") == 0) {
+      $('.corridos-tip').fadeTo(1000, 1);
+    }
+
+  } else {
+    if ($('.corridos-tip').css("opacity") == 1) {
+      $('.corridos-tip').fadeTo(1000, 0);
+      $('.corridos-tip').hide();
+    }
+  }
+
+  // Ranchera title
+  if (scrollPos > 5200 && scrollPos < 6400) {
+    if ($('#ranchera-title').css("opacity") == 0) {
+      $('#ranchera-title').fadeTo(1000, 1);
+    }
+  } else {
+    if ($('#ranchera-title').css("opacity") == 1) {
+      $('#ranchera-title').fadeTo(1000, 0);
+    }
+  }
+
+  // Ranchera tips
+  if (scrollPos > 5500 && scrollPos < 6400) {
+    $('.ranchera-tip').show();
+    if ($('.ranchera-tip').css("opacity") == 0) {
+      $('.ranchera-tip').fadeTo(1000, 1);
+    }
+  } else {
+    if ($('.ranchera-tip').css("opacity") == 1) {
+      $('.ranchera-tip').fadeTo(1000, 0);
+      $('.ranchera-tip').hide();
+    }
+  }
+
+  // sonjarocho title
+  if (scrollPos > 6400 && scrollPos < 7600) {
+    if ($('#sonjarocho-title').css("opacity") == 0) {
+      $('#sonjarocho-title').fadeTo(1000, 1);
+    }
+  } else {
+    if ($('#sonjarocho-title').css("opacity") == 1) {
+      $('#sonjarocho-title').fadeTo(1000, 0);
+    }
+  }
+
+  // sonjarocho tips
+  if (scrollPos > 6700 && scrollPos < 7600) {
+    $('.sonjarocho-tip').show();
+    if ($('.sonjarocho-tip').css("opacity") == 0) {
+      $('.sonjarocho-tip').fadeTo(1000, 1);
+    }
+    $('#mexico-map .veracruz').css('fill', 'orange')
+  } else {
+    if ($('.sonjarocho-tip').css("opacity") == 1) {
+      $('.sonjarocho-tip').fadeTo(1000, 0);
+      $('.sonjarocho-tip').hide();
+    }
+  }
+
+  if (scrollPos > 3900) {
+    $('body svg path').removeClass('fill');
+  }
+
+  // Zoom of Map for Corridos and Rancheras
+  if (scrollPos > 3900 && scrollPos < 6500) {
+    if (!$('body #mexico-map').hasClass('zoomzoom')) {
+      $('body #mexico-map').addClass('zoomzoom');
+    }
+  } else {
+  }
+
+  // Zoom of Map for Son Jorocho and Son Huestecas
+  if (scrollPos > 6500) {
+    if (!$('body #mexico-map').hasClass('zoomleft')) {
+      $('body #mexico-map').addClass('zoomleft');
+    }
+  } else {
+    if ($('body svg').hasClass('zoomleft')) {
+      $('body svg').removeClass('zoomleft');
+    }
+  }
+  //todo: at 6500 wait 1s then add color active state to veracruz Son Jarocho
+
+
+
+};
 
 
 

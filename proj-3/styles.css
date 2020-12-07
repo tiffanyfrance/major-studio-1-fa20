@@ -42,7 +42,7 @@ body {
 }
 
 #container-native {
-  height: 4000px;
+  height: 12000px;
 }
 
 #slide-native {
@@ -62,17 +62,21 @@ body {
   padding: calc(100% - 3200px); */
 }
 
-#map-native svg path.tlaxcala,
+/* #map-native svg path.tlaxcala,
 #map-native svg path.chihuahua,
 #map-native svg path.sonora,
 #map-native svg path.yucatan,
 #map-native svg path.oaxaca,
 #map-native svg path.puebla {
   fill: #444;
-}
+} */
 
 #map-native svg path.active {
   fill: #ed1e79;
+}
+
+body svg path.fill {
+  fill: #444;
 }
 
 #container-corridos {
@@ -152,17 +156,27 @@ h3 {
   margin-bottom: 0px;
 }
 
+#sonjarocho-title h3 {
+  font-size: 27px;
+}
+
 .group-title {
   color: white;
   font-family: 'Open Sans', sans-serif;
   font-size: 12px;
   float: right;
-  width: 450px;
+  width: 470px;
   text-align: center;
   padding: 0px 20px;
   position: absolute;
   top: 5px;
   right: 5%;
+  margin-top:30px;
+  opacity: 0;
+}
+
+#native-title {
+  opacity: 1;
 }
 
 .description {
@@ -181,6 +195,14 @@ h3 {
 
 #corridos {
   position: relative;
+}
+
+#corridos-title {
+  opacity: 0;
+}
+
+#ranchera-title {
+  opacity: 0;
 }
 
 @media screen and (max-width: 960px) {
@@ -282,6 +304,18 @@ h4 {
   fill:#f7931e;
 }
 
+[id^="huapango"] .cls-1 {
+  fill:#ec297b;
+}
+[id^="huapango"] .cls-2{
+  fill:#faaf40;
+  opacity:0.55;
+}
+[id^="huapango"] .cls-3{
+  fill:#f2f2f2;
+  opacity:0.21;
+}
+
 [id^="mariachi"] .cls-1 {
   fill:#652d90;
   opacity:0.9;
@@ -310,7 +344,39 @@ h4 {
   fill:#f7931e;
 }
 
+
+
 [id^="banda"] .cls-1 {
   fill:#ff0;
   opacity:0.85;
+}
+
+@keyframes zoomin {
+  0% {
+      transform: scale(1,1);
+  }
+  100% {
+      transform: scale(1.5,1.5);
+  }
+}
+
+.zoomzoom {
+  animation: zoomin 2s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes zoomleft {
+  0% {
+      transform: scale(1.5,1.5) translate(0%, 0%);
+     -webkit-transform: scale(1.5,1.5) translateX(0%);
+  }
+  100% {
+      transform: scale(2,2) translateX(-20%);
+     -webkit-transform: scale(1.75,1.75) translate(-20%, -10%);
+  }
+}
+
+.zoomleft {
+  animation: zoomleft 2s ease-in-out;
+  animation-fill-mode: forwards;
 }
