@@ -32,6 +32,7 @@ body {
 
 .map svg {
   max-height: 100vh;
+  margin-left: -200px;
 }
 .map svg path {
   fill:#333;
@@ -59,6 +60,19 @@ body {
   max-width: 1600px;
   /*margin: calc(100% - 3200px);
   padding: calc(100% - 3200px); */
+}
+
+#map-native svg path.tlaxcala,
+#map-native svg path.mexico,
+#map-native svg path.sonora,
+#map-native svg path.zacatecas,
+#map-native svg path.oaxaca,
+#map-native svg path.puebla {
+  fill: #444;
+}
+
+#map-native svg path.active {
+  fill: #ed1e79;
 }
 
 #container-corridos {
@@ -209,7 +223,7 @@ h4 {
 
 /* .waves gets width from parent */
 .wave-container {
-  width: 200px; 
+  width: 150px; 
   margin-left: 15px;
 }
 

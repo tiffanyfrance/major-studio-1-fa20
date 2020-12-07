@@ -10,9 +10,9 @@ d3.select('#slide-native')
   .append('div')
   .attr('class', 'tip')
   .attr('id', d => `${d.id}-tip`)
+  .attr('data-locations', d => d.locations)
   .html(d => {
-    return `
-            <h4><img src="svgs/native.svg" />${d.trackName}</h4>
+    return `<h4><img src="svgs/native.svg" />${d.trackName}</h4>
             <a class="play"><img src="play.svg" class="wave-btn"></a>
             <div class="wave-container">
             <div class="waves" id="${d.id}-wf"></div>
@@ -55,14 +55,18 @@ function buildWave(id, wavecolor, progresscolor, mp3) {
 
     wavesurfer.playPause();
 
-    let imgs = document.querySelectorAll('.wave-btn');
-
-    for (let i of imgs) {
-      i.src = 'play.svg';
-    }
+    $('.wave-btn').attr('src', 'play.svg');
+    $('.tip-content').css('visibility', 'hidden');
 
     if (wavesurfer.isPlaying()) {
       document.querySelector(`#${id}-tip .wave-btn`).src = 'pause.svg';
     }
+
+    $(`#${id}-tip .tip-content`).css('visibility', 'visible');
+
+    let elem = document.querySelector(`#${id}-tip`);
+
+    $(`svg path`).removeClass('active');
+    $(`svg path.${elem.dataset.locations.toLowerCase()}`).addClass('active');
   };
 }
