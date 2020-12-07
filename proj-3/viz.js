@@ -1,8 +1,8 @@
 import { data } from './data.js';
 
-var w = Math.min(window.innerWidth, 1600);
-var h = window.innerHeight;
-var scale = 1;
+let w = Math.min(window.innerWidth, 1600);
+let h = window.innerHeight;
+let scale = 1;
 
 console.log(w)
 
@@ -12,7 +12,7 @@ console.log(w)
 //   .attr('height', h)
 //   .attr('viewbox', `0 0 ${w} ${h}`);
 
-// for (var d of data) {
+// for (let d of data) {
 //   svg.append('g')
 //     .attr('id', d.id + '-flower')
 //     .html(d.genresvg)
@@ -24,7 +24,7 @@ console.log(w)
 
 // let leafdata = [[160,140,45], [200,350,0]];
 
-// for (var l of leafdata) {
+// for (let l of leafdata) {
 //   svg.append('g')
 //     .attr('class', 'leaf')
 //     .html(leafsvg)
@@ -39,9 +39,7 @@ console.log(w)
 
 /////// ANIMATION ////////
 
-var title = document.getElementById('title');
-var subtitle = document.getElementById('subtitle');
-
+let title = document.getElementById('title');
 let start;
 
 function step(timestamp) {
@@ -59,6 +57,24 @@ function step(timestamp) {
 
 window.requestAnimationFrame(step);
 
+var viz = document.querySelector("#viz");
+var mapNative = document.querySelector("#container-native .map");
+
+window.onscroll = function() {
+  console.log(window.pageYOffset)
+  let scrollPos = window.pageYOffset;
+  if (scrollPos > 50) {
+    viz.className = "hidden";
+  } else  {
+    viz.className = "visible";
+  }
+
+  if (scrollPos > 2233 && scrollPos < 3000) {
+    // mapNative.style.position = "fixed";
+  } else {
+    // map.className = "hidden";
+  }
+};
 
 d3.select('#title')
   .transition()

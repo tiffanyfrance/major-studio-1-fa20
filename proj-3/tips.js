@@ -3,7 +3,7 @@ import { data } from './data.js';
 
 let arrWaves = [];
 
-d3.select('#corridos')
+d3.select('#slide-native')
   .selectAll('.tip')
   .data(data)
   .enter()
@@ -11,13 +11,18 @@ d3.select('#corridos')
   .attr('class', 'tip')
   .attr('id', d => `${d.id}-tip`)
   .html(d => {
-    return `<h4>${d.trackName}</h4>
-            <a><img src="play.svg" class="wave-btn"></a>
+    return `
+            <h4><img src="svgs/native.svg" />${d.trackName}</h4>
+            <a class="play"><img src="play.svg" class="wave-btn"></a>
+            <div class="wave-container">
             <div class="waves" id="${d.id}-wf"></div>
-            <p>${d.trackStr}</p>`
+            </div>
+            <div class="tip-content">
+            <p>${d.trackStr}</p>
+            </div>`
   })
-  .style('top', d => d.top + 'px')
-  .style('left', d => d.left + 'px')
+  .style('top', d => d.top)
+  .style('left', d => d.left)
   .each(function (d) {
     buildWave(d.id, d.wavecolor, d.progresscolor, d.trackMP3)
   });
