@@ -27,11 +27,11 @@ d3.select('#slide-native')
   })
   .style('top', d => d.top)
   .style('left', d => d.left)
-  .each(function (d) {
-    buildWave(d.id, d.wavecolor, d.progresscolor, d.trackMP3)
-  });
+  .each(buildWave);
 
-function buildWave(id, wavecolor, progresscolor, mp3) {
+function buildWave(d) {
+  let { id, wavecolor, progresscolor, trackMP3 } = d;
+
   let wavesurfer = WaveSurfer.create({
     container: document.querySelector(`#${id}-wf`),
     barWidth: 3,
@@ -48,7 +48,7 @@ function buildWave(id, wavecolor, progresscolor, mp3) {
     document.querySelector(`#${id}-tip .wave-btn`).src = 'pause.svg';
   });
 
-  wavesurfer.load(mp3);
+  wavesurfer.load(trackMP3);
 
   arrWaves.push(wavesurfer);
 
@@ -71,6 +71,9 @@ function buildWave(id, wavecolor, progresscolor, mp3) {
     let elem = document.querySelector(`#${id}-tip`);
 
     $(`svg path`).removeClass('active');
-    $(`svg path.${elem.dataset.locations.toLowerCase()}`).addClass('active');
+
+    if (d.genre === 'native' && elem.dataset.locations) {
+      $(`svg path.${elem.dataset.locations.toLowerCase()}`).addClass('active');
+    }
   };
 }
