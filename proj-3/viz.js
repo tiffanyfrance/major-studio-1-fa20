@@ -112,6 +112,8 @@ window.onscroll = function () {
 
   // Ranchera tips
   if (scrollPos > 5500 && scrollPos < 6400) {
+    $('.sonjarocho-tip').hide();
+    $('.corridos-tip').hide();
     $('.ranchera-tip').show();
     if ($('.ranchera-tip').css("opacity") == 0) {
       $('.ranchera-tip').fadeTo(1000, 1);
@@ -136,6 +138,8 @@ window.onscroll = function () {
 
   // sonjarocho tips
   if (scrollPos > 6700 && scrollPos < 7600) {
+    $('.corridos-tip').hide();
+    $('.ranchera-tip').hide();
     $('.sonjarocho-tip').show();
     if ($('.sonjarocho-tip').css("opacity") == 0) {
       $('.sonjarocho-tip').fadeTo(1000, 1);
@@ -147,6 +151,34 @@ window.onscroll = function () {
       $('.sonjarocho-tip').hide();
     }
   }
+
+  // huapango title
+  if (scrollPos > 7600 && scrollPos < 8800) {
+    if ($('#huapango-title').css("opacity") == 0) {
+      $('#huapango-title').fadeTo(1000, 1);
+    }
+  } else {
+    if ($('#huapango-title').css("opacity") == 1) {
+      $('#huapango-title').fadeTo(1000, 0);
+    }
+  }
+
+  // huapango tips
+  if (scrollPos > 7900 && scrollPos < 8000) {
+    $('.corridos-tip').hide();
+    $('.ranchera-tip').hide();
+    $('.huapango-tip').show();
+    if ($('.huapango-tip').css("opacity") == 0) {
+      $('.huapango-tip').fadeTo(1000, 1);
+    }
+    $('#mexico-map .veracruz').css('fill', 'orange')
+  } else {
+    if ($('.huapango-tip').css("opacity") == 1) {
+      $('.huapango-tip').fadeTo(1000, 0);
+      $('.huapango-tip').hide();
+    }
+  }
+
 
   if (scrollPos > 3900) {
     $('body svg path').removeClass('fill');
