@@ -63,9 +63,9 @@ body {
 }
 
 #map-native svg path.tlaxcala,
-#map-native svg path.mexico,
+#map-native svg path.chihuahua,
 #map-native svg path.sonora,
-#map-native svg path.zacatecas,
+#map-native svg path.yucatan,
 #map-native svg path.oaxaca,
 #map-native svg path.puebla {
   fill: #444;
@@ -157,7 +157,7 @@ h3 {
   font-family: 'Open Sans', sans-serif;
   font-size: 12px;
   float: right;
-  width: 300px;
+  width: 450px;
   text-align: center;
   padding: 0px 20px;
   position: absolute;
@@ -200,6 +200,7 @@ h3 {
   left: 200px;
   background-color: transparent;
   cursor: pointer;
+  opacity: 0;
 }
 
 h4 {
@@ -239,6 +240,16 @@ h4 {
 
 .tip-content {
   visibility: hidden;
+}
+
+.tip-content img {
+  width: 50px; 
+  float:left;
+  padding: 0 10px 0px 0px
+}
+
+.tip-content a {
+  color: #999;
 }
 
 /* FLOWERS */

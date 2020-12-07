@@ -18,7 +18,10 @@ d3.select('#slide-native')
             <div class="waves" id="${d.id}-wf"></div>
             </div>
             <div class="tip-content">
-            <p>${d.trackStr}</p>
+            <p>
+            <img src="albums/${d.trackImg}" />
+            ${d.trackStr} <a href="${d.trackURL}" target="_blank">${d.trackAlbum}</a>
+            </p>
             </div>`
   })
   .style('top', d => d.top)

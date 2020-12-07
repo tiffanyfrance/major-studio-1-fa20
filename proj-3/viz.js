@@ -60,19 +60,25 @@ window.requestAnimationFrame(step);
 var viz = document.querySelector("#viz");
 var mapNative = document.querySelector("#container-native .map");
 
-window.onscroll = function() {
+window.onscroll = function () {
   console.log(window.pageYOffset)
   let scrollPos = window.pageYOffset;
   if (scrollPos > 50) {
     viz.className = "hidden";
-  } else  {
+  } else {
     viz.className = "visible";
   }
 
-  if (scrollPos > 2233 && scrollPos < 3000) {
+  if (scrollPos > 2910 && scrollPos < 3500) {
     // mapNative.style.position = "fixed";
-  } else {
-    // map.className = "hidden";
+    if ($('#slide-native .tip').css("opacity") == 0) {
+      $('#slide-native .tip').fadeTo(1000, 1);
+    }
+
+  } else  {
+    if ($('#slide-native .tip').css("opacity") == 1) {
+      $('#slide-native .tip').fadeTo(1000, 0);
+    }
   }
 };
 
