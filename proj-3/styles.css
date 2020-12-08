@@ -485,3 +485,26 @@ h4 {
   animation: zoomout 2s ease-in-out;
   animation-fill-mode: forwards;
 }
+
+@keyframes wiggle {
+  0% {transform: rotate(0deg);}
+  20% {transform: rotate(-10deg);}
+  40% {transform: rotate(10deg);}
+  60% {transform: rotate(-10deg);}
+  80% {transform: rotate(10deg);}
+  100% {transform: rotate(0deg);}
+}
+
+h3 a {
+  transform: translateZ(0) rotateZ(360deg);
+  backface-visibility: hidden;
+  perspective: 1000;
+  -webkit-animation-timing-function: ease-in-out;
+  -ms-animation-timing-function: ease-in-out;
+}
+
+h3 a img:hover {
+  /* background-color: #ccc;
+  box-shadow: 0 0 0px 0px #999, 0 0 0px 0px #f0f,0 0 7px 3px white;
+  border-radius: 80px; */
+}

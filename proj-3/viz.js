@@ -4,6 +4,13 @@ window.onbeforeunload = function () {
   window.scrollTo(0, 0);
 }
 
+let navItemArr = document.querySelectorAll('h3 a');
+
+navItemArr.forEach(item => {
+  let randoSec = Math.floor(Math.random() * 5 + 1) + "s";
+  item.style.animation = `wiggle ${randoSec} infinite`;
+});
+
 let w = Math.min(window.innerWidth, 1600);
 let h = window.innerHeight;
 
