@@ -67,7 +67,8 @@ function buildWave(d) {
     }
 
     $(`#${id}-tip .tip-content`).css('visibility', 'visible');
-
+    // $(`#${id}-tip .tip-content`).slideDown();
+    
     let elem = document.querySelector(`#${id}-tip`);
 
     $(`svg path`).removeClass('active');

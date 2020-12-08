@@ -1,5 +1,9 @@
 import { data } from './data.js';
 
+window.onbeforeunload = function () {
+  window.scrollTo(0, 0);
+}
+
 let w = Math.min(window.innerWidth, 1600);
 let h = window.innerHeight;
 
@@ -41,11 +45,19 @@ window.onscroll = function () {
   let scrollPos = window.pageYOffset;
   if (scrollPos > 50) {
     viz.className = "hidden";
-    $('.corridos-tip').hide();
 
   } else {
     viz.className = "visible";
   }
+
+  //Hide all on load??
+  $('.corridos-tip').hide();
+  $('.ranchera-tip').hide();
+  $('.sonjarocho-tip').hide();
+  $('.huapango-tip').hide();
+  $('.banda-tip').hide();
+  $('.norteno-tip').hide();
+  $('.mariachi-tip').hide();
 
   // Native title
   if (scrollPos < 3900) {
@@ -86,7 +98,6 @@ window.onscroll = function () {
 
   // Corridos tips
   if (scrollPos > 4200 && scrollPos < 5100) {
-    $('.ranchera-tip').hide();
     $('.corridos-tip').show();
     if ($('.corridos-tip').css("opacity") == 0) {
       $('.corridos-tip').fadeTo(1000, 1);
@@ -112,8 +123,6 @@ window.onscroll = function () {
 
   // Ranchera tips
   if (scrollPos > 5500 && scrollPos < 6400) {
-    $('.sonjarocho-tip').hide();
-    $('.corridos-tip').hide();
     $('.ranchera-tip').show();
     if ($('.ranchera-tip').css("opacity") == 0) {
       $('.ranchera-tip').fadeTo(1000, 1);
@@ -138,9 +147,6 @@ window.onscroll = function () {
 
   // sonjarocho tips
   if (scrollPos > 6700 && scrollPos < 7600) {
-    $('.corridos-tip').hide();
-    $('.ranchera-tip').hide();
-    $('.huapango-tip').hide();
     $('.sonjarocho-tip').show();
     if ($('.sonjarocho-tip').css("opacity") == 0) {
       $('.sonjarocho-tip').fadeTo(1000, 1);
@@ -167,9 +173,6 @@ window.onscroll = function () {
 
   // huapango tips
   if (scrollPos > 7900 && scrollPos < 8000) {
-    $('.corridos-tip').hide();
-    $('.ranchera-tip').hide();
-    $('.sonjarocho-tip').hide();
     $('.huapango-tip').show();
     if ($('.huapango-tip').css("opacity") == 0) {
       $('.huapango-tip').fadeTo(1000, 1);
@@ -196,10 +199,6 @@ window.onscroll = function () {
 
   // banda tips
   if (scrollPos > 9100 && scrollPos < 10000) {
-    $('.corridos-tip').hide();
-    $('.ranchera-tip').hide();
-    $('.sonjarocho-tip').hide();
-    $('.huapango-tip').hide();
     $('.banda-tip').show();
     if ($('.banda-tip').css("opacity") == 0) {
       $('.banda-tip').fadeTo(1000, 1);
@@ -225,10 +224,6 @@ window.onscroll = function () {
 
   // norteno tips
   if (scrollPos > 10300 && scrollPos < 12000) {
-    $('.corridos-tip').hide();
-    $('.ranchera-tip').hide();
-    $('.sonjarocho-tip').hide();
-    $('.huapango-tip').hide();
     $('.norteno-tip').show();
     if ($('.norteno-tip').css("opacity") == 0) {
       $('.norteno-tip').fadeTo(1000, 1);
@@ -253,10 +248,6 @@ window.onscroll = function () {
 
   // mariachi tips
   if (scrollPos > 12300 && scrollPos < 13200) {
-    $('.corridos-tip').hide();
-    $('.ranchera-tip').hide();
-    $('.sonjarocho-tip').hide();
-    $('.huapango-tip').hide();
     $('.mariachi-tip').show();
     if ($('.mariachi-tip').css("opacity") == 0) {
       $('.mariachi-tip').fadeTo(1000, 1);

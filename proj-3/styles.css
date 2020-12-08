@@ -263,6 +263,7 @@ h4 {
 
 .tip-content {
   visibility: hidden;
+  /* display: none; */
 }
 
 .tip-content img {
