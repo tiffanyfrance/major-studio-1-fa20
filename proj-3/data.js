@@ -692,7 +692,7 @@ let data = [
     trackName: "La Petenera",
     trackMP3: "songs/La-Petenera.mp3",
     trackStr: "The mestiza music began to develop even a relatively short time after Cortés’s conquest of the land of Huitzilopochtli. Today, more than four centuries later, the Spanish roots can clearly be recognized in most of the songs and dances that do not preserve an outright Indian character...",
-    trackImg: "Sones-of-Mexico.jpg",
+    trackImg: "sones-of-mexico.jpg",
     trackArtist: "",
     trackAlbum: "Sones of Mexico",
     trackURL: "https://folkways.si.edu/trio-aguilillas/sones-of-mexico/latin-world/music/album/smithsonian",

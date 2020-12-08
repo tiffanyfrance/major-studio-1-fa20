@@ -121,6 +121,10 @@ body svg path.fill {
   opacity: 0;
 }
 
+#thoughts {
+  display: none;
+}
+
 .loader,
 .loader:before,
 .loader:after {
