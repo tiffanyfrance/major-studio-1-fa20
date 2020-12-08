@@ -355,10 +355,6 @@ window.onscroll = function () {
       $('body svg').removeClass('zoomout');
     }
   }
-
-
-
-
 };
 
 
