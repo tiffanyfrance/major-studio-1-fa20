@@ -105,7 +105,7 @@ window.onscroll = function () {
   }
 
   // Native Tips
-  if (scrollPos > 2910 && scrollPos < 3500) {
+  if (scrollPos > 2700 && scrollPos < 3800) {
     $('.native-tip').show();
     if ($('.native-tip').css("opacity") == 0) {
       $('.native-tip').fadeTo(500, 1);
@@ -158,7 +158,7 @@ window.onscroll = function () {
   }
 
   // Ranchera tips
-  if (scrollPos > 5500 && scrollPos < 6400) {
+  if (scrollPos > 5400 && scrollPos < 6400) {
     $('.ranchera-tip').show();
     if ($('.ranchera-tip').css("opacity") == 0) {
       $('.ranchera-tip').fadeTo(500, 1);
