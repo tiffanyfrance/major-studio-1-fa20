@@ -1,6 +1,7 @@
 // building each song tooltip
 import { data } from './data.js';
 
+let navItemArr = document.querySelectorAll('h3 a');
 let wavePromises = [];
 let arrWaves = [];
 
@@ -80,6 +81,15 @@ function buildWave(d) {
 
     if (wavesurfer.isPlaying()) {
       document.querySelector(`#${id}-tip .wave-btn`).src = 'pause.svg';
+
+      navItemArr.forEach(item => {
+        let randoSec = Math.floor(Math.random() * 5 + 1) + "s";
+        item.style.animation = `wiggle ${randoSec} infinite`;
+      });
+    } else {
+      navItemArr.forEach(item => {
+        item.style.animation = `none`;
+      });    
     }
 
     $(`#${id}-tip .tip-content`).css('visibility', 'visible');

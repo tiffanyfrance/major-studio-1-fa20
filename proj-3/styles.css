@@ -502,9 +502,3 @@ h3 a {
   -webkit-animation-timing-function: ease-in-out;
   -ms-animation-timing-function: ease-in-out;
 }
-
-h3 a img:hover {
-  /* background-color: #ccc;
-  box-shadow: 0 0 0px 0px #999, 0 0 0px 0px #f0f,0 0 7px 3px white;
-  border-radius: 80px; */
-}
