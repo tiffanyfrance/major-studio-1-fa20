@@ -173,17 +173,20 @@ window.onscroll = function () {
   }
 
   // huapango tips
-  if (scrollPos > 7900 && scrollPos < 8000) {
+  if (scrollPos > 7900 && scrollPos < 8800) {
     $('.huapango-tip').show();
     if ($('.huapango-tip').css("opacity") == 0) {
       $('.huapango-tip').fadeTo(1000, 1);
     }
-    $('#mexico-map .tamaulipas').css('fill', 'orange');
+    $('#mexico-map .tamaulipas').css('fill', '#ec297b');
+    $('#mexico-map .tamaulipas').css('opacity', '0.6');
   } else {
     if ($('.huapango-tip').css("opacity") == 1) {
       $('.huapango-tip').fadeTo(1000, 0);
       $('.huapango-tip').hide();
     }
+    $('#mexico-map .tamaulipas').css('fill', '#333');
+    $('#mexico-map .tamaulipas').css('opacity', '1');
   }
 
   // banda title
@@ -192,6 +195,8 @@ window.onscroll = function () {
       $('#banda-title').fadeTo(1000, 1);
     }
     $('#mexico-map .sinaola, #mexico-map .zacatecas').addClass('fill');
+    $('#mexico-map .tamaulipas').css('fill', '#333');
+    $('#mexico-map .tamaulipas').css('opacity', '1');
   } else {
     if ($('#banda-title').css("opacity") == 1) {
       $('#banda-title').fadeTo(1000, 0);
