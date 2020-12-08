@@ -7,9 +7,37 @@ window.onbeforeunload = function () {
 let w = Math.min(window.innerWidth, 1600);
 let h = window.innerHeight;
 
-/////// ANIMATION ////////
+const backgroundWidth = 265;
+const backgroundHeight = 150;
 
-let title = document.getElementById('title');
+function repositionTitle() {
+  var elem = $('#viz');
+
+  var imageRatio = backgroundWidth / backgroundHeight;
+  var coverRatio = elem.outerWidth() / elem.outerHeight();
+
+  if (imageRatio >= coverRatio) {
+    var coverHeight = elem.outerHeight();
+    var scale = (coverHeight / backgroundHeight);
+    var coverWidth = backgroundWidth * scale;
+  } else {
+    var coverWidth = elem.outerWidth();
+    var scale = (coverWidth / backgroundWidth);
+    var coverHeight = backgroundHeight * scale;
+  }
+
+  let top = (Math.min(coverHeight, elem.outerHeight()) / 2) - 17;
+  $('#main-title').css('top', `${top}px`);
+}
+
+repositionTitle();
+
+$(window).resize(() => {
+  repositionTitle();
+});
+
+/////// ANIMATION ////////
+let title = document.querySelector('#main-title h1');
 let start;
 
 function step(timestamp) {
@@ -17,8 +45,7 @@ function step(timestamp) {
     start = timestamp;
   const elapsed = timestamp - start;
 
-  title.style.transform = 'translateY(' + Math.min(0.06 * elapsed, 60) + 'px)';
-
+  title.style.transform = 'translateY(' + (Math.min(0.06 * elapsed, 60) - 60) + 'px)';
 
   if (elapsed < 2000) { // Stop the animation after 2 seconds
     window.requestAnimationFrame(step);
@@ -27,12 +54,12 @@ function step(timestamp) {
 
 window.requestAnimationFrame(step);
 
-d3.select('#title')
+d3.select('#main-title h1')
   .transition()
   .duration(600)
   .style('opacity', 1);
 
-d3.select('#subtitle')
+d3.select('#main-title h2')
   .transition()
   .delay(1000)
   .duration(600)
@@ -287,7 +314,7 @@ window.onscroll = function () {
       $('body svg').removeClass('zoomleft');
     }
   }
- 
+
   // Zoom of Map for Banda
   if (scrollPos > 8800) {
     $('body #mexico-map path.zacatecas, body #mexico-map path.sinaloa').addClass('fill');
@@ -305,7 +332,7 @@ window.onscroll = function () {
   if (scrollPos > 10000) {
     $('body #mexico-map path.zacatecas, body #mexico-map path.sinaloa').removeClass('fill');
     $('body #mexico-map path.sonora, body #mexico-map path.chihuahua, body #mexico-map path.coahuila, body #mexico-map path.nuevo-leon').addClass('fill');
-    
+
     if (!$('body #mexico-map').hasClass('zoomtop')) {
       $('body #mexico-map').addClass('zoomtop');
     }

@@ -5,7 +5,7 @@ let wavecolors = {
   sonjarocho: ['#F15A24', '#F7931E'],
   huapango: ['#ec297b', '#faaf40'], //fix
   banda: ['yellow', '#ff0'], //fix
-  norteno: ['#F15A24', '#F7931E'], //fix
+  norteno: ['#478bc9', '#F7931E'], //fix
   mariachi: ['#F15A24', '#F7931E'], //fix
 }
 
@@ -687,7 +687,7 @@ let data = [
     genresvg: huapangosvg,
     wavecolor: wavecolors.huapango[0],
     progresscolor: wavecolors.huapango[1],
-    top: '28%',
+    top: '24%',
     left: '37%',
     trackName: "La Petenera",
     trackMP3: "songs/La-Petenera.mp3",
