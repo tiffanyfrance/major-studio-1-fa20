@@ -158,6 +158,7 @@ window.onscroll = function () {
     if ($('#huapango-title').css("opacity") == 0) {
       $('#huapango-title').fadeTo(1000, 1);
     }
+    $('#mexico-map .veracruz').css('fill', '#333');
   } else {
     if ($('#huapango-title').css("opacity") == 1) {
       $('#huapango-title').fadeTo(1000, 0);
@@ -173,7 +174,7 @@ window.onscroll = function () {
     if ($('.huapango-tip').css("opacity") == 0) {
       $('.huapango-tip').fadeTo(1000, 1);
     }
-    $('#mexico-map .veracruz').css('fill', 'orange')
+    $('#mexico-map .tamaulipas').css('fill', 'orange');
   } else {
     if ($('.huapango-tip').css("opacity") == 1) {
       $('.huapango-tip').fadeTo(1000, 0);
@@ -202,6 +203,7 @@ window.onscroll = function () {
     if ($('.banda-tip').css("opacity") == 0) {
       $('.banda-tip').fadeTo(1000, 1);
     }
+    $('#mexico-map .tamaulipas').css('fill', '#333');
   } else {
     if ($('.banda-tip').css("opacity") == 1) {
       $('.banda-tip').fadeTo(1000, 0);
@@ -264,7 +266,6 @@ window.onscroll = function () {
       $('.mariachi-tip').hide();
     }
   }
-
 
   if (scrollPos > 3900) {
     $('body svg path').removeClass('fill');

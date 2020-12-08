@@ -373,7 +373,7 @@ h4 {
   }
   100% {
       transform: scale(2,2) translateX(-20%);
-     -webkit-transform: scale(1.75,1.75) translate(-20%, -10%);
+     -webkit-transform: scale(1.65,1.65) translate(-20%, -8%);
   }
 }
 

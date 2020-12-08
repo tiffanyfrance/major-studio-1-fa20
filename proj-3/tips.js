@@ -72,8 +72,10 @@ function buildWave(d) {
 
     $(`svg path`).removeClass('active');
 
-    if (d.genre === 'native' && elem.dataset.locations) {
-      $(`svg path.${elem.dataset.locations.toLowerCase()}`).addClass('active');
-    }
-  };
+    if (d.genre === 'native' || d.genre === 'norteno' || d.genre === 'mariachi')
+      if (elem.dataset.locations) {
+        $(`svg path.${elem.dataset.locations.toLowerCase()}`).addClass('active');
+      }
+  }
+};
 }

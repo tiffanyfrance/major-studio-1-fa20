@@ -675,7 +675,7 @@ let data = [
     "trackArtist": "Timothy Harding",
     "trackAlbum": "Songs of Mexico",
     "trackURL": "https://folkways.si.edu/songs-of-mexico/latin-world/music/album/smithsonian",
-    "locations": "Las Huastecas |.Tamaulipas",
+    "locations": "Las Huastecas | Tamaulipas",
     "influences": "",
     "instruments": "Violin | Guitarra huapanguera | Jarana"
   },
@@ -694,7 +694,7 @@ let data = [
     "trackArtist": "",
     "trackAlbum": "Sones of Mexico",
     "trackURL": "https://folkways.si.edu/trio-aguilillas/sones-of-mexico/latin-world/music/album/smithsonian",
-    "locations": "Las Huastecas |.Tamaulipas",
+    "locations": "Las Huastecas | Tamaulipas",
     "influences": "",
     "instruments": "Violin | Guitarra huapanguera | Jarana"
   },
@@ -713,7 +713,7 @@ let data = [
     "trackArtist": "",
     "trackAlbum": "Corridos of the Chicano Movement",
     "trackURL": "https://folkways.si.edu/rumel-fuentes/corridos-of-the-chicano-movement/latin-world/music/album/smithsonian",
-    "locations": "Las Huastecas |.Tamaulipas",
+    "locations": "Las Huastecas | Tamaulipas",
     "influences": "",
     "instruments": "Violin | Guitarra huapanguera | Jarana"
   },
@@ -732,7 +732,7 @@ let data = [
     "trackArtist": "",
     "trackAlbum": "Huapangos y Sones Huastecos",
     "trackURL": "https://folkways.si.edu/los-caimanes-los-caporales-de-panuco/huapangos-y-sones-huastecos/latin/music/album/smithsonian",
-    "locations": "Las Huastecas |.Tamaulipas",
+    "locations": "Las Huastecas | Tamaulipas",
     "influences": "",
     "instruments": "Violin | Guitarra huapanguera | Jarana"
   },
@@ -751,7 +751,7 @@ let data = [
     "trackArtist": "",
     "trackAlbum": "Huapangos y Sones Huastecos",
     "trackURL": "https://folkways.si.edu/los-caimanes-los-caporales-de-panuco/huapangos-y-sones-huastecos/latin/music/album/smithsonian",
-    "locations": "Las Huastecas |.Tamaulipas",
+    "locations": "Las Huastecas | Tamaulipas",
     "influences": "",
     "instruments": "Violin | Guitarra huapanguera | Jarana"
   },
@@ -770,7 +770,7 @@ let data = [
     "trackArtist": "",
     "trackAlbum": "Huapangos y Sones Huastecos",
     "trackURL": "https://folkways.si.edu/los-caimanes-los-caporales-de-panuco/huapangos-y-sones-huastecos/latin/music/album/smithsonian",
-    "locations": "Las Huastecas |.Tamaulipas",
+    "locations": "Las Huastecas | Tamaulipas",
     "influences": "",
     "instruments": "Violin | Guitarra huapanguera | Jarana"
   },
@@ -789,7 +789,7 @@ let data = [
     "trackArtist": "",
     "trackAlbum": "Border Bash: Tex-Mex Dance Music, Vol. 2",
     "trackURL": "https://folkways.si.edu/los-polkeros-de-ben-tavera-king/border-bash-tex-mex-dance-music-vol-2/latin-world/album/smithsonian",
-    "locations": "Las Huastecas |.Tamaulipas | Northern Mexico",
+    "locations": "Las Huastecas | Tamaulipas | Northern Mexico",
     "influences": "German | Polish | African",
     "instruments": "Buttton Accordion | Bajo Sexto | Guitar"
   },
