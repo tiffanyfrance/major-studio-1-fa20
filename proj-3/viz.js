@@ -366,6 +366,22 @@ window.onscroll = function () {
       $('body svg').removeClass('zoomout');
     }
   }
+
+  if (scrollPos > 13200) {
+    $('body #mexico-map path.nuevo-leon, body #mexico-map path.jalisco').removeClass('fill');
+
+    $('#thoughts').show();
+    if ($('#thoughts').css("opacity") == 0) {
+      $('#thoughts').fadeTo(500, 1);
+    }
+  } else {
+    if ($('#thoughts').css("opacity") == 1) {
+      $('#thoughts').fadeTo(500, 0);
+      $('#thoughts').hide();
+    }
+  }
+
+
 };
 
 
