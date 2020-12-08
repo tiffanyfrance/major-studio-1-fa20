@@ -1,6 +1,7 @@
 // building each song tooltip
 import { data } from './data.js';
 
+let wavePromises = [];
 let arrWaves = [];
 
 d3.select('#slide-native')
@@ -29,6 +30,13 @@ d3.select('#slide-native')
   .style('left', d => d.left)
   .each(buildWave);
 
+Promise.allSettled(wavePromises).then(() => {
+  $('body').css('overflow-y', 'auto');
+  console.log(performance.now());
+
+  d3.select('#main-title .loader').remove();
+});
+
 function buildWave(d) {
   let { id, wavecolor, progresscolor, trackMP3 } = d;
 
@@ -47,6 +55,14 @@ function buildWave(d) {
   wavesurfer.on('pause', function () {
     document.querySelector(`#${id}-tip .wave-btn`).src = 'pause.svg';
   });
+
+  let p = new Promise(function (resolve, reject) {
+    wavesurfer.on('ready', () => {
+      resolve();
+    });
+  });
+
+  wavePromises.push(p);
 
   wavesurfer.load(trackMP3);
 

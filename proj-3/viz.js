@@ -56,13 +56,19 @@ window.requestAnimationFrame(step);
 
 d3.select('#main-title h1')
   .transition()
-  .duration(600)
+  .duration(3000)
   .style('opacity', 1);
 
 d3.select('#main-title h2')
   .transition()
-  .delay(1000)
+  .delay(1500)
   .duration(600)
+  .style('opacity', 1);
+
+d3.select('#main-title .loader')
+  .transition()
+  .delay(2100)
+  .duration(2000)
   .style('opacity', 1);
 
 var viz = document.querySelector("#viz");
