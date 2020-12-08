@@ -90,6 +90,7 @@ window.onscroll = function () {
     }
 
     $('#mexico-map path').removeClass('fill');
+    $('#mexico-map path').removeClass('active');
   } else {
     if ($('#corridos-title').css("opacity") == 1) {
       $('#corridos-title').fadeTo(1000, 0);
