@@ -294,6 +294,13 @@ h4 {
   fill:#ed1e79;
 }
 
+[id^="corridos"] .cls-1 {
+  fill:#f15a24;
+}
+[id^="corridos"] .cls-2 {
+  fill:#f7931e;
+}
+
 [id^="sonjarocho"] .cls-1 {
   fill:#f15a24;
 }
@@ -308,20 +315,32 @@ h4 {
 [id^="huapango"] .cls-1 {
   fill:#ec297b;
 }
-[id^="huapango"] .cls-2{
+[id^="huapango"] .cls-2 {
   fill:#faaf40;
   opacity:0.55;
 }
-[id^="huapango"] .cls-3{
+[id^="huapango"] .cls-3 {
   fill:#f2f2f2;
   opacity:0.21;
+}
+
+[id^="banda"] .cls-1 {
+  fill:#ff0;
+  opacity:0.85;
+}
+
+[id^="norteno"] .cls-1 {
+  fill:#f6921e;
+}
+[id^="norteno"] .cls-2 {
+  fill:#478bc9;
 }
 
 [id^="mariachi"] .cls-1 {
   fill:#652d90;
   opacity:0.9;
 }
-[id^="mariachi"] .cls-2{
+[id^="mariachi"] .cls-2 {
   fill:none;
   stroke:#f6921e;
   stroke-miterlimit:10;
@@ -336,20 +355,6 @@ h4 {
 [id^="mariachi"] .cls-4 {
   fill:#f6921e;
   opacity:0.95;
-}
-
-[id^="corridos"] .cls-1 {
-  fill:#f15a24;
-}
-[id^="corridos"] .cls-2 {
-  fill:#f7931e;
-}
-
-
-
-[id^="banda"] .cls-1 {
-  fill:#ff0;
-  opacity:0.85;
 }
 
 @keyframes zoomin {
@@ -369,15 +374,63 @@ h4 {
 @keyframes zoomleft {
   0% {
       transform: scale(1.5,1.5) translate(0%, 0%);
-     -webkit-transform: scale(1.5,1.5) translateX(0%);
+     -webkit-transform: scale(1.5,1.5) translate(0%, 0%);
   }
   100% {
-      transform: scale(2,2) translateX(-20%);
+      transform: scale(1.65,1.65) translate(-20%, -8%);
      -webkit-transform: scale(1.65,1.65) translate(-20%, -8%);
   }
 }
 
 .zoomleft {
   animation: zoomleft 2s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes zoomright {
+  0% {
+    transform: scale(1.65,1.65) translate(-20%, -8%);
+     -webkit-transform: scale(1.65,1.65) translate(-20%, -8%);
+  }
+  100% {
+      transform: scale(1.25,1.25) translate(10%, 0%);
+     -webkit-transform: scale(1.25,1.25) translate(10%, 0%);
+  }
+}
+
+.zoomright {
+  animation: zoomright 2s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes zoomtop {
+  0% {
+    transform: scale(1.25,1.25) translate(10%, 0%);
+     -webkit-transform: scale(1.25,1.25) translate(10%, 0%);
+  }
+  100% {
+      transform: scale(1.25,1.25) translate(0%, 30%);
+     -webkit-transform: scale(1.25,1.25) translate(0%, 30%);
+  }
+}
+
+.zoomtop {
+  animation: zoomtop 2s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes zoomout {
+  0% {
+    transform: scale(1.25,1.25) translate(0%, 30%);
+     -webkit-transform: scale(1.25,1.25) translate(0%, 30%);
+  }
+  100% {
+    transform: scale(1,1) translate(0%, 0%);
+    -webkit-transform: scale(1,1) translate(0% 0%);
+  }
+}
+
+.zoomout {
+  animation: zoomout 2s ease-in-out;
   animation-fill-mode: forwards;
 }

@@ -187,6 +187,7 @@ window.onscroll = function () {
     if ($('#banda-title').css("opacity") == 0) {
       $('#banda-title').fadeTo(1000, 1);
     }
+    $('#mexico-map .sinaola, #mexico-map .zacatecas').addClass('fill');
   } else {
     if ($('#banda-title').css("opacity") == 1) {
       $('#banda-title').fadeTo(1000, 0);
@@ -268,7 +269,7 @@ window.onscroll = function () {
   }
 
   if (scrollPos > 3900) {
-    $('body svg path').removeClass('fill');
+    $('body #mexico-map path').removeClass('fill');
   }
 
   // Zoom of Map for Corridos and Rancheras
@@ -289,7 +290,47 @@ window.onscroll = function () {
       $('body svg').removeClass('zoomleft');
     }
   }
-  //todo: at 6500 wait 1s then add color active state to veracruz Son Jarocho
+ 
+  // Zoom of Map for Banda
+  if (scrollPos > 8800) {
+    $('body #mexico-map path.zacatecas, body #mexico-map path.sinaloa').addClass('fill');
+
+    if (!$('body #mexico-map').hasClass('zoomright')) {
+      $('body #mexico-map').addClass('zoomright');
+    }
+  } else {
+    if ($('body svg').hasClass('zoomright')) {
+      $('body svg').removeClass('zoomright');
+    }
+  }
+
+  // Zoom of Map for Norteno
+  if (scrollPos > 10000) {
+    $('body #mexico-map path.zacatecas, body #mexico-map path.sinaloa').removeClass('fill');
+    $('body #mexico-map path.sonora, body #mexico-map path.chihuahua, body #mexico-map path.coahuila, body #mexico-map path.nuevo-leon').addClass('fill');
+    
+    if (!$('body #mexico-map').hasClass('zoomtop')) {
+      $('body #mexico-map').addClass('zoomtop');
+    }
+  } else {
+    if ($('body svg').hasClass('zoomtop')) {
+      $('body svg').removeClass('zoomtop');
+    }
+  }
+
+  // Zoom of Map for Mariachi
+  if (scrollPos > 12000) {
+    if (!$('body #mexico-map').hasClass('zoomout')) {
+      $('body #mexico-map').addClass('zoomout');
+    }
+    $('body #mexico-map path').removeClass('fill');
+    $('body #mexico-map path.jalisco, body #mexico-map path.nuevo-leon').addClass('fill');
+  } else {
+    if ($('body svg').hasClass('zoomout')) {
+      $('body svg').removeClass('zoomout');
+    }
+  }
+
 
 
 
