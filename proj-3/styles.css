@@ -229,6 +229,10 @@ h3 {
   opacity: 0;
 }
 
+.timeline {
+  width: 350px;
+}
+
 #native-title {
   opacity: 1;
 }
