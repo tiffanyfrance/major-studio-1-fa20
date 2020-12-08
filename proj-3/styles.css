@@ -123,6 +123,14 @@ body svg path.fill {
 
 #thoughts {
   display: none;
+  width: 400px;
+  top: 185px;
+  right: 50px;
+  color: #999;
+}
+
+#thoughts a {
+  color: #999;
 }
 
 .loader,
