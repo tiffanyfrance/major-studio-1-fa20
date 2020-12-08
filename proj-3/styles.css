@@ -15,20 +15,15 @@ body {
 #container {
   height: 100vh;
   position: relative;
-  /* margin-top: -50px; */
 }
 
 #viz {
   position: fixed;
-  /* left: 50%;
-  transform: translateX(-50%); */
   width: 100%;
   max-width: 1600px;
   height: 100vh;
   background: url(eipc2.svg) no-repeat;
   background-position: center;
-  /* background-position-y: -10px; */
-  /* background-attachment: fixed; */
   background-size: cover;
 }
 
@@ -48,30 +43,14 @@ body {
 }
 
 #slide-native {
-  /* background-image: url(mexico_1.svg); */
   width: 100%;
   height: 100vh;
   background-size: contain;
-  /* background-position-x: -480px;
-  background-position-y: 0px; */
   background-repeat: no-repeat;
   position: sticky;
   top: -1px;
-  /* background-attachment: fixed; */
-  /* opacity: 0; */
   max-width: 1600px;
-  /*margin: calc(100% - 3200px);
-  padding: calc(100% - 3200px); */
 }
-
-/* #map-native svg path.tlaxcala,
-#map-native svg path.chihuahua,
-#map-native svg path.sonora,
-#map-native svg path.yucatan,
-#map-native svg path.oaxaca,
-#map-native svg path.puebla {
-  fill: #444;
-} */
 
 #map-native svg path.active {
   fill: #ed1e79;
@@ -235,10 +214,6 @@ h3 {
 
 #native-title {
   opacity: 1;
-}
-
-.description {
-
 }
 
 .description p {
