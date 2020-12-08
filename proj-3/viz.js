@@ -362,7 +362,37 @@ window.onscroll = function () {
 };
 
 
+$('.native-pos').click(function () {
+    $('html, body').scrollTop(2901);
+})
 
+$('.corridos-pos').click(function () {
+  $('html, body').scrollTop(4201);
+})
+
+$('.ranchera-pos').click(function () {
+  $('html, body').scrollTop(5201);
+})
+
+$('.sonjaracho-pos').click(function () {
+  $('html, body').scrollTop(6801);
+})
+
+$('.huapango-pos').click(function () {
+  $('html, body').scrollTop(7901);
+})
+
+$('.banda-pos').click(function () {
+  $('html, body').scrollTop(9101);
+})
+
+$('.norteno-pos').click(function () {
+  $('html, body').scrollTop(10301);
+})
+
+$('.mariachi-pos').click(function () {
+  $('html, body').scrollTop(12301);
+})       
 
 
 /*
