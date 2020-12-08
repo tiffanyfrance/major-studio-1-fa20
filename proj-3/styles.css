@@ -77,6 +77,18 @@ body {
   fill: #ed1e79;
 }
 
+#map-native svg path.active-banda {
+  fill: #FFFF00;
+}
+
+#map-native svg path.active-norteno {
+  fill: #305271;
+}
+
+#map-native svg path.active-mariachi {
+  fill: #652D90;
+}
+
 body svg path.fill {
   fill: #444;
 }

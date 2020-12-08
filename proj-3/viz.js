@@ -112,6 +112,7 @@ window.onscroll = function () {
     if ($('.native-tip').css("opacity") == 1) {
       $('.native-tip').fadeTo(500, 0);
       $('.native-tip').hide();
+      $('#mexico-map path').removeClass('active');
     }
   }
 
@@ -123,7 +124,6 @@ window.onscroll = function () {
     }
 
     $('#mexico-map path').removeClass('fill');
-    $('#mexico-map path').removeClass('active');
   } else {
     if ($('#corridos-title').css("opacity") == 1) {
       $('#corridos-title').fadeTo(500, 0);
@@ -248,6 +248,7 @@ window.onscroll = function () {
     if ($('.banda-tip').css("opacity") == 1) {
       $('.banda-tip').fadeTo(500, 0);
       $('.banda-tip').hide();
+      $('#mexico-map path').removeClass('active-banda');
     }
   }
 
@@ -272,6 +273,7 @@ window.onscroll = function () {
     if ($('.norteno-tip').css("opacity") == 1) {
       $('.norteno-tip').fadeTo(500, 0);
       $('.norteno-tip').hide();
+      $('#mexico-map path').removeClass('active-norteno');
     }
   }
 
@@ -296,6 +298,7 @@ window.onscroll = function () {
     if ($('.mariachi-tip').css("opacity") == 1) {
       $('.mariachi-tip').fadeTo(500, 0);
       $('.mariachi-tip').hide();
+      $('#mexico-map path').removeClass('active-mariachi');
     }
   }
 
@@ -365,7 +368,7 @@ window.onscroll = function () {
 
 
 $('.native-pos').click(function () {
-    $('html, body').scrollTop(2901);
+  $('html, body').scrollTop(2901);
 })
 
 $('.corridos-pos').click(function () {
@@ -394,7 +397,7 @@ $('.norteno-pos').click(function () {
 
 $('.mariachi-pos').click(function () {
   $('html, body').scrollTop(12301);
-})       
+})
 
 
 /*

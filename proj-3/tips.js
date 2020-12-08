@@ -88,10 +88,19 @@ function buildWave(d) {
     let elem = document.querySelector(`#${id}-tip`);
 
     $(`svg path`).removeClass('active');
+    $(`svg path`).removeClass('active-banda');
+    $(`svg path`).removeClass('active-norteno');
+    $(`svg path`).removeClass('active-mariachi');
 
     if (d.genre === 'native' || d.genre === 'banda' || d.genre === 'norteno' || d.genre === 'mariachi')
       if (elem.dataset.locations) {
-        $(`svg path.${elem.dataset.locations.toLowerCase()}`).addClass('active');
+        let activeClass = 'active';
+
+        if (d.genre !== 'native') {
+          activeClass += '-' + d.genre;
+        }
+
+        $(`svg path.${elem.dataset.locations.toLowerCase()}`).addClass(activeClass);
       }
   }
 };
