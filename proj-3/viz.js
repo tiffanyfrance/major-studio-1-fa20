@@ -88,23 +88,23 @@ window.onscroll = function () {
 
   // Native title
   if (scrollPos < 3900) {
-    if ($('#nativ-title').css("opacity") == 0) {
-      $('#native-title').fadeTo(1000, 1);
+    if ($('#native-title').css("opacity") == 0) {
+      $('#native-title').fadeTo(500, 1);
     }
   } else {
-    if ($('#nativ-title').css("opacity") == 1) {
-      $('#native-title').fadeTo(1000, 0);
+    if ($('#native-title').css("opacity") == 1) {
+      $('#native-title').fadeTo(500, 0);
     }
   }
 
   // Native Tips
   if (scrollPos > 2910 && scrollPos < 3500) {
     if ($('.native-tip').css("opacity") == 0) {
-      $('.native-tip').fadeTo(1000, 1);
+      $('.native-tip').fadeTo(500, 1);
     }
   } else {
     if ($('.native-tip').css("opacity") == 1) {
-      $('.native-tip').fadeTo(1000, 0);
+      $('.native-tip').fadeTo(500, 0);
       $('.native-tip').hide();
     }
   }
@@ -112,15 +112,15 @@ window.onscroll = function () {
   // Corridos title
   if (scrollPos > 3900 && scrollPos < 5100) {
     if ($('#corridos-title').css("opacity") == 0) {
-      $('#native-title').fadeTo(1000, 0);
-      $('#corridos-title').fadeTo(1000, 1);
+      $('#native-title').fadeTo(500, 0);
+      $('#corridos-title').fadeTo(500, 1);
     }
 
     $('#mexico-map path').removeClass('fill');
     $('#mexico-map path').removeClass('active');
   } else {
     if ($('#corridos-title').css("opacity") == 1) {
-      $('#corridos-title').fadeTo(1000, 0);
+      $('#corridos-title').fadeTo(500, 0);
     }
   }
 
@@ -128,12 +128,12 @@ window.onscroll = function () {
   if (scrollPos > 4200 && scrollPos < 5100) {
     $('.corridos-tip').show();
     if ($('.corridos-tip').css("opacity") == 0) {
-      $('.corridos-tip').fadeTo(1000, 1);
+      $('.corridos-tip').fadeTo(500, 1);
     }
 
   } else {
     if ($('.corridos-tip').css("opacity") == 1) {
-      $('.corridos-tip').fadeTo(1000, 0);
+      $('.corridos-tip').fadeTo(500, 0);
       $('.corridos-tip').hide();
     }
   }
@@ -141,11 +141,11 @@ window.onscroll = function () {
   // Ranchera title
   if (scrollPos > 5200 && scrollPos < 6400) {
     if ($('#ranchera-title').css("opacity") == 0) {
-      $('#ranchera-title').fadeTo(1000, 1);
+      $('#ranchera-title').fadeTo(500, 1);
     }
   } else {
     if ($('#ranchera-title').css("opacity") == 1) {
-      $('#ranchera-title').fadeTo(1000, 0);
+      $('#ranchera-title').fadeTo(500, 0);
     }
   }
 
@@ -153,11 +153,11 @@ window.onscroll = function () {
   if (scrollPos > 5500 && scrollPos < 6400) {
     $('.ranchera-tip').show();
     if ($('.ranchera-tip').css("opacity") == 0) {
-      $('.ranchera-tip').fadeTo(1000, 1);
+      $('.ranchera-tip').fadeTo(500, 1);
     }
   } else {
     if ($('.ranchera-tip').css("opacity") == 1) {
-      $('.ranchera-tip').fadeTo(1000, 0);
+      $('.ranchera-tip').fadeTo(500, 0);
       $('.ranchera-tip').hide();
     }
   }
@@ -165,11 +165,11 @@ window.onscroll = function () {
   // sonjarocho title
   if (scrollPos > 6400 && scrollPos < 7600) {
     if ($('#sonjarocho-title').css("opacity") == 0) {
-      $('#sonjarocho-title').fadeTo(1000, 1);
+      $('#sonjarocho-title').fadeTo(500, 1);
     }
   } else {
     if ($('#sonjarocho-title').css("opacity") == 1) {
-      $('#sonjarocho-title').fadeTo(1000, 0);
+      $('#sonjarocho-title').fadeTo(500, 0);
     }
   }
 
@@ -177,12 +177,12 @@ window.onscroll = function () {
   if (scrollPos > 6700 && scrollPos < 7600) {
     $('.sonjarocho-tip').show();
     if ($('.sonjarocho-tip').css("opacity") == 0) {
-      $('.sonjarocho-tip').fadeTo(1000, 1);
+      $('.sonjarocho-tip').fadeTo(500, 1);
     }
     $('#mexico-map .veracruz').css('fill', 'orange')
   } else {
     if ($('.sonjarocho-tip').css("opacity") == 1) {
-      $('.sonjarocho-tip').fadeTo(1000, 0);
+      $('.sonjarocho-tip').fadeTo(500, 0);
       $('.sonjarocho-tip').hide();
     }
     $('#mexico-map .veracruz').css('fill', '#333')
@@ -191,12 +191,12 @@ window.onscroll = function () {
   // huapango title
   if (scrollPos > 7600 && scrollPos < 8800) {
     if ($('#huapango-title').css("opacity") == 0) {
-      $('#huapango-title').fadeTo(1000, 1);
+      $('#huapango-title').fadeTo(500, 1);
     }
     $('#mexico-map .veracruz').css('fill', '#333');
   } else {
     if ($('#huapango-title').css("opacity") == 1) {
-      $('#huapango-title').fadeTo(1000, 0);
+      $('#huapango-title').fadeTo(500, 0);
     }
   }
 
@@ -204,13 +204,13 @@ window.onscroll = function () {
   if (scrollPos > 7900 && scrollPos < 8800) {
     $('.huapango-tip').show();
     if ($('.huapango-tip').css("opacity") == 0) {
-      $('.huapango-tip').fadeTo(1000, 1);
+      $('.huapango-tip').fadeTo(500, 1);
     }
     $('#mexico-map .tamaulipas').css('fill', '#ec297b');
     $('#mexico-map .tamaulipas').css('opacity', '0.6');
   } else {
     if ($('.huapango-tip').css("opacity") == 1) {
-      $('.huapango-tip').fadeTo(1000, 0);
+      $('.huapango-tip').fadeTo(500, 0);
       $('.huapango-tip').hide();
     }
     $('#mexico-map .tamaulipas').css('fill', '#333');
@@ -220,14 +220,14 @@ window.onscroll = function () {
   // banda title
   if (scrollPos > 8800 && scrollPos < 10000) {
     if ($('#banda-title').css("opacity") == 0) {
-      $('#banda-title').fadeTo(1000, 1);
+      $('#banda-title').fadeTo(500, 1);
     }
     $('#mexico-map .sinaola, #mexico-map .zacatecas').addClass('fill');
     $('#mexico-map .tamaulipas').css('fill', '#333');
     $('#mexico-map .tamaulipas').css('opacity', '1');
   } else {
     if ($('#banda-title').css("opacity") == 1) {
-      $('#banda-title').fadeTo(1000, 0);
+      $('#banda-title').fadeTo(500, 0);
     }
   }
 
@@ -235,12 +235,12 @@ window.onscroll = function () {
   if (scrollPos > 9100 && scrollPos < 10000) {
     $('.banda-tip').show();
     if ($('.banda-tip').css("opacity") == 0) {
-      $('.banda-tip').fadeTo(1000, 1);
+      $('.banda-tip').fadeTo(500, 1);
     }
     $('#mexico-map .tamaulipas').css('fill', '#333');
   } else {
     if ($('.banda-tip').css("opacity") == 1) {
-      $('.banda-tip').fadeTo(1000, 0);
+      $('.banda-tip').fadeTo(500, 0);
       $('.banda-tip').hide();
     }
   }
@@ -248,11 +248,11 @@ window.onscroll = function () {
   // norteno title
   if (scrollPos > 10000 && scrollPos < 12000) {
     if ($('#norteno-title').css("opacity") == 0) {
-      $('#norteno-title').fadeTo(1000, 1);
+      $('#norteno-title').fadeTo(500, 1);
     }
   } else {
     if ($('#norteno-title').css("opacity") == 1) {
-      $('#norteno-title').fadeTo(1000, 0);
+      $('#norteno-title').fadeTo(500, 0);
     }
   }
 
@@ -260,11 +260,11 @@ window.onscroll = function () {
   if (scrollPos > 10300 && scrollPos < 12000) {
     $('.norteno-tip').show();
     if ($('.norteno-tip').css("opacity") == 0) {
-      $('.norteno-tip').fadeTo(1000, 1);
+      $('.norteno-tip').fadeTo(500, 1);
     }
   } else {
     if ($('.norteno-tip').css("opacity") == 1) {
-      $('.norteno-tip').fadeTo(1000, 0);
+      $('.norteno-tip').fadeTo(500, 0);
       $('.norteno-tip').hide();
     }
   }
@@ -272,11 +272,11 @@ window.onscroll = function () {
   // mariachi title
   if (scrollPos > 12000 && scrollPos < 13200) {
     if ($('#mariachi-title').css("opacity") == 0) {
-      $('#mariachi-title').fadeTo(1000, 1);
+      $('#mariachi-title').fadeTo(500, 1);
     }
   } else {
     if ($('#mariachi-title').css("opacity") == 1) {
-      $('#mariachi-title').fadeTo(1000, 0);
+      $('#mariachi-title').fadeTo(500, 0);
     }
   }
 
@@ -284,11 +284,11 @@ window.onscroll = function () {
   if (scrollPos > 12300 && scrollPos < 13200) {
     $('.mariachi-tip').show();
     if ($('.mariachi-tip').css("opacity") == 0) {
-      $('.mariachi-tip').fadeTo(1000, 1);
+      $('.mariachi-tip').fadeTo(500, 1);
     }
   } else {
     if ($('.mariachi-tip').css("opacity") == 1) {
-      $('.mariachi-tip').fadeTo(1000, 0);
+      $('.mariachi-tip').fadeTo(500, 0);
       $('.mariachi-tip').hide();
     }
   }
