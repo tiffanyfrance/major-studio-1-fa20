@@ -185,6 +185,7 @@ window.onscroll = function () {
       $('.sonjarocho-tip').fadeTo(1000, 0);
       $('.sonjarocho-tip').hide();
     }
+    $('#mexico-map .veracruz').css('fill', '#333')
   }
 
   // huapango title

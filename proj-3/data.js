@@ -6,7 +6,7 @@ let wavecolors = {
   huapango: ['#ec297b', '#faaf40'], //fix
   banda: ['yellow', '#ff0'], //fix
   norteno: ['#478bc9', '#F7931E'], //fix
-  mariachi: ['#F15A24', '#F7931E'], //fix
+  mariachi: ['#652d90', '#faaf40'], //fix
 }
 
 function rand(min, max) {
@@ -972,8 +972,8 @@ let data = [
     genresvg: mariachisvg,
     wavecolor: wavecolors.mariachi[0],
     progresscolor: wavecolors.mariachi[1],
-    top: '21%',
-    left: '60%',
+    top: '31%',
+    left: '77%',
     trackName: "La Malagueña",
     trackMP3: "songs/La-Malaguena.mp3",
     trackStr: "Sung in the falsetto style typical of some Mexican songs, this exciting song says \"what beautiful eyes you have . . . how I wish they would look at me . . . Even though I am poor I offer you all my love.",
@@ -991,7 +991,7 @@ let data = [
     genresvg: mariachisvg,
     wavecolor: wavecolors.mariachi[0],
     progresscolor: wavecolors.mariachi[1],
-    top: '21%',
+    top: '51%',
     left: '60%',
     trackName: "From Monterrey",
     trackMP3: "songs/from-monterrey.mp3",
@@ -1010,8 +1010,8 @@ let data = [
     genresvg: mariachisvg,
     wavecolor: wavecolors.mariachi[0],
     progresscolor: wavecolors.mariachi[1],
-    top: '21%',
-    left: '60%',
+    top: '71%',
+    left: '10%',
     trackName: "Ay, Jalisco No Te Rajes!",
     trackMP3: "songs/ay-jalisco.mp3",
     trackStr: '"Jalisco, don\'t back down", the tilte of this song has long been a rallying cry for all Tapatios.',
