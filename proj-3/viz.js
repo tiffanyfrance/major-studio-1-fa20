@@ -84,6 +84,7 @@ window.onscroll = function () {
   }
 
   //Hide all on load??
+  $('.native-tip').hide();
   $('.corridos-tip').hide();
   $('.ranchera-tip').hide();
   $('.sonjarocho-tip').hide();
@@ -105,6 +106,7 @@ window.onscroll = function () {
 
   // Native Tips
   if (scrollPos > 2910 && scrollPos < 3500) {
+    $('.native-tip').show();
     if ($('.native-tip').css("opacity") == 0) {
       $('.native-tip').fadeTo(500, 1);
     }
@@ -368,7 +370,7 @@ window.onscroll = function () {
 
 
 $('.native-pos').click(function () {
-  $('html, body').scrollTop(2901);
+  $('html, body').scrollTop(2911);
 })
 
 $('.corridos-pos').click(function () {
@@ -376,7 +378,7 @@ $('.corridos-pos').click(function () {
 })
 
 $('.ranchera-pos').click(function () {
-  $('html, body').scrollTop(5201);
+  $('html, body').scrollTop(5501);
 })
 
 $('.sonjaracho-pos').click(function () {
