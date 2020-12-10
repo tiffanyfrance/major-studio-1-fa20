@@ -1,7 +1,7 @@
 // building each song tooltip
 import { data } from './data.js';
 
-let navItemArr = document.querySelectorAll('h3 a');
+let navItemArr = document.querySelectorAll('h3 a img');
 let wavePromises = [];
 let arrWaves = [];
 

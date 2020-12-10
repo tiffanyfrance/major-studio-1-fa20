@@ -502,3 +502,19 @@ h3 a {
   -webkit-animation-timing-function: ease-in-out;
   -ms-animation-timing-function: ease-in-out;
 }
+
+.dot {
+  height: 4px;
+  width: 4px;
+  background-color: transparent;
+  border: solid 1px #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+  top: 33px;
+  left: 7px;
+}
+
+.dot.current {
+  background-color: #bbb;
+}
