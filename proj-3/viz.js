@@ -74,7 +74,6 @@ d3.select('#main-title .loader')
 var viz = document.querySelector("#viz");
 
 window.onscroll = function () {
-  console.log(window.pageYOffset)
   let scrollPos = window.pageYOffset;
   if (scrollPos > 50) {
     viz.className = "hidden";
@@ -304,72 +303,40 @@ window.onscroll = function () {
     }
   }
 
-  if (scrollPos > 3900) {
-    $('body #mexico-map path').removeClass('fill');
-  }
+  $('body #mexico-map path').removeClass('fill');
 
+  let mapClass = '';
+
+  if (scrollPos <= 3900) {
+    $('path.chihuahua, path.oaxaca, path.puebla, path.sonora, path.yucatan').addClass('fill');
+  }
   // Zoom of Map for Corridos and Rancheras
-  if (scrollPos > 3900 && scrollPos < 6500) {
-    if (!$('body #mexico-map').hasClass('zoomzoom')) {
-      $('body #mexico-map').addClass('zoomzoom');
-    }
-  } else {
+  else if (scrollPos > 3900 && scrollPos <= 6500) {
+    mapClass = 'zoomzoom';
   }
-
   // Zoom of Map for Son Jorocho and Son Huestecas
-  if (scrollPos > 6500) {
-    if (!$('body #mexico-map').hasClass('zoomleft')) {
-      $('body #mexico-map').addClass('zoomleft');
-    }
-  } else {
-    if ($('body svg').hasClass('zoomleft')) {
-      $('body svg').removeClass('zoomleft');
-    }
+  else if (scrollPos > 6500 && scrollPos <= 8800) {
+    mapClass = 'zoomleft';
   }
-
   // Zoom of Map for Banda
-  if (scrollPos > 8800) {
-    $('body #mexico-map path.zacatecas, body #mexico-map path.sinaloa').addClass('fill');
-
-    if (!$('body #mexico-map').hasClass('zoomright')) {
-      $('body #mexico-map').addClass('zoomright');
-    }
-  } else {
-    if ($('body svg').hasClass('zoomright')) {
-      $('body svg').removeClass('zoomright');
-    }
+  else if (scrollPos > 8800 && scrollPos <= 10000) {
+    $('path.zacatecas, path.sinaloa').addClass('fill');
+    mapClass = 'zoomright';
   }
-
   // Zoom of Map for Norteno
-  if (scrollPos > 10000) {
-    $('body #mexico-map path.zacatecas, body #mexico-map path.sinaloa').removeClass('fill');
-    $('body #mexico-map path.sonora, body #mexico-map path.chihuahua, body #mexico-map path.coahuila, body #mexico-map path.nuevo-leon').addClass('fill');
-
-    if (!$('body #mexico-map').hasClass('zoomtop')) {
-      $('body #mexico-map').addClass('zoomtop');
-    }
-  } else {
-    if ($('body svg').hasClass('zoomtop')) {
-      $('body svg').removeClass('zoomtop');
-    }
+  else if (scrollPos > 10000 && scrollPos <= 12000) {
+    $('path.sonora, path.chihuahua, path.coahuila, path.nuevo-leon').addClass('fill');
+    mapClass = 'zoomtop';
   }
-
   // Zoom of Map for Mariachi
-  if (scrollPos > 12000) {
-    if (!$('body #mexico-map').hasClass('zoomout')) {
-      $('body #mexico-map').addClass('zoomout');
-    }
-    $('body #mexico-map path').removeClass('fill');
-    $('body #mexico-map path.jalisco, body #mexico-map path.nuevo-leon').addClass('fill');
-  } else {
-    if ($('body svg').hasClass('zoomout')) {
-      $('body svg').removeClass('zoomout');
-    }
+  else if (scrollPos > 12000 && scrollPos <= 13200) {
+    $('path.jalisco, path.nuevo-leon').addClass('fill');
+    mapClass = '';
   }
+  
+  $('body #mexico-map').attr('class', mapClass);
 
   if (scrollPos > 13200) {
-    $('body #mexico-map path.nuevo-leon, body #mexico-map path.jalisco').removeClass('fill');
-
     $('#thoughts').show();
     if ($('#thoughts').css("opacity") == 0) {
       $('#thoughts').fadeTo(500, 1);
@@ -380,8 +347,6 @@ window.onscroll = function () {
       $('#thoughts').hide();
     }
   }
-
-
 };
 
 
